@@ -82,7 +82,7 @@ export function getMeta(path: string): Meta {
     if (path === "/colectii") ld.push(itemList(collections, "Colecții de mochetă Burmatex"));
     if (path === "/devino-dealer") ld.push(faqPage(dealerFaqs));
     if (path === "/") ld.push(faqPage(generalFaqs.slice(0, 3)));
-    return { title: stat.title, description: stat.description, jsonLd: ld, image: "/img/c/go-to/room-2.webp" };
+    return { title: stat.title, description: stat.description, jsonLd: ld, image: "/img/c/go-to/mocheta-dale-go-to-ambient-2.webp" };
   }
   const landing = landingByPath[path];
   if (landing) {

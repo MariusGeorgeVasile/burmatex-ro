@@ -6,12 +6,12 @@ import { sectors } from "../data/site";
 import { landings } from "../data/landings";
 
 const familyImage: Record<FamilyKey, string> = {
-  multilevel: "/img/c/rocklines/room-1.webp",
-  loop: "/img/c/tivoli-mist/room-1.webp",
-  cut: "/img/c/origin/room-1.webp",
-  barrier: "/img/c/armour/room-1.webp",
-  fibre: "/img/c/academy/room-1.webp",
-  entrance: "/img/c/chevrolay-50/room-1.webp",
+  multilevel: "/img/c/rocklines/mocheta-dale-rocklines-ambient-1.webp",
+  loop: "/img/c/tivoli-mist/mocheta-dale-tivoli-mist-ambient-1.webp",
+  cut: "/img/c/origin/mocheta-dale-origin-ambient-1.webp",
+  barrier: "/img/c/armour/mocheta-dale-armour-ambient-1.webp",
+  fibre: "/img/c/academy/mocheta-dale-academy-ambient-1.webp",
+  entrance: "/img/c/chevrolay-50/mocheta-dale-chevrolay-50-ambient-1.webp",
 };
 
 const featuredFacts: Record<string, { status: string; claim: string; text: string }> = {
@@ -25,7 +25,7 @@ export default function Home() {
   const familyKeys = Object.keys(families) as FamilyKey[];
   return <div className="editorial-home">
     <section className="ed-hero" aria-labelledby="hero-title">
-      <img className="ed-hero-photo" src="/img/c/go-to/room-2.webp" alt="Mochetă în dale Burmatex go to® într-un birou" fetchPriority="high" width="1200" height="1200" />
+      <img className="ed-hero-photo" src="/img/c/go-to/mocheta-dale-go-to-ambient-2.webp" alt="Mochetă în dale Burmatex go to® într-un birou" fetchPriority="high" width="1200" height="1200" />
       <div className="ed-hero-shade" />
       <div className="ed-shell ed-hero-body">
         <Label light>Burmatex® / Mochetă dale produsă în Marea Britanie din 1967</Label>
@@ -60,11 +60,11 @@ export default function Home() {
 
     <section className="ed-directions ed-shell">
       <Link href="/devino-dealer" className="ed-direction ed-direction-primary">
-        <img src="/img/c/infinity/room-1.webp" alt="Birou open-space cu mochetă în dale Burmatex infinity®" loading="lazy" width="1200" height="1200" />
+        <img src="/img/c/infinity/mocheta-dale-infinity-ambient-1.webp" alt="Birou open-space cu mochetă în dale Burmatex infinity®" loading="lazy" width="1200" height="1200" />
         <div><span className="ed-number">01 / Pentru dealeri</span><h2>Vindeți<br />Burmatex</h2><p>Magazine de pardoseli, showroom-uri de finisaje, distribuitori regionali. Portofoliu complet, mostre și condiții de partener.</p><span className="ed-text-link">Programul de dealeri <ArrowUpRight /></span></div>
       </Link>
       <Link href="/devino-dealer#profil" className="ed-direction ed-direction-secondary">
-        <img src="/img/c/eco-cordiale/room-1.webp" alt="Spațiu școlar cu mochetă Burmatex eco-cordiale®" loading="lazy" width="1200" height="1200" />
+        <img src="/img/c/eco-cordiale/mocheta-dale-eco-cordiale-ambient-1.webp" alt="Spațiu școlar cu mochetă Burmatex eco-cordiale®" loading="lazy" width="1200" height="1200" />
         <div><span className="ed-number">02 / Pentru montatori și constructori</span><h2>Montați<br />Burmatex</h2><p>Firme de montaj, amenajări interioare, antreprenori. Produs de proiect, livrat la timp, cu suport tehnic.</p><span className="ed-text-link">Parteneriat de montaj <ArrowUpRight /></span></div>
       </Link>
     </section>

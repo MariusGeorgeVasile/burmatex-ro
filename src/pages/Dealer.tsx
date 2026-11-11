@@ -31,7 +31,7 @@ export default function DealerPage() {
       <div className="intro-actions"><Link href="#aplica" className="ed-button">Aplicați acum <ArrowUpRight /></Link><Link href="#beneficii" className="ed-text-link">Ce primiți ca partener <ArrowRight /></Link></div>
     </PageIntro>
 
-    <figure className="wide-figure"><img src="/img/c/tivoli/room-2.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli® · imagine Burmatex</figcaption></figure>
+    <figure className="wide-figure"><img src="/img/c/tivoli/mocheta-dale-tivoli-ambient-2.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli® · imagine Burmatex</figcaption></figure>
 
     <section className="ed-shell benefits" id="beneficii">
       <div className="ed-section-heading"><div><Label>Ce primiți</Label><h2>Tot ce vă trebuie<br /><span>ca să vindeți din prima lună.</span></h2></div><p>Programul este gândit pentru firme mici și mijlocii. Fără angajamente de volum nerealiste, fără stoc blocat pe raft.</p></div>

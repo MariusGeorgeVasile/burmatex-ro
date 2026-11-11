@@ -39,7 +39,7 @@ export const landings: Landing[] = [
     accent: "Tot ce trebuie să știți înainte să alegeți.",
     lead: "Mocheta în dale (mochetă în plăci) este standardul pentru birouri, școli și spații publice: se montează rapid, se înlocuiește pe bucăți și ascunde instalațiile din pardoseala tehnică. Burmatex o produce în Marea Britanie din 1967.",
     summary: [["Format", "Dală 50 × 50 cm (4 dale/m²) și lamele 25 × 100 cm"], ["Trafic", "Clasa 33 — comercial intens, pentru colecțiile documentate"], ["Nuanțe", "Peste 400, în peste 20 de colecții"], ["Garanție", "15 ani declarați, în condițiile producătorului"], ["Reacție la foc", "Bfl-s1 pentru colecțiile documentate"], ["Mediu", "EPD pe produs, fire reciclate, suport BioBase®"]],
-    image: "/img/c/infinity/room-1.webp",
+    image: "/img/c/infinity/mocheta-dale-infinity-ambient-1.webp",
     imageAlt: "Birou open-space cu mochetă dale Burmatex infinity®",
     sections: [
       { h2: "Ce este mocheta în dale", p: ["Mocheta în dale este mochetă textilă tăiată în module pătrate de 50 × 50 cm, cu un suport rigid care o ține plană fără lipire completă. Se mai numește mochetă în plăci, mochetă modulară sau mochetă tip dale.", "Diferența față de mocheta la rulou este modul de lucru: dalele se pot ridica și înlocui individual, se combină în modele de culoare și se montează pe pardoseala tehnică supraînălțată fără să blocheze accesul la doze și cabluri."] },
@@ -61,7 +61,7 @@ export const landings: Landing[] = [
     accent: "Liniște, rezistență și un spațiu care arată bine și peste zece ani.",
     lead: "Într-un birou, pardoseala lucrează non-stop: scaune pe rotile, trafic pe coridoare, zgomot în open-space. Mocheta în dale rezolvă acustica, se montează peste pardoseala tehnică și se repară dală cu dală.",
     summary: [["Trafic", "Clasa 33 — comercial intens"], ["Acustică", "22–28 dB reducere a zgomotului de impact (colecții documentate)"], ["Format", "Dală 50 × 50 cm, lamelă 25 × 100 cm"], ["Montaj", "Pe șapă sau pardoseală tehnică, cu adeziv tackifier"], ["Certificări verzi", "EPD pe produs pentru LEED / BREEAM / WELL"]],
-    image: "/img/c/go-to/room-2.webp",
+    image: "/img/c/go-to/mocheta-dale-go-to-ambient-2.webp",
     imageAlt: "Birou cu mochetă dale go to® Burmatex",
     sections: [
       { h2: "De ce mochetă în dale în birouri", bullets: [["Acustică", "Mocheta absoarbe zgomotul de pași și reduce reverberația în open-space, unde suprafețele dure amplifică sunetul."], ["Acces la instalații", "Pe pardoseala tehnică, dalele se ridică individual pentru acces la doze, cabluri și prize."], ["Reamenajare ușoară", "La schimbarea layout-ului sau la deteriorări punctuale se înlocuiesc doar dalele afectate."], ["Zonare cu culoare", "Coridoare, zone de focus și zone sociale se pot marca prin culoare fără pereți."]] },
@@ -86,7 +86,7 @@ export const landings: Landing[] = [
     accent: "Zeci de mii de metri pătrați. Un singur standard.",
     lead: "La o clădire de birouri nouă, mocheta se alege o dată pentru toate etajele și pentru zeci de chiriași. Contează livrarea etapizată, uniformitatea lotului, documentația pentru certificarea verde și un partener care răspunde la termen.",
     summary: [["Pardoseală tehnică", "Dalele 50 × 50 cm se ridică individual pentru acces la doze"], ["Certificări", "EPD verificat de terți, pe produs — pentru BREEAM, LEED, WELL"], ["Uniformitate", "Comandă pe lot de producție, cu rezervă pentru întreținere"], ["Acustică", "22–28 dB reducere a zgomotului de impact (colecții documentate)"], ["Mediu", "Colecții declarate neutre carbon, fire reciclate, suport BioBase®"]],
-    image: "/img/c/surface-story/room-1.webp",
+    image: "/img/c/surface-story/mocheta-dale-surface-story-ambient-1.webp",
     imageAlt: "Spațiu de birouri cu mochetă dale Burmatex surface story®",
     sections: [
       { h2: "Cat A sau Cat B: cine alege mocheta", p: ["În multe clădiri de birouri noi, dezvoltatorul livrează spațiul în standard Cat A (pardoseală tehnică, tavan, instalații de bază), iar mocheta în dale intră în amenajarea chiriașului, Cat B. Uneori dezvoltatorul include mocheta în livrarea Cat A, ca standard al clădirii.", "În ambele cazuri, o colecție de bază aleasă devreme simplifică ofertarea pentru chiriași și menține un aspect unitar pe toate etajele."] },
@@ -111,7 +111,7 @@ export const landings: Landing[] = [
     accent: "Construită pentru trafic, bugete publice și curățenie zilnică.",
     lead: "Sălile de clasă și coridoarele au nevoie de o pardoseală care rezistă la mii de pași pe zi, se curăță ușor și reduce zgomotul. Fibra presată Burmatex a fost dezvoltată exact pentru acest tip de spații.",
     summary: [["Construcție", "Fibră presată (fibre bonded), nervurată"], ["Format", "Dale 50 × 50 cm sau rulou 2 m lățime"], ["Culori", "academy® 24, eco-cordiale® 44, velour excel® 18"], ["Margini", "Nu se destramă la tăiere"], ["Mediu", "eco-cordiale® declarată neutră carbon; academy® carbon redus"]],
-    image: "/img/c/academy/room-1.webp",
+    image: "/img/c/academy/mocheta-dale-academy-ambient-1.webp",
     imageAlt: "Spațiu educațional cu mochetă Burmatex academy®",
     sections: [
       { h2: "De ce fibră presată în școli", bullets: [["Rezistență", "Fibrele sunt compactate mecanic într-un strat dens, fără bucle care să se agațe sau să se tragă."], ["Cost", "Cel mai mic cost pe metru pătrat din gama Burmatex, potrivit pentru bugete publice și suprafețe mari."], ["Întreținere", "Suprafața nervurată se aspiră ușor; dalele deteriorate se înlocuiesc punctual."], ["Zonare", "Culorile vii delimitează zone de lectură, joacă sau circulație."]] },
@@ -135,7 +135,7 @@ export const landings: Landing[] = [
     accent: "Cea mai ieftină protecție pentru toată pardoseala clădirii.",
     lead: "Murdăria și umezeala aduse pe încălțăminte sunt principala cauză de uzură a mochetei și a pardoselilor dure. Un covor de intrare corect dimensionat le oprește în primii pași.",
     summary: [["Colecții", "grimebuster 50®, chevrolay 50®, armour®"], ["Format", "Dale 50 × 50 cm; rulou 2 m pentru 7700 grimebuster și 7800 chevrolay"], ["armour®", "Sistem de fir în trei trepte: absorbție, raclor, denier mare"], ["Culori", "6 nuanțe grimebuster 50®, 6 chevrolay 50®, 12 armour®"]],
-    image: "/img/c/chevrolay-50/room-1.webp",
+    image: "/img/c/chevrolay-50/mocheta-dale-chevrolay-50-ambient-1.webp",
     imageAlt: "Intrare în clădire cu covor de intrare Burmatex chevrolay 50®",
     sections: [
       { h2: "Cum funcționează o zonă de intrare", bullets: [["Raclare", "Nervurile adânci desprind murdăria grosieră de pe tălpi."], ["Absorbție", "Fibrele rețin umezeala și praful fin."], ["Tranziție", "Ultimii pași pe o suprafață curată înainte de mocheta sau pardoseala din interior."]] },
@@ -158,7 +158,7 @@ export const landings: Landing[] = [
     accent: "Ce face prețul și cum îl comparați corect.",
     lead: "Prețul mochetei în dale variază după construcție, greutatea firului, design și volumul comandat. Mai jos sunt factorii care contează și clasele de preț ale colecțiilor Burmatex. Prețul final îl primiți în ofertă, de la dealerul din zona dumneavoastră.",
     summary: [["Economic", "Fibră presată și covoare de intrare"], ["Standard", "Dale cu buclă uniformă (go to®, tivoli®, infinity®, armour®)"], ["Premium", "Buclă pe mai multe niveluri și fir tăiat"], ["Ce mai intră în buget", "Pregătirea suportului, adeziv, montaj, transport"]],
-    image: "/img/c/tivoli/room-1.webp",
+    image: "/img/c/tivoli/mocheta-dale-tivoli-ambient-1.webp",
     imageAlt: "Mochetă dale Burmatex tivoli® în culori combinate",
     sections: [
       { h2: "De ce depinde prețul mochetei în dale", bullets: [["Construcția", "Fibra presată costă cel mai puțin; bucla pe mai multe niveluri și firul tăiat costă cel mai mult."], ["Greutatea și tipul firului", "Mai mult fir pe metru pătrat (g/m²) și fire regenerate premium (ECONYL®, Thrive®) cresc prețul și durabilitatea."], ["Designul", "Desenele complexe și colecțiile noi sunt mai scumpe decât culorile uni."], ["Volumul și disponibilitatea", "Produsele din stoc și comenzile mari au alt preț decât cantitățile mici aduse din fabrică."], ["Montajul", "Pregătirea șapei, adezivul și manopera se adaugă la prețul materialului."]] },

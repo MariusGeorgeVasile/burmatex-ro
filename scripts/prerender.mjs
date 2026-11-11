@@ -15,7 +15,7 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replac
 function page(path) {
   const meta = getMeta(path);
   const url = `${domain}${path === "/" ? "/" : path}`;
-  const image = meta.image ? `${domain}${meta.image}` : `${domain}/img/c/go-to/room-2.webp`;
+  const image = meta.image ? `${domain}${meta.image}` : `${domain}/img/c/go-to/mocheta-dale-go-to-ambient-2.webp`;
   const ld = JSON.stringify({ "@context": "https://schema.org", "@graph": meta.jsonLd }).replace(/</g, "\\u003c");
   return template
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)
