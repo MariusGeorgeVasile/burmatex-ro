@@ -4,7 +4,9 @@ import { Link } from "./link";
 import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import { site } from "./data/site";
 import { collections, families, type Collection, collectionPath, plainName } from "./data/collections";
-import seo from "./data/seo.json";
+import { priceTiers } from "./data/attributes";
+import { landings } from "./data/landings";
+import { getMeta } from "./seo";
 
 export function Label({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return <p className={`ed-label${light ? " light" : ""}`}><span aria-hidden="true" />{children}</p>;
@@ -16,8 +18,9 @@ export function Wordmark({ inverse = false }: { inverse?: boolean }) {
 
 const nav = [
   ["Colecții", "/colectii"],
+  ["Selector mochetă", "/selector-mocheta"],
+  ["Mochetă dale", "/mocheta-dale"],
   ["Devino dealer", "/devino-dealer"],
-  ["De ce Burmatex", "/de-ce-burmatex"],
   ["Resurse", "/resurse"],
   ["Contact", "/contact"],
 ] as const;
@@ -56,6 +59,7 @@ export function Footer() {
     <div className="ed-shell footer-grid">
       <div className="footer-about"><Wordmark /><p>Mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie. O rețea de dealeri pentru toată România.</p></div>
       <div><h4>Colecții</h4>{familyKeys.map(key => <Link key={key} href={`/colectii?familie=${key}`}>{families[key].label}</Link>)}</div>
+      <div><h4>Ghiduri</h4>{landings.map(l => <Link key={l.path} href={l.path}>{l.label}</Link>)}<Link href="/selector-mocheta">Selector mochetă</Link></div>
       <div><h4>Parteneri</h4><Link href="/devino-dealer">Devino dealer</Link><Link href="/devino-dealer#aplica">Formular de aplicare</Link><Link href="/contact?tip=mostre">Solicitați mostre</Link><Link href="/resurse">Resurse tehnice</Link><Link href="/de-ce-burmatex">De ce Burmatex</Link></div>
       <div><h4>Contact</h4>{site.address && <p>{site.address}</p>}<a href={`mailto:${site.email}`}>{site.email}</a>{site.phone && <a href={`tel:${site.phone}`}>{site.phoneDisplay || site.phone}</a>}<p>{site.showroomNote}</p></div>
     </div>
@@ -66,16 +70,15 @@ export function Footer() {
   </footer>;
 }
 
-export function usePageMeta(path: string, override?: { title: string; description: string }) {
+export function usePageMeta(path: string) {
   useEffect(() => {
-    const meta = override ?? (seo as Record<string, { title: string; description: string }>)[path];
-    if (!meta) return;
+    const meta = getMeta(path);
     document.title = meta.title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", meta.description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content", meta.title);
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", meta.description);
-    document.querySelector('link[rel="canonical"]')?.setAttribute("href", `${site.domain}${path === "/" ? "/" : path}`);
-  }, [path, override?.title, override?.description]);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", `${site.domain}${path}`);
+  }, [path]);
 }
 
 export function PageIntro({ label, title, accent, text, children }: { label: string; title: string; accent: string; text: string; children?: React.ReactNode }) {
@@ -91,6 +94,11 @@ export function TilePlaceholder({ collection }: { collection: Collection }) {
   return <div className="tile-placeholder" aria-hidden="true"><span>{plainName(collection.name)}</span><small>{families[collection.family].short}</small></div>;
 }
 
+export function PriceTag({ c }: { c: Collection }) {
+  const t = priceTiers[c.priceTier];
+  return <span className={`price-tag ${c.priceTier}`} title={t.text}>{t.marks} {t.label}{c.priceFrom ? ` · de la ${c.priceFrom} €/m²` : ""}</span>;
+}
+
 export function CarbonTag({ c }: { c: Collection }) {
   if (!c.carbon) return null;
   return <span className={`carbon-tag ${c.carbon}`}>{c.carbon === "neutral" ? "Neutră carbon (declarat)" : "Carbon redus"}</span>;
@@ -100,7 +108,7 @@ export function CollectionCard({ c, index }: { c: Collection; index?: number }) 
   const img = c.image ?? c.tile;
   return <article className="cc-card">
     <Link href={collectionPath(c.slug)} className="cc-card-photo" aria-label={`Descoperiți ${c.name}`}>
-      {img ? <img src={img} alt={`Mochetă Burmatex ${c.name}`} loading="lazy" width="600" height="600" /> : <TilePlaceholder collection={c} />}
+      {img ? <img src={img} alt={`Mochetă dale Burmatex ${c.name}`} loading="lazy" width="600" height="600" /> : <TilePlaceholder collection={c} />}
       {index !== undefined && <span className="cc-index">{String(index + 1).padStart(2, "0")}</span>}
       {c.inStock && <span className="cc-badge">Din stoc</span>}
       {c.isNew && <span className="cc-badge new">Nou</span>}
@@ -110,16 +118,17 @@ export function CollectionCard({ c, index }: { c: Collection; index?: number }) 
       <h3><Link href={collectionPath(c.slug)}>{plainName(c.name)}<sup>®</sup></Link></h3>
       <p className="cc-card-headline">{c.headline}</p>
       <p>{c.use}</p>
-      <div className="cc-card-foot"><span>{c.formats.join(" · ")}</span><CarbonTag c={c} /></div>
+      {c.swatches.length > 0 && <ul className="cc-strip" aria-label={`${c.swatches.length} nuanțe`}>{c.swatches.slice(0, 8).map(s => <li key={s.img} style={{ background: s.hex }} title={s.name} />)}{c.swatches.length > 8 && <li className="more">+{c.swatches.length - 8}</li>}</ul>}
+      <div className="cc-card-foot"><span>{c.formats.join(" · ")}</span><span className="cc-tags"><PriceTag c={c} /><CarbonTag c={c} /></span></div>
     </div>
   </article>;
 }
 
-export function DealerCTA({ title = "Aduceți Burmatex", accent = "în orașul dumneavoastră.", text = "Spuneți-ne unde lucrați și ce clienți aveți. Revenim cu condițiile de parteneriat, kitul de mostre și pașii de început." }: { title?: string; accent?: string; text?: string }) {
+export function DealerCTA({ title = "Aduceți Burmatex", accent = "în orașul dumneavoastră.", text = "Spuneți-ne unde lucrați și ce clienți aveți. Revenim cu condițiile de parteneriat, kitul de mostre și pașii de început.", to = "/devino-dealer#aplica", button = "Aplicați ca dealer", label = "Program de dealeri / România" }: { title?: string; accent?: string; text?: string; to?: string; button?: string; label?: string }) {
   return <section className="ed-final"><div className="ed-shell">
-    <Label>Program de dealeri / România</Label>
+    <Label>{label}</Label>
     <h2>{title}<br /><span>{accent}</span></h2>
-    <div><p>{text}</p><Link href="/devino-dealer#aplica" className="ed-button">Aplicați ca dealer <ArrowUpRight /></Link></div>
+    <div><p>{text}</p><Link href={to} className="ed-button">{button} <ArrowUpRight /></Link></div>
   </div></section>;
 }
 

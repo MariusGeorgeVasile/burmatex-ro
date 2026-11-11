@@ -3,14 +3,15 @@ import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { DealerCTA, Label, featured, usePageMeta } from "../components";
 import { collections, families, totalColours, collectionPath, plainName, type FamilyKey } from "../data/collections";
 import { sectors } from "../data/site";
+import { landings } from "../data/landings";
 
 const familyImage: Record<FamilyKey, string> = {
-  multilevel: "/img/surface-memory.webp",
-  loop: "/img/infinity.webp",
-  cut: "/img/tile-origin.webp",
-  barrier: "/img/armour.webp",
-  fibre: "/img/academy.webp",
-  entrance: "/img/chevrolay-50.webp",
+  multilevel: "/img/c/rocklines/room-1.webp",
+  loop: "/img/c/tivoli-mist/room-1.webp",
+  cut: "/img/c/origin/room-1.webp",
+  barrier: "/img/c/armour/room-1.webp",
+  fibre: "/img/c/academy/room-1.webp",
+  entrance: "/img/c/chevrolay-50/room-1.webp",
 };
 
 const featuredFacts: Record<string, { status: string; claim: string; text: string }> = {
@@ -24,13 +25,13 @@ export default function Home() {
   const familyKeys = Object.keys(families) as FamilyKey[];
   return <div className="editorial-home">
     <section className="ed-hero" aria-labelledby="hero-title">
-      <img className="ed-hero-photo" src="/img/go-to.webp" alt="Mochetă în dale Burmatex go to® într-un birou" fetchPriority="high" width="1200" height="1200" />
+      <img className="ed-hero-photo" src="/img/c/go-to/room-2.webp" alt="Mochetă în dale Burmatex go to® într-un birou" fetchPriority="high" width="1200" height="1200" />
       <div className="ed-hero-shade" />
       <div className="ed-shell ed-hero-body">
-        <Label light>Burmatex® / Mochetă britanică din 1967</Label>
-        <h1 id="hero-title">Mocheta în dale britanică.<br /><strong>Acum prin dealerul din orașul dumneavoastră.</strong></h1>
-        <p>Construim rețeaua națională Burmatex. Căutăm magazine de pardoseli,<br />firme de montaj și amenajări din toată țara.</p>
-        <div className="ed-hero-actions"><Link href="/devino-dealer" className="ed-button">Devino dealer Burmatex <ArrowUpRight /></Link><Link href="/colectii" className="ed-hero-link">Vedeți colecțiile <ArrowRight /></Link></div>
+        <Label light>Burmatex® / Mochetă dale produsă în Marea Britanie din 1967</Label>
+        <h1 id="hero-title">Mochetă dale britanică.<br /><strong>Pentru birouri, școli și clădiri publice din toată România.</strong></h1>
+        <p>{collections.length} de colecții și peste 400 de nuanțe, clasa 33 pentru trafic intens,<br />stoc în România și dealeri locali în toată țara.</p>
+        <div className="ed-hero-actions"><Link href="/selector-mocheta" className="ed-button">Găsiți mocheta potrivită <ArrowUpRight /></Link><Link href="/devino-dealer" className="ed-hero-link">Sunteți firmă de pardoseli? Deveniți dealer <ArrowRight /></Link></div>
       </div>
       <div className="ed-shell ed-hero-caption"><Link href="#produse"><ArrowDown /> Descoperiți Burmatex</Link><Link href={collectionPath("go-to")}>go to® / din stoc <ArrowUpRight /></Link></div>
     </section>
@@ -59,11 +60,11 @@ export default function Home() {
 
     <section className="ed-directions ed-shell">
       <Link href="/devino-dealer" className="ed-direction ed-direction-primary">
-        <img src="/img/infinity.webp" alt="Birou open-space cu mochetă în dale Burmatex infinity®" loading="lazy" width="1200" height="1200" />
+        <img src="/img/c/infinity/room-1.webp" alt="Birou open-space cu mochetă în dale Burmatex infinity®" loading="lazy" width="1200" height="1200" />
         <div><span className="ed-number">01 / Pentru dealeri</span><h2>Vindeți<br />Burmatex</h2><p>Magazine de pardoseli, showroom-uri de finisaje, distribuitori regionali. Portofoliu complet, mostre și condiții de partener.</p><span className="ed-text-link">Programul de dealeri <ArrowUpRight /></span></div>
       </Link>
       <Link href="/devino-dealer#profil" className="ed-direction ed-direction-secondary">
-        <img src="/img/eco-cordiale.webp" alt="Spațiu școlar cu mochetă Burmatex eco-cordiale®" loading="lazy" width="1200" height="1200" />
+        <img src="/img/c/eco-cordiale/room-1.webp" alt="Spațiu școlar cu mochetă Burmatex eco-cordiale®" loading="lazy" width="1200" height="1200" />
         <div><span className="ed-number">02 / Pentru montatori și constructori</span><h2>Montați<br />Burmatex</h2><p>Firme de montaj, amenajări interioare, antreprenori. Produs de proiect, livrat la timp, cu suport tehnic.</p><span className="ed-text-link">Parteneriat de montaj <ArrowUpRight /></span></div>
       </Link>
     </section>
@@ -75,6 +76,11 @@ export default function Home() {
         <div className="ed-signature-body"><span className="ed-number">0{i + 1} / {families[c.family].label}</span><h3>{c.name}</h3><small>Burmatex · {c.colours} nuanțe</small><h4>{featuredFacts[c.slug].claim}</h4><p>{featuredFacts[c.slug].text}</p><div className="ed-signature-facts">{c.formats.join(" · ")}</div><div className="ed-signature-links"><Link href={collectionPath(c.slug)}>Vedeți colecția <ArrowUpRight /></Link><Link href={`/contact?tip=mostre&produs=${encodeURIComponent(plainName(c.name))}`}>Solicitați mostre <ArrowRight /></Link></div></div>
       </article>)}</div>
     </div></section>
+
+    <section className="brain ed-shell" aria-labelledby="brain-title">
+      <div className="brain-copy"><Label>Selector mochetă</Label><h2 id="brain-title">Brain-ul mochetei.<br /><span>Alegeți după ce contează.</span></h2><p>Buget, tip de spațiu, design, culoare, acustică, amprentă de carbon. Combinați criteriile și vedeți imediat colecțiile potrivite, de ce se potrivesc și cum se compară.</p><Link href="/selector-mocheta" className="ed-button">Deschideți selectorul <ArrowUpRight /></Link></div>
+      <ul className="brain-preview" aria-hidden="true">{collections.flatMap(c => c.swatches.slice(0, 2)).slice(0, 24).map(s => <li key={s.img}><img src={s.img} alt="" loading="lazy" width="120" height="120" /></li>)}</ul>
+    </section>
 
     <section className="ed-families ed-shell">
       <div className="ed-section-heading"><div><Label>Portofoliul complet</Label><h2>Șase familii.<br /><span>Un singur furnizor.</span></h2></div><Link href="/colectii" className="ed-text-link">Toate colecțiile <ArrowUpRight /></Link></div>
@@ -96,6 +102,11 @@ export default function Home() {
         ["04", "Vindeți cu suport.", "Ofertare rapidă, stoc în România, suport tehnic la specificare și montaj."],
       ].map(([n, t, d]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
     </div></section>
+
+    <section className="ed-shell home-guides">
+      <div className="ed-section-heading"><div><Label>Ghiduri</Label><h2>Întâi înțelegeți.<br /><span>Apoi alegeți.</span></h2></div><Link href="/mocheta-dale" className="ed-text-link">Ghidul complet al mochetei în dale <ArrowUpRight /></Link></div>
+      <div className="guide-cards">{landings.map(l => <Link key={l.path} href={l.path} className="guide-card"><img src={l.image} alt={l.imageAlt} loading="lazy" width="600" height="400" /><div><small>{l.label}</small><h3>{l.h1}</h3><p>{l.lead.split(". ")[0]}.</p></div></Link>)}</div>
+    </section>
 
     <section className="ed-sectors ed-shell">
       <div className="ed-section-heading"><div><Label>Unde se vinde Burmatex</Label><h2>Clienții există deja.<br /><span>În orașul dumneavoastră.</span></h2></div><p>Fiecare oraș are birouri, școli, cabinete medicale, hoteluri și magazine care renovează periodic. Mocheta în dale se înlocuiește modular, fără să oprească activitatea.</p></div>

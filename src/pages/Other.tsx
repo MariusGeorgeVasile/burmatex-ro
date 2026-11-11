@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearch } from "wouter";
 import { Link } from "../link";
 import { ArrowRight, ArrowUpRight, ExternalLink, FileText, Mail, Phone } from "lucide-react";
@@ -10,7 +10,7 @@ export function AboutPage() {
   usePageMeta("/de-ce-burmatex");
   return <div className="about-page">
     <PageIntro label="De ce Burmatex" title="Nu vindem doar mochetă." accent="Vindem cine o produce." text="Britanică prin origine. Concepută pentru trafic real. Cu o istorie în reciclare care începe cu mult înainte ca sustenabilitatea să devină un argument de vânzare." />
-    <figure className="wide-figure"><img src="/img/armour.webp" alt="Coridor cu mochetă Burmatex armour®" width="1200" height="1200" /><figcaption className="ed-shell">armour® · imagine Burmatex</figcaption></figure>
+    <figure className="wide-figure"><img src="/img/c/armour/room-1.webp" alt="Coridor cu mochetă Burmatex armour®" width="1200" height="1200" /><figcaption className="ed-shell">armour® · imagine Burmatex</figcaption></figure>
 
     <section className="chapter ed-shell"><div><Label>01 / Tradiție britanică</Label><h2>O fabrică.<br /><span>Nu doar o etichetă.</span></h2></div><div><p>Povestea începe în 1912 la Ossett, în West Yorkshire, ca J&amp;F Burrows: recuperarea și prelucrarea deșeurilor textile — lână, bumbac, apoi nailon și polipropilenă. Marca Burmatex apare în 1967, odată cu prima mochetă produsă pe amplasament. <a className="cite" href={sources.history} target="_blank" rel="noreferrer">[1]</a></p><p><strong>Pentru un dealer, „britanic” este un argument concret:</strong> continuitate de producție, control al calității certificat ISO 9001 și ISO 14001 și un producător care există de peste un secol. <a className="cite" href={sources.about} target="_blank" rel="noreferrer">[2]</a></p></div></section>
 
@@ -70,21 +70,28 @@ export function ResourcesPage() {
   </div>;
 }
 
-const requestTypes = { dealer: "Parteneriat de dealer", mostre: "Solicitare mostre", oferta: "Cerere de ofertă / preț", proiect: "Proiect / specificare", alta: "Altă întrebare" } as const;
+const requestTypes = { oferta: "Cerere de ofertă / preț", mostre: "Solicitare mostre", proiect: "Proiect / specificare", dealer: "Parteneriat de dealer", alta: "Altă întrebare" } as const;
 type RequestType = keyof typeof requestTypes;
 
 export function ContactPage() {
   usePageMeta("/contact");
-  const params = new URLSearchParams(useSearch());
-  const initialType = (params.get("tip") ?? "dealer") as RequestType;
-  const product = params.get("produs") ?? "";
-  const [type, setType] = useState<RequestType>(initialType in requestTypes ? initialType : "dealer");
+  const search = useSearch();
+  const [type, setType] = useState<RequestType>("oferta");
+  const [product, setProduct] = useState("");
+  const [shade, setShade] = useState("");
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const t = params.get("tip") as RequestType | null;
+    if (t && t in requestTypes) setType(t);
+    setProduct(params.get("produs") ?? "");
+    setShade(params.get("nuanta") ?? "");
+  }, [search]);
   const [sent, setSent] = useState(false);
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const d = new FormData(event.currentTarget);
     const get = (k: string) => String(d.get(k) ?? "").trim();
-    const body = [`${requestTypes[type]}`, "", `Nume: ${get("nume")}`, `Firma: ${get("firma") || "—"}`, `Telefon: ${get("telefon")}`, `E-mail: ${get("email")}`, `Județ: ${get("judet") || "—"}`, `Colecție: ${get("produs") || "—"}`, `Suprafață estimată: ${get("suprafata") || "—"}`, "", get("mesaj")].join("\n");
+    const body = [`${requestTypes[type]}`, "", `Nume: ${get("nume")}`, `Firma: ${get("firma") || "—"}`, `Telefon: ${get("telefon")}`, `E-mail: ${get("email")}`, `Județ: ${get("judet") || "—"}`, `Colecție: ${get("produs") || "—"}`, `Nuanță: ${get("nuanta") || "—"}`, `Suprafață estimată: ${get("suprafata") || "—"}`, "", get("mesaj")].join("\n");
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`${requestTypes[type]} — ${get("firma") || get("nume")}`)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
@@ -102,7 +109,8 @@ export function ContactPage() {
         <label>Telefon *<input required name="telefon" type="tel" autoComplete="tel" /></label>
         <label>E-mail *<input required name="email" type="email" autoComplete="email" /></label>
         <label>Județ<select name="judet" defaultValue=""><option value="">—</option>{counties.map(c => <option key={c}>{c}</option>)}</select></label>
-        <label>Colecție<select name="produs" defaultValue={product}><option value="">—</option>{collections.map(c => <option key={c.slug} value={plainName(c.name)}>{c.name}</option>)}</select></label>
+        <label>Colecție<select id="contact-produs" name="produs" value={product} onChange={e => setProduct(e.target.value)}><option value="">—</option>{product && !collections.some(c => plainName(c.name) === product) && <option value={product}>{product}</option>}{collections.map(c => <option key={c.slug} value={plainName(c.name)}>{c.name}</option>)}</select></label>
+        <label>Nuanță<input id="contact-nuanta" name="nuanta" value={shade} onChange={e => setShade(e.target.value)} placeholder="opțional" /></label>
         {(type === "oferta" || type === "proiect") && <label className="full">Suprafață estimată (m²)<input name="suprafata" inputMode="numeric" /></label>}
         <label className="full">Mesaj *<textarea required name="mesaj" rows={5} placeholder={type === "mostre" ? "Ce colecții și nuanțe vă interesează, adresa de livrare a mostrelor." : "Detalii despre solicitare."} /></label>
         <label className="check full"><input type="checkbox" required /> Sunt de acord ca datele să fie folosite pentru a răspunde solicitării. *</label>

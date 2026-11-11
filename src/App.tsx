@@ -6,6 +6,9 @@ import { CollectionPage, CollectionsPage } from "./pages/Collections";
 import DealerPage from "./pages/Dealer";
 import { AboutPage, ContactPage, ResourcesPage } from "./pages/Other";
 import NotFound from "./pages/NotFound";
+import LandingPage from "./pages/Landing";
+import SelectorPage from "./pages/Selector";
+import { landings } from "./data/landings";
 
 // The hosted preview (claude.ai artifact) has no server rewrites, so it routes on the URL hash:
 // "#/page?query#section". The real site uses normal browser URLs.
@@ -37,6 +40,8 @@ function ScrollManager() {
   return null;
 }
 
+export { Site };
+
 export default function App() {
   return hashMode ? <Router hook={useAppHashLocation} searchHook={useHashSearch}><Site /></Router> : <Site />;
 }
@@ -51,6 +56,8 @@ function Site() {
         <Route path="/" component={Home} />
         <Route path="/colectii" component={CollectionsPage} />
         <Route path="/colectii/:slug">{params => <CollectionPage slug={params.slug} />}</Route>
+        <Route path="/selector-mocheta" component={SelectorPage} />
+        {landings.map(l => <Route key={l.path} path={l.path}><LandingPage path={l.path} /></Route>)}
         <Route path="/devino-dealer" component={DealerPage} />
         <Route path="/de-ce-burmatex" component={AboutPage} />
         <Route path="/resurse" component={ResourcesPage} />

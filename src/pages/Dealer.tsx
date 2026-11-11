@@ -3,6 +3,7 @@ import { Link } from "../link";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Label, PageIntro, usePageMeta } from "../components";
 import { counties, regions, site } from "../data/site";
+import { dealerFaqs } from "../data/faqs";
 
 const benefits = [
   ["Un brand pe care arhitecții îl cunosc", "Burmatex este specificat de ani de zile în proiecte de birouri din România. Clientul final recunoaște marca; dumneavoastră nu mai trebuie să o explicați de la zero."],
@@ -22,13 +23,6 @@ const profiles = [
   ["Arhitecți și designeri de interior", "Specificați Burmatex și lucrați cu un partener local care livrează și montează conform specificației."],
 ] as const;
 
-const faqs = [
-  ["Trebuie să cumpăr stoc la început?", "Nu este obligatoriu. Discutăm un kit de mostre pentru showroom și, dacă doriți, un stoc minim de go to® pentru vânzările rapide. Restul colecțiilor se comandă pe proiect."],
-  ["Există o cantitate minimă de comandă?", "Pentru produsele din stoc în România se pot comanda și cantități mici. Pentru colecțiile aduse din fabrică, cantitatea minimă și termenul se confirmă la ofertare, în funcție de colecție."],
-  ["Cum se stabilesc prețurile de dealer?", "Prețurile de partener depind de tipul colaborării și de volumul estimat. Le primiți după prima discuție, împreună cu lista de prețuri recomandate pentru clientul final."],
-  ["Pot fi dealer dacă sunt doar firmă de montaj?", "Da. Mulți parteneri vând material și manoperă împreună. Vă ajutăm cu recomandări de montaj și cu documentația pentru client."],
-  ["Câți dealeri acceptați într-un oraș?", "Preferăm puțini parteneri, bine susținuți, decât o rețea aglomerată. Zona se stabilește în funcție de piața locală și de capacitatea fiecărui partener."],
-] as const;
 
 export default function DealerPage() {
   usePageMeta("/devino-dealer");
@@ -37,7 +31,7 @@ export default function DealerPage() {
       <div className="intro-actions"><Link href="#aplica" className="ed-button">Aplicați acum <ArrowUpRight /></Link><Link href="#beneficii" className="ed-text-link">Ce primiți ca partener <ArrowRight /></Link></div>
     </PageIntro>
 
-    <figure className="wide-figure"><img src="/img/tivoli-mist.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli mist® · imagine Burmatex</figcaption></figure>
+    <figure className="wide-figure"><img src="/img/c/tivoli/room-2.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli® · imagine Burmatex</figcaption></figure>
 
     <section className="ed-shell benefits" id="beneficii">
       <div className="ed-section-heading"><div><Label>Ce primiți</Label><h2>Tot ce vă trebuie<br /><span>ca să vindeți din prima lună.</span></h2></div><p>Programul este gândit pentru firme mici și mijlocii. Fără angajamente de volum nerealiste, fără stoc blocat pe raft.</p></div>
@@ -67,7 +61,7 @@ export default function DealerPage() {
 
     <section className="ed-shell faq">
       <div><Label>Întrebări frecvente</Label><h2>Răspunsuri directe<br /><span>înainte de aplicare.</span></h2></div>
-      <div>{faqs.map(([q, a]) => <details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div>
+      <div>{dealerFaqs.map(({ q, a }) => <details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div>
     </section>
 
     <DealerForm />
