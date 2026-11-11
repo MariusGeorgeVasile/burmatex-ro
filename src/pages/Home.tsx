@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "../link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { DealerCTA, Label, featured, usePageMeta } from "../components";
 import { collections, families, totalColours, collectionPath, plainName, type FamilyKey } from "../data/collections";
@@ -32,7 +32,7 @@ export default function Home() {
         <p>Construim rețeaua națională Burmatex. Căutăm magazine de pardoseli,<br />firme de montaj și amenajări din toată țara.</p>
         <div className="ed-hero-actions"><Link href="/devino-dealer" className="ed-button">Devino dealer Burmatex <ArrowUpRight /></Link><Link href="/colectii" className="ed-hero-link">Vedeți colecțiile <ArrowRight /></Link></div>
       </div>
-      <div className="ed-shell ed-hero-caption"><a href="#produse"><ArrowDown /> Descoperiți Burmatex</a><Link href={collectionPath("go-to")}>go to® / din stoc <ArrowUpRight /></Link></div>
+      <div className="ed-shell ed-hero-caption"><Link href="#produse"><ArrowDown /> Descoperiți Burmatex</Link><Link href={collectionPath("go-to")}>go to® / din stoc <ArrowUpRight /></Link></div>
     </section>
 
     <nav className="ed-product-dock ed-shell" aria-label="Produse reprezentative" id="produse">

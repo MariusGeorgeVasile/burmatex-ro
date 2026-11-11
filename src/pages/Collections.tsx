@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Link, useSearch } from "wouter";
+import { useSearch } from "wouter";
+import { Link } from "../link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, FileText, Search } from "lucide-react";
 import { CarbonTag, CollectionCard, DealerCTA, Label, PageIntro, TilePlaceholder, usePageMeta } from "../components";
 import { collectionBySlug, collectionPath, collections, families, plainName, type FamilyKey } from "../data/collections";

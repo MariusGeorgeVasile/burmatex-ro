@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link } from "../link";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Label, PageIntro, usePageMeta } from "../components";
 import { counties, regions, site } from "../data/site";
@@ -34,7 +34,7 @@ export default function DealerPage() {
   usePageMeta("/devino-dealer");
   return <div className="dealer-page">
     <PageIntro label="Program de dealeri Burmatex · România" title="Un brand britanic." accent="Partenerul local este dumneavoastră." text="Căutăm magazine de pardoseli, firme de montaj și de amenajări din toată țara care vor să adauge în portofoliu o mochetă comercială de calitate, cu stoc în România și suport real.">
-      <div className="intro-actions"><a href="#aplica" className="ed-button">Aplicați acum <ArrowUpRight /></a><a href="#beneficii" className="ed-text-link">Ce primiți ca partener <ArrowRight /></a></div>
+      <div className="intro-actions"><Link href="#aplica" className="ed-button">Aplicați acum <ArrowUpRight /></Link><Link href="#beneficii" className="ed-text-link">Ce primiți ca partener <ArrowRight /></Link></div>
     </PageIntro>
 
     <figure className="wide-figure"><img src="/img/tivoli-mist.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli mist® · imagine Burmatex</figcaption></figure>

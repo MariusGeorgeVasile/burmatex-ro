@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "../link";
 import { ArrowUpRight } from "lucide-react";
 import { Label } from "../components";
 

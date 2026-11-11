@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
+import { Link } from "./link";
 import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import { site } from "./data/site";
 import { collections, families, type Collection, collectionPath, plainName } from "./data/collections";

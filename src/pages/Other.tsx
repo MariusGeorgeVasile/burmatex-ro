@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useSearch } from "wouter";
+import { useSearch } from "wouter";
+import { Link } from "../link";
 import { ArrowRight, ArrowUpRight, ExternalLink, FileText, Mail, Phone } from "lucide-react";
 import { DealerCTA, Label, PageIntro, usePageMeta } from "../components";
 import { collections, plainName } from "../data/collections";
