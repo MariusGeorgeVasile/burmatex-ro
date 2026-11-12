@@ -3,8 +3,8 @@
 Lista punctelor care trebuie confirmate înainte de publicare. Bifați pe măsură ce le verificați.
 
 ## Costuri afișate pe site (/pret-mocheta-dale)
-- [ ] Montaj mochetă în dale: **35–55 lei/m²** (surse: brig.ro, lamesteri.eu, 2026)
-- [ ] Adeziv Mapei Ultrabond Eco Fix: **aprox. 5–12 lei/m²** (estimare din consum 0,10–0,20 kg/m²; prețul pe kg în România de confirmat cu distribuitorul Mapei)
+- [x] Montaj mochetă în dale: **de la 5 €/m² + TVA** (confirmat InsightFLOOR)
+- [x] Adeziv Mapei Ultrabond Eco Fix: **aprox. 1 €/m² + TVA** (confirmat InsightFLOOR)
 - [ ] Șapă autonivelantă: **50–80 lei/m²** (sursa: brig.ro; de confirmat dacă include materialul)
 - [ ] Rezervă de material 3–5%
 
