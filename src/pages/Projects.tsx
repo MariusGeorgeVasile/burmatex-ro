@@ -45,7 +45,7 @@ export default function ProjectsPage() {
     </section>
 
     <section className="ed-shell featured-projects">
-      <div className="ed-section-heading"><div><Label>Proiecte fotografiate</Label><h2>Mocheta Burmatex,<br /><span>după ce se deschid ușile.</span></h2></div></div>
+      <div className="ed-section-heading"><div><Label>Proiecte fotografiate</Label><h2>Mocheta Burmatex,<br /><span>în spații reale.</span></h2></div></div>
       {featured.map(r => <article key={referenceKey(r)} className="featured-project">
         <div className="featured-copy">
           <span className="ed-number">{kindLabels[r.kind]}{r.location ? ` · ${r.location}` : ""}</span>

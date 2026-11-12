@@ -56,6 +56,6 @@ export default function LandingPage({ path }: { path: string }) {
 
     <nav className="ed-shell landing-more" aria-label="Alte ghiduri"><h2 className="sub">Alte ghiduri</h2><div>{others.map(o => <Link key={o.path} href={o.path} className="ed-text-link">{o.label} <ArrowRight /></Link>)}</div></nav>
 
-    <DealerCTA title="Spuneți-ne despre spațiu." accent="Vă recomandăm colecția și dealerul." text="Suprafața, orașul, tipul de spațiu și termenul. Primiți mostrele potrivite și o ofertă de la dealerul Burmatex din zona dumneavoastră." to="/contact?tip=oferta" button="Cereți ofertă" label="Ofertă și mostre" />
+    <DealerCTA title="Spuneți-ne despre proiect." accent="Vă recomandăm colecția și dealerul." text="Suprafața, orașul, tipul de spațiu și termenul. Primiți mostrele potrivite și o ofertă de la dealerul Burmatex din zona dumneavoastră." to="/contact?tip=oferta" button="Cereți ofertă" label="Ofertă și mostre" />
   </article>;
 }
