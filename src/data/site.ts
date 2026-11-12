@@ -2,10 +2,10 @@
 export const site = {
   name: "Burmatex România",
   domain: "https://burmatex.ro",
-  email: "office@burmatex.ro",
+  email: "office@insightfloor.ro",
   // Leave empty to hide the phone across the site.
-  phone: "",
-  phoneDisplay: "",
+  phone: "+40728082778",
+  phoneDisplay: "0728.082.778",
   address: "",
   showroomNote: "Mostre și consultanță, cu programare",
   manufacturerUrl: "https://www.burmatex.co.uk",

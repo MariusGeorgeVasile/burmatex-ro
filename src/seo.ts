@@ -13,7 +13,7 @@ const clip = (text: string, max = 158) => (text.length <= max ? text : `${text.s
 const ORG_ID = `${site.domain}/#organizatie`;
 
 const organization = {
-  "@type": "Organization", "@id": ORG_ID, name: site.name, url: `${site.domain}/`, email: site.email,
+  "@type": "Organization", "@id": ORG_ID, name: site.name, url: `${site.domain}/`, email: site.email, ...(site.phone ? { telephone: site.phone, contactPoint: { "@type": "ContactPoint", telephone: site.phone, email: site.email, contactType: "sales", areaServed: "RO", availableLanguage: ["ro", "en"] } } : {}),
   logo: abs("/favicon.svg"), areaServed: { "@type": "Country", name: "România" },
   brand: { "@type": "Brand", name: "Burmatex" },
   description: "Distribuție Burmatex® în România: mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie, vândute prin rețeaua națională de dealeri.",
