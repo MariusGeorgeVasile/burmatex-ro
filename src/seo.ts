@@ -14,8 +14,9 @@ const clip = (text: string, max = 158) => (text.length <= max ? text : `${text.s
 const ORG_ID = `${site.domain}/#organizatie`;
 
 const organization = {
-  "@type": "Organization", "@id": ORG_ID, name: site.dealer.name, alternateName: site.name, sameAs: [site.dealer.url], url: `${site.domain}/`, email: site.email, ...(site.phone ? { telephone: site.phone, contactPoint: { "@type": "ContactPoint", telephone: site.phone, email: site.email, contactType: "sales", areaServed: "RO", availableLanguage: ["ro", "en"] } } : {}),
-  logo: abs("/favicon.svg"), areaServed: { "@type": "Country", name: "România" },
+  "@type": ["Organization", "HomeAndConstructionBusiness"], "@id": ORG_ID, name: site.dealer.name, alternateName: site.name, sameAs: [site.dealer.url], url: `${site.domain}/`, email: site.email, ...(site.phone ? { telephone: site.phone, contactPoint: { "@type": "ContactPoint", telephone: site.phone, email: site.email, contactType: "sales", areaServed: "RO", availableLanguage: ["ro", "en"] } } : {}),
+  logo: abs("/logo.png"), image: abs("/logo.png"),
+  address: { "@type": "PostalAddress", streetAddress: "Str. Povernei 32", addressLocality: "București", addressRegion: "București", addressCountry: "RO" }, areaServed: { "@type": "Country", name: "România" },
   brand: { "@type": "Brand", name: "Burmatex" },
   description: "InsightFLOOR este dealerul oficial Burmatex® în România: mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie, livrate și montate direct sau prin rețeaua națională de parteneri.",
   knowsAbout: ["mochetă dale", "mochetă în plăci", "mochetă pentru birouri", "covoare de intrare", "pardoseli textile comerciale"],
@@ -80,7 +81,7 @@ export const staticPages: Record<string, { title: string; description: string; c
   "/cataloage/principii-sustenabilitate": { title: "Principiile de sustenabilitate Burmatex (eco₂matters) | RO", description: "Principiile de sustenabilitate Burmatex în română: drumul spre Net Zero, fir cu amprentă negativă, BioBase®, energie regenerabilă, Zero Landfill, EPD.", crumb: "Principii de sustenabilitate" },
   "/cataloage/fir-biogenic": { title: "Fir bio-genic Burmatex: threads, tivoli, tivoli mist | RO", description: "Primul fir 100% reciclat din deșeuri organice: threads®, tivoli® și tivoli mist® cu amprentă redusă de carbon, suport BioBase® și montaj circular IOBAC.", crumb: "Fir bio-genic" },
   "/cataloage/well": { title: "Mochetă Burmatex și WELL Building Standard | Burmatex România", description: "Cum contribuie mocheta în dale Burmatex la WELL: VOC A+ și M1, intrare sănătoasă, materiale fără substanțe toxice, mediu ușor de curățat, biofilie, EPD.", crumb: "WELL Building Standard" },
-  "/contact": { title: "Contact — mostre, oferte, dealeri | Burmatex România", description: "Solicitați mostre de mochetă Burmatex, o ofertă de preț sau datele dealerului din zona dumneavoastră.", crumb: "Contact" },
+  "/contact": { title: "Contact — mostre, oferte, dealeri | Burmatex România", description: "Mostre gratuite de mochetă Burmatex, oferte de preț, documente tehnice și parteneriat de dealer. InsightFLOOR, Str. Povernei 32, București, 0728.082.778.", crumb: "Contact" },
 };
 
 export const allRoutes = [...Object.keys(staticPages), ...landings.map(l => l.path), ...collections.map(c => collectionPath(c.slug))];

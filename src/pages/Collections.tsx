@@ -101,8 +101,8 @@ export function CollectionPage({ slug }: { slug: string }) {
     <nav className="breadcrumb ed-shell" aria-label="Breadcrumb"><Link href="/">Acasă</Link><span>/</span><Link href="/colectii">Colecții</Link><span>/</span><Link href={`/colectii?familie=${c.family}`}>{families[c.family].label}</Link><span>/</span><b>{c.name}</b></nav>
     <section className="product-hero ed-shell">
       <div className="product-hero-copy">
-        <Label>Mochetă dale Burmatex · {families[c.family].label}</Label>
-        <h1>{name}<sup>®</sup></h1>
+        <Label>{families[c.family].label} · {c.formats.join(" / ")}</Label>
+        <h1><span className="h1-kicker">{c.family === "entrance" ? "Covor de intrare" : "Mochetă dale"} Burmatex </span>{name}<sup>®</sup></h1>
         <p className="product-headline">{c.headline}</p>
         <p>{c.summary}</p>
         <div className="product-tags">{c.inStock && <span className="cc-badge static">Din stoc în România</span>}{c.isNew && <span className="cc-badge new static">Nou</span>}<PriceTag c={c} /><CarbonTag c={c} /></div>

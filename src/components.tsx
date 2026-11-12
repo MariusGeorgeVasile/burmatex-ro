@@ -6,6 +6,7 @@ import { site } from "./data/site";
 import { collections, families, type Collection, collectionPath, plainName } from "./data/collections";
 import { priceTiers } from "./data/attributes";
 import { landings } from "./data/landings";
+import { InsightFloorLogo } from "./InsightFloorLogo";
 import { getMeta } from "./seo";
 
 export function Label({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -59,7 +60,7 @@ export function Footer() {
   const familyKeys = Object.keys(families) as (keyof typeof families)[];
   return <footer className="footer">
     <div className="ed-shell footer-grid">
-      <div className="footer-about"><Wordmark /><p>Mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie. {site.dealer.statement}</p><a className="official-link" href={site.dealer.url} target="_blank" rel="noreferrer">InsightFLOOR · dealer oficial Burmatex® în România</a></div>
+      <div className="footer-about"><Wordmark /><p>Mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie. {site.dealer.statement}</p><a className="official-link dealer-logo-link" href={site.dealer.url} target="_blank" rel="noreferrer"><small>Dealer oficial Burmatex® în România</small><InsightFloorLogo className="dealer-logo" /></a></div>
       <div><h4>Colecții</h4>{familyKeys.map(key => <Link key={key} href={`/colectii?familie=${key}`}>{families[key].label}</Link>)}</div>
       <div><h4>Ghiduri</h4>{landings.map(l => <Link key={l.path} href={l.path}>{l.label}</Link>)}<Link href="/selector-mocheta">Selector mochetă</Link></div>
       <div><h4>Parteneri</h4><Link href="/proiecte">Proiecte Burmatex în România</Link><Link href="/devino-dealer">Devino dealer</Link><Link href="/devino-dealer#aplica">Formular de aplicare</Link><Link href="/contact?tip=mostre">Solicitați mostre</Link><Link href="/cataloage">Cataloage și broșuri</Link><Link href="/ghid-tehnic">Ghid tehnic: montaj și întreținere</Link><Link href="/resurse">Resurse tehnice</Link><Link href="/de-ce-burmatex">De ce Burmatex</Link></div>

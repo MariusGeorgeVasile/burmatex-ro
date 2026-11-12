@@ -6,6 +6,7 @@ import { DealerCTA, Label, PageIntro, usePageMeta } from "../components";
 import { collections, plainName } from "../data/collections";
 import { counties, site } from "../data/site";
 import { docsFor } from "../data/documents";
+import { InsightFloorLogo } from "../InsightFloorLogo";
 
 export function AboutPage() {
   usePageMeta("/de-ce-burmatex");
@@ -97,7 +98,7 @@ export function ContactPage() {
     <PageIntro label="Contact" title="Mostre, oferte," accent="parteneriat." text="Spuneți-ne ce aveți nevoie. Răspundem direct, cu pașii următori — fără formulare care dispar în neant. Burmatex România este operat de InsightFLOOR, dealer oficial Burmatex® în România." />
     <section className="ed-shell form-section">
       <div className="form-intro">
-        <div className="contact-lines"><a href={`mailto:${site.email}`}><Mail /> {site.email}</a>{site.phone && <a href={`tel:${site.phone}`}><Phone /> {site.phoneDisplay || site.phone}</a>}{site.address && <p>{site.address}</p>}<p>{site.showroomNote}</p></div>
+        <div className="contact-lines"><a href={`mailto:${site.email}`}><Mail /> {site.email}</a>{site.phone && <a href={`tel:${site.phone}`}><Phone /> {site.phoneDisplay || site.phone}</a>}{site.address && <p>{site.address}</p>}<p>{site.showroomNote}</p><a className="contact-dealer" href={site.dealer.url} target="_blank" rel="noreferrer"><small>Dealer oficial Burmatex® în România</small><InsightFloorLogo className="dealer-logo" /></a></div>
         <div className="type-switch" role="group" aria-label="Tipul solicitării">{(Object.keys(requestTypes) as RequestType[]).map(k => <button key={k} type="button" aria-pressed={type === k} className={type === k ? "active" : ""} onClick={() => setType(k)}>{requestTypes[k]}</button>)}</div>
         {type === "dealer" && <p>Pentru aplicația completă de dealer folosiți <Link href="/devino-dealer#aplica" className="ed-text-link">formularul dedicat <ArrowRight /></Link></p>}
       </div>

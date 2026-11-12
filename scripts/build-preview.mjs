@@ -18,6 +18,7 @@ import { rmSync } from "node:fs";
 rmSync(join(out, "cataloage"), { recursive: true, force: true });
 rmSync(join(out, "documente"), { recursive: true, force: true });
 rmSync(join(out, "favicon.svg"), { force: true });
+rmSync(join(out, "logo.png"), { force: true });
 const html = join(out, "index.html");
 writeFileSync(html, readFileSync(html, "utf8").replace('href="./favicon.svg"', 'href="favicon.svg"'));
 console.log("Preview ready in", out);

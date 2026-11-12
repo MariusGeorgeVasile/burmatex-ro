@@ -254,6 +254,7 @@ main h2 > span { color: #5c5750; }
 .breadcrumb b { color: var(--ink); font-weight: 600; }
 .product-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding-block: 50px 70px; }
 .product-hero h1 { margin: 0; font: 600 clamp(54px, 7vw, 104px)/.95 "Jost", sans-serif; letter-spacing: -.06em; }
+.product-hero h1 .h1-kicker { display: block; margin-bottom: 14px; font: 600 15px/1.3 Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--soft-ink); }
 .product-hero h1 sup { font-size: .25em; color: var(--accent); vertical-align: top; }
 .product-headline { margin: 22px 0 14px; font: 500 24px/1.3 "Jost", sans-serif; letter-spacing: -.02em; }
 .product-hero-copy > p:not(.ed-label):not(.product-headline) { color: var(--soft-ink); font-size: 15px; line-height: 1.8; margin: 0 0 22px; max-width: 560px; }
@@ -688,6 +689,12 @@ main h2 > span { color: #5c5750; }
 .official-bar a:hover { border-color: #fff; }
 .official-note { padding: 14px 18px; border-left: 2px solid var(--accent); background: var(--warm); color: var(--ink) !important; font-size: 14px !important; }
 .footer-about .official-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--ink); border-bottom: 1px solid var(--line); }
+.footer-about .dealer-logo-link { display: grid; gap: 10px; border: 0; margin-top: 22px; }
+.footer-about .dealer-logo-link small { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft-ink); }
+.dealer-logo { width: 190px; height: auto; display: block; }
+.contact-dealer { border: 0 !important; display: grid !important; grid-template-columns: 1fr; justify-items: start; gap: 10px; margin-top: 26px; width: 100%; }
+.contact-dealer .dealer-logo { width: 220px; }
+.contact-dealer small { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft-ink); }
 @media (max-width: 640px) { .official-bar { font-size: 11px; } .official-bar .site-nav-inner { width: calc(100% - 32px); padding: 6px 0; } }
 
 /* ——— Catalogue pages: InsightFLOOR catalogue style (cream, bronze, light Jost) ——— */

@@ -6,7 +6,7 @@ export const site = {
   // Leave empty to hide the phone across the site.
   phone: "+40728082778",
   phoneDisplay: "0728.082.778",
-  address: "",
+  address: "Str. Povernei 32, București",
   showroomNote: "Mostre și consultanță, cu programare",
   dealer: {
     name: "InsightFLOOR",
