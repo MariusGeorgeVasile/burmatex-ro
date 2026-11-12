@@ -4,7 +4,7 @@
 
 export type PriceTier = "economic" | "standard" | "premium";
 export type DesignKey = "uni" | "textura" | "organic" | "geometric" | "linii" | "culoare";
-export type SectorKey = "birouri" | "cladiri-noi" | "scoli" | "public" | "hotel" | "retail" | "intrari" | "rezidential";
+export type SectorKey = "birouri" | "cladiri-noi" | "scoli" | "public" | "hotel" | "retail" | "intrari" | "industrie" | "rezidential";
 export type Doc = { label: string; href: string };
 
 export const priceTiers: Record<PriceTier, { label: string; text: string; marks: string }> = {
@@ -30,6 +30,7 @@ export const sectorsMeta: Record<SectorKey, { label: string; short: string }> = 
   hotel: { label: "Hoteluri și agrement", short: "Hotel" },
   retail: { label: "Retail și showroom", short: "Retail" },
   intrari: { label: "Intrări și holuri de acces", short: "Intrări" },
+  industrie: { label: "Industrie (fabrici, uzine, producție)", short: "Industrie" },
   rezidential: { label: "Rezidențial", short: "Rezidențial" },
 };
 
@@ -68,17 +69,17 @@ export const attributes: Record<string, Attr> = {
     docs: d("2025/07/burmatex-infinity-technical-spec-2024-05.pdf", "2025/11/infinity-brochure-250x250mm-ENG-Nov-2025-optimised.pdf", "2025/07/infinity-carpet-tiles-shade-card.pdf", "2025/07/Infinity-EPD-1.pdf") },
   origin: { priceTier: "premium", design: ["uni"], sectors: ["birouri", "hotel", "rezidential"],
     docs: d("2025/07/burmatex-origin-technical-spec-2024-10.pdf", "2025/07/origin-carpet-tiles-brochure-from-Burmatex-2024-10.pdf", "2025/07/origin-carpet-tiles-shade-card-Burmatex.pdf", "2025/07/EPD-burmatex-carpet-tiles-origin-S-P-08175.pdf") },
-  armour: { priceTier: "premium", design: ["uni", "textura"], sectors: ["intrari", "birouri", "cladiri-noi", "public", "retail"],
+  armour: { priceTier: "premium", design: ["uni", "textura"], sectors: ["intrari", "industrie", "birouri", "cladiri-noi", "public", "retail"],
     docs: d("2025/07/burmatex-armour-technical-spec-2025-11.pdf", "2026/01/armour-brochure-250x250mm-ENG-Nov-2025-optimised.pdf", "2025/07/armour-shade-card-2025-11.pdf", "2025/07/Armour-EPD-2.pdf") },
-  "eco-cordiale": { priceTier: "economic", design: ["uni", "culoare"], sectors: ["scoli", "public", "birouri", "retail"],
+  "eco-cordiale": { priceTier: "economic", design: ["uni", "culoare"], sectors: ["scoli", "industrie", "public", "birouri", "retail"],
     docs: d("2025/07/eco-cordiale-full-technical-spec-march-2025.pdf", "2026/09/eco-cordiale-brochure-250x250mm-English-version-hi-res-September-2026-optimised.pdf", "2025/07/eco-cordiale-inliner-digital-shade-card.pdf", "2025/07/Eco-cordiale-tile-EPD.pdf") },
-  academy: { priceTier: "economic", design: ["uni", "linii", "culoare"], sectors: ["scoli", "public", "birouri"],
+  academy: { priceTier: "economic", design: ["uni", "linii", "culoare"], sectors: ["scoli", "industrie", "public", "birouri"],
     docs: d("2025/07/burmatex-academy-technical-spec-2024-10.pdf", "2025/07/academy-carpet-tiles-sheet-brochure-from-Burmatex-march-2025.pdf", "2025/07/academy-digital-shade-card-2024-02.pdf", "2025/07/Academy-Tile-24-4-24.pdf") },
-  "velour-excel": { priceTier: "standard", design: ["uni", "culoare"], sectors: ["public", "retail", "scoli", "birouri"],
+  "velour-excel": { priceTier: "standard", design: ["uni", "culoare"], sectors: ["industrie", "public", "retail", "scoli", "birouri"],
     docs: [...d("2026/09/velour-excel-technical-spec-2026-09.pdf", undefined, "2025/07/5500-velour-excel-carpet-tiles-shade-card-burmatex.pdf", "2025/07/Velour-Excel-EPD.pdf"), { label: "EPD rulou 5500 luxury", href: u("2025/07/5500-EPD.pdf") }] },
-  "grimebuster-50": { priceTier: "premium", design: ["linii"], sectors: ["intrari", "scoli", "public", "retail", "birouri"],
+  "grimebuster-50": { priceTier: "premium", design: ["linii"], sectors: ["intrari", "industrie", "scoli", "public", "retail", "birouri"],
     docs: d("2025/07/burmatex-entrance-matting-technical-spec-2026-06.pdf", undefined, "2026/10/entrance-collection-shade-card.pdf", "2025/07/CV50GB50-EPD.pdf") },
-  "chevrolay-50": { priceTier: "premium", design: ["geometric"], sectors: ["intrari", "scoli", "public", "retail", "birouri"],
+  "chevrolay-50": { priceTier: "premium", design: ["geometric"], sectors: ["intrari", "industrie", "scoli", "public", "retail", "birouri"],
     docs: d("2025/07/burmatex-entrance-matting-technical-spec-2024-08.pdf", undefined, "2026/10/entrance-collection-shade-card.pdf", "2025/07/CV50GB50-EPD.pdf") },
 };
 

@@ -30,6 +30,8 @@ const presets: { label: string; text: string; state: Partial<State> }[] = [
   { label: "Săli de ședință liniștite", text: "Acustică ≥ 25 dB, design premium", state: { sector: "birouri", minDb: 25, sort: "acustica" } },
   { label: "Școală, buget redus", text: "Fibră presată, culori vii", state: { sector: "scoli", tiers: ["economic"] } },
   { label: "Intrare în clădire", text: "Covoare de intrare și dale barieră", state: { sector: "intrari" } },
+  { label: "Fabrică, uzină, producție", text: "Fibră presată în dale și rulou, covoare de intrare, dale barieră", state: { sector: "industrie" } },
+  { label: "Hotel sau recepție premium", text: "Design, fir tăiat, clasă premium", state: { sector: "hotel", tiers: ["premium"] } },
   { label: "Livrare rapidă", text: "Doar ce este în stoc în România", state: { stock: true } },
 ];
 
@@ -46,6 +48,7 @@ function reasons(c: Collection, s: State) {
   if (c.impactDb) r.push(`${c.impactDb} dB`);
   if (c.carbon === "neutral") r.push("Neutră carbon (declarat)");
   if (c.recycled && s.minRecycled) r.push(`${c.recycled} reciclat`);
+  if (c.formats.some(f => f.startsWith("Rulou")) && (s.sector === "industrie" || s.sector === "scoli" || s.format === "Rulou")) r.push("Și în rulou de 2 m");
   if (c.inStock) r.push("Din stoc");
   const n = referencesFor(c.slug).length;
   if (n) r.push(`${n} ${n === 1 ? "proiect" : "proiecte"} în România`);
@@ -74,7 +77,8 @@ export default function SelectorPage() {
       && (!s.neutral || c.carbon === "neutral")
       && (!s.minRecycled || num(c.recycled) >= s.minRecycled)
       && (!s.maxGwp || num(c.gwp) <= s.maxGwp));
-    const matchScore = (c: Collection) => s.designs.filter(d => c.design.includes(d)).length * 2 + (s.colours.length ? c.swatches.filter(sw => s.colours.includes(sw.family)).length / 4 : 0) + (c.inStock ? 0.5 : 0) + (c.isNew ? 0.3 : 0);
+    const industryRank: Record<string, number> = { fibre: 3, entrance: 2, barrier: 1 };
+    const matchScore = (c: Collection) => (s.sector === "industrie" ? (industryRank[c.family] ?? 0) * 3 : 0) + s.designs.filter(d => c.design.includes(d)).length * 2 + (s.colours.length ? c.swatches.filter(sw => s.colours.includes(sw.family)).length / 4 : 0) + (c.inStock ? 0.5 : 0) + (c.isNew ? 0.3 : 0);
     const by: Record<Sort, (a: Collection, b: Collection) => number> = {
       potrivire: (a, b) => matchScore(b) - matchScore(a),
       pret: (a, b) => tierRank[a.priceTier] - tierRank[b.priceTier] || (a.priceFrom ?? 0) - (b.priceFrom ?? 0),

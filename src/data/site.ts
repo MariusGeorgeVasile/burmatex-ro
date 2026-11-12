@@ -49,4 +49,5 @@ export const sectors = [
   ["Retail", "Zone de intrare, showroom-uri și spații comerciale."],
   ["Rezidențial", "Dale și lamele pentru locuințe, mansarde și birouri acasă."],
   ["Intrări în clădiri", "Covoare de intrare care opresc murdăria la ușă."],
+  ["Industrie și producție", "Fibră presată în dale și rulou, covoare de intrare și dale barieră pentru birourile, vestiarele, cantinele și coridoarele din fabrici și uzine."],
 ] as const;
