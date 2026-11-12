@@ -227,7 +227,7 @@ export const landings: Landing[] = [
   {
     path: "/mocheta-hoteluri",
     title: "Mochetă pentru hoteluri: camere, coridoare | Burmatex",
-    description: "Mochetă dale pentru hoteluri: camere, coridoare, lobby și săli de conferință. Clasa 33, Bfl-s1, reducere a zgomotului de pași până la 28 dB, fir tăiat și design premium.",
+    description: "Mochetă dale pentru hoteluri: camere, coridoare, lobby și săli de conferință. Clasa 33, Bfl-s1, zgomot de pași redus cu până la 28 dB, design premium.",
     label: "Mochetă pentru hoteluri",
     h1: "Mochetă pentru hoteluri.",
     accent: "Liniște pe coridor, confort în cameră, design în lobby.",

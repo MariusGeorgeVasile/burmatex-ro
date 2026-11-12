@@ -24,6 +24,7 @@ const nav = [
   ["Devino dealer", "/devino-dealer"],
   ["Cataloage", "/cataloage"],
   ["Ghid tehnic", "/ghid-tehnic"],
+  ["Articole", "/articole"],
   ["Contact", "/contact"],
 ] as const;
 

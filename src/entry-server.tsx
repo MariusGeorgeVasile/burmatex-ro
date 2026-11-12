@@ -9,6 +9,7 @@ export function render(path: string) {
 }
 export { getMeta, allRoutes } from "./seo";
 export { docsFor } from "./data/documents";
+export { articles, articleCategories } from "./data/articles";
 export { collections, families, collectionPath } from "./data/collections";
 export { landings, generalFaqs } from "./data/landings";
 export { priceTiers } from "./data/attributes";

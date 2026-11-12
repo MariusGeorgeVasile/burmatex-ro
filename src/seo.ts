@@ -5,9 +5,10 @@ import { generalFaqs, landingByPath, landings, type Faq } from "./data/landings"
 import { dealerFaqs } from "./data/faqs";
 import { steps as installSteps, technicalFaqs } from "./data/technical";
 import { site } from "./data/site";
+import { articleBySlug, articleCategories, articlePath, articles } from "./data/articles";
 import { formatArea, references, referencesFor, TOTAL_M2 } from "./data/references";
 
-export type Meta = { title: string; description: string; image?: string; jsonLd: object[]; noindex?: boolean };
+export type Meta = { title: string; description: string; image?: string; jsonLd: object[]; noindex?: boolean; type?: "website" | "article" };
 
 const abs = (path: string) => `${site.domain}${path}`;
 const clip = (text: string, max = 158) => (text.length <= max ? text : `${text.slice(0, text.lastIndexOf(" ", max - 1))}…`);
@@ -67,6 +68,7 @@ function productLd(c: Collection) {
 }
 
 export const staticPages: Record<string, { title: string; description: string; crumb?: string }> = {
+  "/articole": { title: "Articole despre mochetă în dale și pardoseli | Burmatex România", description: "Articole despre mocheta în dale, pardoseli comerciale și clădiri de birouri: alegere, acustică, montaj și întreținere, de la InsightFLOOR.", crumb: "Articole" },
   "/": { title: "Mochetă dale Burmatex — mochetă britanică | Burmatex România", description: "Mochetă în dale 50×50, lamele, rulouri și covoare de intrare Burmatex, produse în UK. Peste 400 de nuanțe, clasa 33, stoc în România, dealeri în toată țara." },
   "/colectii": { title: "Colecții mochetă dale Burmatex — 22 colecții, 405 nuanțe", description: "Toate colecțiile Burmatex: buclă multilevel, buclă uniformă, fir tăiat, fibră presată, covoare de intrare. Peste 400 de nuanțe cu imagini, fișe tehnice și EPD.", crumb: "Colecții" },
   "/selector-mocheta": { title: "Selector mochetă: buget, design, culoare | Burmatex România", description: "Filtrați colecțiile de mochetă în dale Burmatex după buget, spațiu, design, culoare, acustică și impact de mediu. Comparați până la 3 colecții.", crumb: "Selector mochetă" },
@@ -84,7 +86,7 @@ export const staticPages: Record<string, { title: string; description: string; c
   "/contact": { title: "Contact — mostre, oferte, dealeri | Burmatex România", description: "Mostre gratuite de mochetă Burmatex, oferte de preț, documente tehnice și parteneriat de dealer. InsightFLOOR, Str. Povernei 32, București, 0728.082.778.", crumb: "Contact" },
 };
 
-export const allRoutes = [...Object.keys(staticPages), ...landings.map(l => l.path), ...collections.map(c => collectionPath(c.slug))];
+export const allRoutes = [...Object.keys(staticPages), ...landings.map(l => l.path), ...collections.map(c => collectionPath(c.slug)), ...articles.map(a => articlePath(a.slug))];
 
 export function getMeta(path: string): Meta {
   const base = [organization, website];
@@ -103,6 +105,21 @@ export function getMeta(path: string): Meta {
   if (landing) {
     const picked = collections.filter(landing.pick);
     return { title: landing.title, description: landing.description, image: landing.image, jsonLd: [...base, breadcrumb([[landing.label, path]]), faqPage(landing.faqs), itemList(picked, landing.pickTitle)] };
+  }
+  const art = path.startsWith("/articole/") ? articleBySlug[path.slice("/articole/".length)] : undefined;
+  if (art) {
+    return {
+      title: art.title.length > 52 ? art.title : `${art.title} | Burmatex România`,
+      description: clip(art.description, 160),
+      image: art.image,
+      type: "article",
+      jsonLd: [...base, breadcrumb([["Articole", "/articole"], [articleCategories[art.category].label, `/articole?categorie=${art.category}`], [art.title, path]]), {
+        "@type": "BlogPosting", "@id": `${abs(path)}#articol`, headline: art.title, description: art.description, image: abs(art.image), inLanguage: "ro-RO",
+        datePublished: art.date, dateModified: art.updated ?? art.date, wordCount: art.text.split(/\s+/).length, articleSection: articleCategories[art.category].label,
+        author: { "@id": ORG_ID }, publisher: { "@id": ORG_ID }, mainEntityOfPage: abs(path),
+        about: art.collections.map(s => collectionBySlug[s]).filter(Boolean).map(c => ({ "@type": "Product", name: `Mochetă dale Burmatex ${c.name}`, url: abs(collectionPath(c.slug)) })),
+      }],
+    };
   }
   const slug = path.startsWith("/colectii/") ? path.slice("/colectii/".length) : "";
   const c = collectionBySlug[slug];
