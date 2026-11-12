@@ -75,7 +75,7 @@ export const attributes: Record<string, Attr> = {
   academy: { priceTier: "economic", design: ["uni", "linii", "culoare"], sectors: ["scoli", "public", "birouri"],
     docs: d("2025/07/burmatex-academy-technical-spec-2024-10.pdf", "2025/07/academy-carpet-tiles-sheet-brochure-from-Burmatex-march-2025.pdf", "2025/07/academy-digital-shade-card-2024-02.pdf", "2025/07/Academy-Tile-24-4-24.pdf") },
   "velour-excel": { priceTier: "standard", design: ["uni", "culoare"], sectors: ["public", "retail", "scoli", "birouri"],
-    docs: d("2026/09/velour-excel-technical-spec-2026-09.pdf", undefined, "2025/07/5500-velour-excel-carpet-tiles-shade-card-burmatex.pdf", "2025/07/Velour-Excel-EPD.pdf") },
+    docs: [...d("2026/09/velour-excel-technical-spec-2026-09.pdf", undefined, "2025/07/5500-velour-excel-carpet-tiles-shade-card-burmatex.pdf", "2025/07/Velour-Excel-EPD.pdf"), { label: "EPD rulou 5500 luxury", href: u("2025/07/5500-EPD.pdf") }] },
   "grimebuster-50": { priceTier: "premium", design: ["linii"], sectors: ["intrari", "scoli", "public", "retail", "birouri"],
     docs: d("2025/07/burmatex-entrance-matting-technical-spec-2026-06.pdf", undefined, "2026/10/entrance-collection-shade-card.pdf", "2025/07/CV50GB50-EPD.pdf") },
   "chevrolay-50": { priceTier: "premium", design: ["geometric"], sectors: ["intrari", "scoli", "public", "retail", "birouri"],
