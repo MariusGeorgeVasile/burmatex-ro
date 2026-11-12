@@ -225,3 +225,98 @@ export function SustainabilityPage() {
     <DealerCTA title="Aveți nevoie de EPD-uri" accent="pentru BREEAM, LEED sau WELL?" text="Vă trimitem declarațiile de mediu și datele de carbon pentru colecțiile din proiect." to="/contact?tip=proiect" button="Cereți documentația" label="Certificare verde" />
   </div>;
 }
+
+const bioProducts = [
+  { slug: "threads", text: "Inspirată de fire care leagă culori, tonuri și desene într-un model de ansamblu potrivit pentru interioare foarte diferite. 12 culori threads® și 15 culori threads® plain combinabile.", gwp: "3,90", rec: "73,6%", photos: [["fir-biogenic-threads-coridor", "threads® shadow blend și harmony stitch"], ["fir-biogenic-threads-hol", "threads® base blend, base yellow și rust mix"]] },
+  { slug: "tivoli", text: "Prima colecție cu fir bio-genic 100% reciclat. tivoli® și tivoli® multiline, 40 de culori coordonate, clasa 33, în dale și lamele, pentru o mare varietate de interioare comerciale.", gwp: "3,10", rec: "74,0%", photos: [["fir-biogenic-tivoli-lamele", "lamele tivoli® dominica dawn, antigua steel, tiki yellow"], ["fir-biogenic-tivoli-multiline", "dale tivoli® și tivoli® multiline melanesia grey"]] },
+  { slug: "tivoli-mist", text: "Tranziții fine între culori sau un desen uniform care se estompează de la o nuanță la alta. 10 culori, în dale și lamele.", gwp: "3,10", rec: "74,0%", photos: [["fir-biogenic-tivoli-mist-hol", "lamele tivoli mist® polar drift și south beach"], ["fir-biogenic-tivoli-mist-sala", "dale tivoli mist® și tivoli® într-o sală de curs"]] },
+] as const;
+
+export function BiogenicPage() {
+  usePageMeta("/cataloage/fir-biogenic");
+  return <div className="cat">
+    <section className="cat-hero"><img src={img("fir-biogenic-coperta")} alt="Bobină de fir bio-genic reciclat Burmatex" width="1244" height="1244" fetchPriority="high" />
+      <div className="cat-shell"><Kicker>Colecția cu fir bio-genic · threads® · tivoli® · tivoli mist®</Kicker><h1>Prea bun<br />ca să fie risipit.</h1><p>Deșeuri transformate în pardoseli de înaltă performanță.</p></div></section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="01" label="fir bio-genic" />
+      <Kicker>De la deșeu la birou</Kicker>
+      <h2>Primul fir 100% reciclat<br />din deșeuri organice.</h2>
+      <div className="cat-cols"><div><p className="cat-lead">Burmatex® este primul producător care folosește fir bio-genic 100% reciclat, obținut din deșeuri organice bio-genice din surse regenerabile.</p><p>Materiile prime provin din deșeuri organice bio-circulare certificate sau din resurse naturale de a doua generație: ulei de gătit uzat, deșeuri din bucătării și tall oil (un produs secundar al industriei celulozei). threads®, tivoli® și tivoli mist® folosesc toate fir bio-genic, combinat cu suportul reciclat BioBase®, deci toate trei au amprentă redusă de carbon.</p></div>
+        <figure className="cat-inline-photo"><img src={img("fir-biogenic-deseuri-alimentare")} alt="Deșeuri alimentare din bucătării comerciale, materie primă pentru firul bio-genic" loading="lazy" width="1400" height="1179" /></figure></div>
+      <ol className="cat-process">{[["Deșeuri alimentare comerciale", "ulei de gătit uzat, resturi din bucătării"], ["Procesare bio-genică", "materie primă bio-circulară certificată"], ["Fir bio-genic", "nailon 100% reciclat"], ["Dale și lamele", "threads®, tivoli®, tivoli mist®"]].map(([t, d], i) => <li key={t}><span>{String(i + 1).padStart(2, "0")}</span><strong>{t}</strong><small>{d}</small></li>)}</ol>
+      <div className="cat-stats four">{[["100%", "reciclat"], ["100%", "reciclabil"], ["100%", "regenerabil"], ["redusă", "amprentă de carbon încorporată"]].map(([n, t]) => <div key={t}><strong>{n}</strong><p>{t}</p></div>)}</div>
+    </section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="02" label="următoarea viață" />
+      <Kicker>Gândit pentru a doua viață</Kicker>
+      <h2>Circularitatea începe<br />de la montaj.</h2>
+      <p className="cat-lead">Sustenabilitatea nu se oprește la materiale. Circularitatea reală ține cont și de felul în care pardoseala se montează, cum se demontează și ce se întâmplă cu ea la sfârșitul primei vieți.</p>
+      <div className="cat-points">
+        <article><h3>Proiectat mai bine</h3><p>Fir bio-genic și suport reciclat BioBase®: mai puțin carbon încorporat, fără compromis la performanță sau design.</p></article>
+        <article><h3>Montat mai bine</h3><p>Produsele Burmatex® sunt compatibile cu sistemele IOBAC MagTabs și Tab-It, alternative la adezivii lichizi tradiționali.</p></article>
+        <article><h3>Folosit mai bine</h3><p>Durabile prin construcție, făcute pentru spații comerciale cu trafic intens. Dalele rămân ferm pe loc în timpul utilizării.</p></article>
+        <article><h3>Refolosit sau reciclat mai bine</h3><p>Dalele se ridică ușor, fără să se deterioreze dala sau suportul, gata pentru reutilizare sau reciclare.</p></article>
+      </div>
+      <h3 className="cat-h3 cat-mt">Cum funcționează montajul IOBAC</h3>
+      <ol className="cat-process">{[["Pregătire", "suport curat, uscat, pregătit"], ["Plasarea pastilelor", "MagTabs sau Tab-It pe suport"], ["Montarea dalelor", "dalele se apasă pe pastile"], ["Utilizare", "dalele stau ferm pe loc"], ["Ridicare curată", "fără deteriorare, gata de reutilizare"]].map(([t, d], i) => <li key={t}><span>{String(i + 1).padStart(2, "0")}</span><strong>{t}</strong><small>{d}</small></li>)}</ol>
+      <p className="cat-small">Detalii despre montajul fără adeziv în <Link href="/ghid-tehnic">ghidul tehnic</Link>.</p>
+    </section>
+
+    {bioProducts.map((p, i) => { const c = collectionBySlug[p.slug]; return <section key={p.slug} className="cat-shell cat-section">
+      <CatHead n={String(i + 3).padStart(2, "0")} label={plainName(c.name)} />
+      <Kicker>Buclă joasă · fabricat în Marea Britanie</Kicker>
+      <h2>{plainName(c.name)}<sup>®</sup></h2>
+      <div className="cat-cols"><div><p className="cat-lead">{p.text}</p><p>Fir 100% reciclat bio-genic și suport BioBase®: amprentă redusă de carbon.</p>
+        <div className="cat-mini-stats"><div><strong>{p.gwp}</strong><span>kg CO₂ echiv. (GWP)</span></div><div><strong>{p.rec}</strong><span>conținut reciclat total</span></div><div><strong>{c.colours}</strong><span>culori</span></div></div>
+        <Link href={collectionPath(p.slug)} className="cat-link">Toate nuanțele {c.name} <ArrowRight /></Link></div>
+        <div className="cat-photos two">{p.photos.map(([f, cap]) => <figure key={f}><img src={img(f)} alt={`${cap}, mochetă Burmatex cu fir bio-genic`} loading="lazy" width="734" height="1245" /><figcaption>{cap}</figcaption></figure>)}</div></div>
+    </section>; })}
+
+    <section className="cat-shell cat-section cat-net">
+      <p className="cat-small">Sursa: Burmatex® Bio-genic yarn flooring collection, octombrie 2026. Adaptare în limba română: InsightFLOOR, dealer oficial Burmatex® în România.</p>
+      <div className="cat-actions"><a href="https://www.burmatex.co.uk/wp-content/uploads/2026/10/Bio-genic-yarn-brochure.pdf" className="cat-link" target="_blank" rel="noreferrer"><Download /> Originalul Burmatex (PDF, engleză)</a><Link href="/cataloage/principii-sustenabilitate" className="cat-link">Principiile de sustenabilitate <ArrowRight /></Link></div>
+    </section>
+    <DealerCTA title="Mostre threads®, tivoli®" accent="și tivoli mist®." text="Vă trimitem mostrele colecțiilor cu fir bio-genic și datele EPD pentru proiect." to="/contact?tip=mostre&produs=tivoli" button="Cereți mostre" label="Fir bio-genic" />
+  </div>;
+}
+
+const wellFeatures: [string, string, string][] = [
+  ["#04", "Reducerea VOC", "Toate gamele Burmatex® sunt testate complet pentru emisii de compuși organici volatili, cu rezultate practic neglijabile."],
+  ["#08", "Intrare sănătoasă", "Gama completă de covoare de intrare și dale barieră reduce murdăria adusă în clădire și îmbunătățește calitatea aerului."],
+  ["#11", "Siguranța fundamentală a materialelor", "Produse fără azbest, fără formaldehidă, cu plumb sub 100 ppm."],
+  ["#25", "Reducerea materialelor toxice", "Burmatex® nu a produs niciodată pardoseli cu componente toxice, confirmat de un audit de mediu BREEAM complet și de EPD-uri validate de Environdec."],
+  ["#26", "Siguranța extinsă a materialelor", "Toate produsele sunt verificate ca fiind libere de multe dintre substanțele suspecte pe care clădirile WELL® le evită."],
+  ["#28", "Mediu ușor de curățat", "Dalele se scot și se înlocuiesc ușor. Pentru acest credit nu se poate folosi mochetă la rulou de la perete la perete."],
+  ["#87", "Frumusețe și design", "Calitatea și varietatea opțiunilor de design: estetică flexibilă și durabilitate."],
+  ["#88", "Biofilie I, calitativ", "Designul mochetei influențează pozitiv starea de spirit, creând un mediu calm și un spațiu de lucru plăcut."],
+  ["#97", "Transparența materialelor", "EPD-uri actualizate, verificate de terți, pentru clienții care vor să știe din ce sunt făcute produsele de construcție."],
+];
+
+export function WellPage() {
+  usePageMeta("/cataloage/well");
+  return <div className="cat">
+    <section className="cat-hero"><img src={img("well-cladire")} alt="Clădire de birouri modernă, standardul WELL Building" width="1400" height="830" fetchPriority="high" />
+      <div className="cat-shell"><Kicker>Contribuția Burmatex® la WELL Building Standard®</Kicker><h1>Pardoseli pentru<br />clădiri sănătoase.</h1><p>Aer · Apă · Hrană · Lumină · Mișcare · Confort · Minte</p></div></section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="01" label="WELL Building Standard®" />
+      <Kicker>Ce este WELL</Kicker>
+      <h2>Clădirea, măsurată<br />după oamenii din ea.</h2>
+      <div className="cat-cols"><p className="cat-lead">WELL Building Standard® este un sistem bazat pe dovezi pentru măsurarea, certificarea și monitorizarea elementelor unei clădiri care influențează sănătatea și starea de bine a celor care o folosesc. Este administrat de International WELL Building Institute® și are șapte concepte: aer, apă, hrană, lumină, mișcare, confort și minte.</p>
+        <p>Pardoseala nu este o componentă distinctă în WELL, dar abordarea sustenabilă Burmatex® completează mai multe cerințe din cele șapte concepte. Pentru că standardul pornește de la experiența ocupanților, pardoseala contribuie prin design, componente sigure și curățenie. Produsele Burmatex® ajută managerul de proiect sau designerul să optimizeze experiența spațiului.</p></div>
+      <div className="cat-badges">{["Fabricat cu electricitate regenerabilă", "ISO 9001:2015 (certificat FM01440)", "Emisii VOC clasa A+ (Franța)", "Clasa M1 de emisii scăzute (Finlanda)", "EPD verificat de terți, ISO 14025:2006"].map(b => <span key={b}>{b}</span>)}</div>
+    </section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="02" label="contribuția Burmatex®" />
+      <Kicker>Cerințele WELL la care contribuie</Kicker>
+      <h2>Nouă cerințe,<br />un singur furnizor.</h2>
+      <div className="cat-well">{wellFeatures.map(([n, t, d]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
+      <p className="cat-small">Punctajul WELL al unui proiect se stabilește de evaluatorul acreditat. Documentele necesare (EPD, certificate de emisii) le primiți de la InsightFLOOR pentru colecțiile din proiect. Sursa: Burmatex® contribution to WELL Building Standard®. Adaptare în limba română: InsightFLOOR.</p>
+      <div className="cat-actions"><a href="https://www.burmatex.co.uk/wp-content/uploads/2025/07/burmatex-wellbeing-statement.pdf" className="cat-link" target="_blank" rel="noreferrer"><Download /> Originalul Burmatex (PDF, engleză)</a><Link href="/mocheta-cladiri-birouri-noi" className="cat-link">Mochetă pentru clădiri de birouri noi <ArrowRight /></Link><Link href="/covoare-intrare" className="cat-link">Covoare de intrare <ArrowRight /></Link></div>
+    </section>
+    <DealerCTA title="Proiect WELL, BREEAM" accent="sau LEED?" text="Vă trimitem EPD-urile, certificatele de emisii și datele de carbon pentru colecțiile alese." to="/contact?tip=proiect" button="Cereți documentația" label="Certificare" />
+  </div>;
+}

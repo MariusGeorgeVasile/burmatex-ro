@@ -808,3 +808,82 @@ main h2 > span { color: #77736d; }
   .cat-combo-text { font-size: 19px; }
   .cat-hero { min-height: 460px; }
 }
+
+/* ——— Technical guide ——— */
+.tg-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 60px; align-items: start; padding-bottom: 60px; }
+.tg-toc { position: sticky; top: 140px; padding-top: 6px; }
+.tg-toc p { margin: 0 0 12px; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--soft-ink); }
+.tg-toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.tg-toc a { display: flex; gap: 12px; padding: 7px 0 7px 14px; font-size: 13px; color: var(--soft-ink); }
+.tg-toc a span { color: var(--accent); font: 500 11px/1.6 "Jost", sans-serif; }
+.tg-toc a:hover { color: var(--ink); }
+.tg-body > section { padding-bottom: 60px; margin-bottom: 10px; border-bottom: 1px solid var(--line); scroll-margin-top: 140px; }
+.tg-body > section > p { max-width: 760px; font-size: 15px; line-height: 1.85; color: #4d4945; }
+.tg-head { display: flex; gap: 22px; align-items: baseline; padding-top: 40px; margin-bottom: 22px; scroll-margin-top: 140px; }
+.tg-head > span { color: var(--accent); font: 500 13px/1 "Jost", sans-serif; }
+.tg-head h2 { font-size: clamp(30px, 3.2vw, 46px); }
+.tg-numbers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); margin: 26px 0 10px; }
+.tg-numbers > div { padding: 22px 18px 22px 0; }
+.tg-numbers strong { font: 500 30px/1 "Jost", sans-serif; letter-spacing: -.03em; white-space: nowrap; }
+.tg-numbers p { margin: 10px 0 0; font-size: 11.5px; line-height: 1.55; color: var(--soft-ink); }
+.tg-numbers b { color: var(--ink); }
+.tg-no { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.tg-no li { position: relative; padding: 12px 14px 12px 38px; background: #fbf1f3; border-left: 2px solid var(--accent); font-size: 14px; line-height: 1.6; }
+.tg-no li::before { content: "×"; position: absolute; left: 14px; top: 9px; color: var(--accent); font-weight: 700; font-size: 17px; }
+.tg-adhesive { padding: 22px 24px; margin-bottom: 14px; border: 1px solid var(--line); background: var(--card); }
+.tg-adhesive h3 { margin: 0 0 8px; font: 500 21px/1.3 "Jost", sans-serif; }
+.tg-adhesive p { margin: 0 0 8px; font-size: 14px; line-height: 1.7; color: #4d4945; }
+.tg-products { font-weight: 600; color: var(--ink) !important; }
+.tg-products span { color: var(--soft-ink); font-weight: 500; }
+.tg-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.tg-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.tg-steps li > span { font: 500 22px/1 "Jost", sans-serif; color: var(--accent); }
+.tg-steps h3 { margin: 0 0 6px; font: 500 20px/1.25 "Jost", sans-serif; }
+.tg-steps p { margin: 0; font-size: 14px; line-height: 1.7; color: #4d4945; }
+.tg-dirs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 26px; }
+.tg-grid { display: grid; grid-template-columns: 1fr 1fr; width: 96px; height: 96px; border: 1.5px solid var(--ink); }
+.tg-grid span { display: grid; place-items: center; border: 1px solid var(--line); font-size: 20px; }
+.tg-grid.offset { grid-template-columns: repeat(4, 1fr); }
+.tg-grid.offset span:nth-child(odd) { grid-column: span 2; }
+.tg-grid.offset span:nth-child(3) { grid-column: 2 / span 2; }
+.tg-dirs h3 { margin: 16px 0 6px; font: 500 19px/1.2 "Jost", sans-serif; }
+.tg-dirs p { margin: 0; font-size: 13px; line-height: 1.65; color: #4d4945; }
+.tg-tips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+.tg-tips article { border-top: 1px solid #ccc7bf; padding-top: 14px; }
+.tg-tips h3 { margin: 0 0 8px; font: 500 19px/1.3 "Jost", sans-serif; }
+.tg-tips p { margin: 0; font-size: 13.5px; line-height: 1.7; color: #4d4945; }
+.tg-faq { grid-template-columns: .7fr 1fr; padding-block: 40px 60px; }
+.tg-sources { padding-top: 30px; }
+@media (max-width: 960px) {
+  .tg-layout { grid-template-columns: 1fr; gap: 20px; }
+  .tg-toc { position: static; }
+  .tg-toc ol { display: flex; flex-wrap: wrap; gap: 4px 14px; border: 0; }
+  .tg-toc a { padding: 4px 0; }
+  .tg-numbers, .tg-dirs { grid-template-columns: 1fr 1fr; }
+  .tg-tips { grid-template-columns: 1fr; }
+}
+.cat-process { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0; border-top: 1px solid var(--bronze); }
+.cat-process li { display: grid; gap: 6px; padding: 18px 18px 18px 0; border-right: 1px solid var(--cat-line); }
+.cat-process li:last-child { border-right: 0; }
+.cat-process span { color: var(--bronze); font: 400 13px/1 "Jost", sans-serif; }
+.cat-process strong { font: 400 19px/1.25 "Jost", sans-serif; }
+.cat-process small { font-size: 12px; color: var(--soft-ink); }
+.cat-stats.four { margin: 40px 0 0; }
+.cat-h3.cat-mt { margin-top: 50px; }
+.cat h2 sup { font-size: .3em; vertical-align: top; color: var(--bronze); }
+.cat-mini-stats { display: flex; flex-wrap: wrap; gap: 26px; margin: 10px 0 22px; }
+.cat-mini-stats div { display: grid; gap: 4px; }
+.cat-mini-stats strong { font: 300 34px/1 "Jost", sans-serif; color: var(--bronze); }
+.cat-mini-stats span { font-size: 11px; color: var(--soft-ink); }
+.cat-photos.two img { aspect-ratio: .75; }
+.cat-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.cat-badges span { padding: 8px 12px; border: 1px solid var(--bronze); font-size: 11.5px; font-weight: 600; color: var(--bronze-dark); }
+.cat-well { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin: 44px 0 30px; }
+.cat-well article { border-top: 1px solid var(--bronze); padding-top: 16px; }
+.cat-well span { font: 300 30px/1 "Jost", sans-serif; color: var(--bronze); }
+.cat-well h3 { margin: 12px 0 8px; font: 400 21px/1.25 "Jost", sans-serif; }
+.cat-well p { margin: 0; font-size: 13.5px; line-height: 1.75; color: #4d4945; }
+@media (max-width: 960px) { .cat-well { grid-template-columns: 1fr 1fr; } .cat-process li { border-right: 0; border-bottom: 1px solid var(--cat-line); } }
+@media (max-width: 640px) { .cat-well { grid-template-columns: 1fr; } }
+.tg-body, .tg-toc { min-width: 0; }
+@media (max-width: 640px) { .tg-numbers strong { font-size: 24px; white-space: normal; } .tg-faq { grid-template-columns: 1fr; } }

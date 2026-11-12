@@ -63,7 +63,7 @@ export function ResourcesPage() {
       <p className="cc-note">Pentru celelalte colecții, documentele sunt disponibile pe pagina fiecărei colecții sau la cerere.</p>
     </section>
     <section className="ed-method"><div className="ed-shell">
-      <div className="ed-section-heading"><div><Label>Ghid tehnic pe scurt</Label><h2>Montaj și întreținere.<br />Ce trebuie să știe clientul.</h2></div><a href={sources.technical} target="_blank" rel="noreferrer" className="ed-text-link">Ghidul tehnic Burmatex <ExternalLink /></a></div>
+      <div className="ed-section-heading"><div><Label>Ghid tehnic pe scurt</Label><h2>Montaj și întreținere.<br />Ce trebuie să știe clientul.</h2></div><Link href="/ghid-tehnic" className="ed-text-link">Ghidul tehnic complet <ArrowRight /></Link></div>
       <div className="guide-grid">{guides.map(([t, d], i) => <article key={t}><span>{String(i + 1).padStart(2, "0")}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
     </div></section>
     <DealerCTA title="Vreți documentația" accent="tradusă în română?" text="Este inclusă în kitul de start pentru dealeri: fișe tehnice, ghid de montaj, ghid de întreținere și declarații de mediu." />

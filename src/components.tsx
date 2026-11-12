@@ -20,9 +20,9 @@ const nav = [
   ["Colecții", "/colectii"],
   ["Selector mochetă", "/selector-mocheta"],
   ["Proiecte", "/proiecte"],
-  ["Mochetă dale", "/mocheta-dale"],
   ["Devino dealer", "/devino-dealer"],
   ["Cataloage", "/cataloage"],
+  ["Ghid tehnic", "/ghid-tehnic"],
   ["Contact", "/contact"],
 ] as const;
 
@@ -62,7 +62,7 @@ export function Footer() {
       <div className="footer-about"><Wordmark /><p>Mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie. {site.dealer.statement}</p><a className="official-link" href={site.dealer.url} target="_blank" rel="noreferrer">InsightFLOOR · dealer oficial Burmatex® în România</a></div>
       <div><h4>Colecții</h4>{familyKeys.map(key => <Link key={key} href={`/colectii?familie=${key}`}>{families[key].label}</Link>)}</div>
       <div><h4>Ghiduri</h4>{landings.map(l => <Link key={l.path} href={l.path}>{l.label}</Link>)}<Link href="/selector-mocheta">Selector mochetă</Link></div>
-      <div><h4>Parteneri</h4><Link href="/proiecte">Proiecte Burmatex în România</Link><Link href="/devino-dealer">Devino dealer</Link><Link href="/devino-dealer#aplica">Formular de aplicare</Link><Link href="/contact?tip=mostre">Solicitați mostre</Link><Link href="/cataloage">Cataloage și broșuri</Link><Link href="/resurse">Resurse tehnice</Link><Link href="/de-ce-burmatex">De ce Burmatex</Link></div>
+      <div><h4>Parteneri</h4><Link href="/proiecte">Proiecte Burmatex în România</Link><Link href="/devino-dealer">Devino dealer</Link><Link href="/devino-dealer#aplica">Formular de aplicare</Link><Link href="/contact?tip=mostre">Solicitați mostre</Link><Link href="/cataloage">Cataloage și broșuri</Link><Link href="/ghid-tehnic">Ghid tehnic: montaj și întreținere</Link><Link href="/resurse">Resurse tehnice</Link><Link href="/de-ce-burmatex">De ce Burmatex</Link></div>
       <div><h4>Contact</h4>{site.address && <p>{site.address}</p>}<a href={`mailto:${site.email}`}>{site.email}</a>{site.phone && <a href={`tel:${site.phone}`}>{site.phoneDisplay || site.phone}</a>}<p>{site.showroomNote}</p></div>
     </div>
     <div className="ed-shell footer-bottom">

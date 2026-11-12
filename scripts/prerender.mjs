@@ -108,6 +108,9 @@ ${references.map(r => `- ${r.name}${r.location ? `, ${r.location}` : ""}: ${form
 - [Cataloage și broșuri](${domain}/cataloage): catalogul de produse Burmatex 2026 (PDF), ghidul Design Connection™ (PDF), catalogul go to® (PDF).
 - [Design Connection™](${domain}/cataloage/design-connection): combinarea surface trace®, surface story® și surface memory®; culori conectate, culori în contrast, banca de culori.
 - [Organic Merge™ și Colour Link™](${domain}/cataloage/organic-merge-colour-link): familii de culori comune între balance®, standing stones®, snowfall®, rocklines® și threads®.
+- [Fir bio-genic](${domain}/cataloage/fir-biogenic): primul fir 100% reciclat din deșeuri organice (threads®, tivoli®, tivoli mist®) și montajul circular IOBAC.
+- [Burmatex și WELL Building Standard](${domain}/cataloage/well): cele nouă cerințe WELL la care contribuie mocheta Burmatex.
+- [Ghid tehnic: montaj, adezivi, întreținere](${domain}/ghid-tehnic): suport, aclimatizare, adezivi tackifier, montaj pas cu pas, direcții de montaj, întreținere și tabelul de pete.
 - [Principiile de sustenabilitate Burmatex](${domain}/cataloage/principii-sustenabilitate): Net Zero, fir cu amprentă negativă de carbon, BioBase®, 100% energie regenerabilă, Zero Landfill, EPD.
 
 ## Parteneri
