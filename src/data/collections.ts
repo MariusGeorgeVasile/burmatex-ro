@@ -332,7 +332,9 @@ export const collections: Collection[] = base.map(c => {
   if (k?.c2c && !specs.some(([l]) => l.startsWith("Certificare"))) specs.push(["Certificare fir", `Cradle to Cradle® Material Health ${k.c2c}`]);
   if (k?.energy) specs.push(["Energie la producție", "100% regenerabilă"]);
   if (!has("Garanție declarată")) specs.push(["Garanție declarată", "15 ani, în condițiile producătorului (Heavy Contract)"]);
-  return { ...c, ...a, specs, pileGm2: a.pileGm2 ?? t?.pileGm2, docs, swatches: m.colours, rooms, image: rooms[0]?.img ?? c.image, tile: m.colours[0]?.img ?? c.tile };
+  // Event halls and wedding venues get every Premium collection.
+  const sectors = a.priceTier === "premium" && !a.sectors.includes("evenimente") ? [...a.sectors, "evenimente" as const] : a.sectors;
+  return { ...c, ...a, sectors, specs, pileGm2: a.pileGm2 ?? t?.pileGm2, docs, swatches: m.colours, rooms, image: rooms[0]?.img ?? c.image, tile: m.colours[0]?.img ?? c.tile };
 });
 
 export const collectionBySlug = Object.fromEntries(collections.map(c => [c.slug, c])) as Record<string, Collection>;

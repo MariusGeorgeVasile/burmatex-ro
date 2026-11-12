@@ -4,7 +4,7 @@
 
 export type PriceTier = "economic" | "standard" | "premium";
 export type DesignKey = "uni" | "textura" | "organic" | "geometric" | "linii" | "culoare";
-export type SectorKey = "birouri" | "cladiri-noi" | "scoli" | "public" | "hotel" | "retail" | "intrari" | "industrie" | "rezidential";
+export type SectorKey = "birouri" | "cladiri-noi" | "scoli" | "public" | "hotel" | "retail" | "intrari" | "industrie" | "evenimente" | "rezidential";
 export type Doc = { label: string; href: string };
 
 export const priceTiers: Record<PriceTier, { label: string; text: string; marks: string }> = {
@@ -31,6 +31,7 @@ export const sectorsMeta: Record<SectorKey, { label: string; short: string }> = 
   retail: { label: "Retail și showroom", short: "Retail" },
   intrari: { label: "Intrări și holuri de acces", short: "Intrări" },
   industrie: { label: "Industrie (fabrici, uzine, producție)", short: "Industrie" },
+  evenimente: { label: "Saloane de evenimente și nunți", short: "Evenimente" },
   rezidential: { label: "Rezidențial", short: "Rezidențial" },
 };
 

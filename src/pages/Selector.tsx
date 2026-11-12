@@ -31,6 +31,7 @@ const presets: { label: string; text: string; state: Partial<State> }[] = [
   { label: "Școală, buget redus", text: "Fibră presată, culori vii", state: { sector: "scoli", tiers: ["economic"] } },
   { label: "Intrare în clădire", text: "Covoare de intrare și dale barieră", state: { sector: "intrari" } },
   { label: "Fabrică, uzină, producție", text: "Fibră presată în dale și rulou, covoare de intrare, dale barieră", state: { sector: "industrie" } },
+  { label: "Salon de evenimente, nunți", text: "Toate colecțiile Premium: design, fir tăiat, intrări", state: { sector: "evenimente" } },
   { label: "Hotel sau recepție premium", text: "Design, fir tăiat, clasă premium", state: { sector: "hotel", tiers: ["premium"] } },
   { label: "Livrare rapidă", text: "Doar ce este în stoc în România", state: { stock: true } },
 ];
@@ -78,7 +79,8 @@ export default function SelectorPage() {
       && (!s.minRecycled || num(c.recycled) >= s.minRecycled)
       && (!s.maxGwp || num(c.gwp) <= s.maxGwp));
     const industryRank: Record<string, number> = { fibre: 3, entrance: 2, barrier: 1 };
-    const matchScore = (c: Collection) => (s.sector === "industrie" ? (industryRank[c.family] ?? 0) * 3 : 0) + s.designs.filter(d => c.design.includes(d)).length * 2 + (s.colours.length ? c.swatches.filter(sw => s.colours.includes(sw.family)).length / 4 : 0) + (c.inStock ? 0.5 : 0) + (c.isNew ? 0.3 : 0);
+    const eventRank: Record<string, number> = { cut: 3, multilevel: 2, barrier: 0.5, entrance: 0 };
+    const matchScore = (c: Collection) => (s.sector === "industrie" ? (industryRank[c.family] ?? 0) * 3 : 0) + (s.sector === "evenimente" ? (eventRank[c.family] ?? 0) * 3 : 0) + s.designs.filter(d => c.design.includes(d)).length * 2 + (s.colours.length ? c.swatches.filter(sw => s.colours.includes(sw.family)).length / 4 : 0) + (c.inStock ? 0.5 : 0) + (c.isNew ? 0.3 : 0);
     const by: Record<Sort, (a: Collection, b: Collection) => number> = {
       potrivire: (a, b) => matchScore(b) - matchScore(a),
       pret: (a, b) => tierRank[a.priceTier] - tierRank[b.priceTier] || (a.priceFrom ?? 0) - (b.priceFrom ?? 0),
