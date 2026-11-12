@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSearch } from "wouter";
 import { Link } from "../link";
-import { ArrowRight, ArrowUpRight, ExternalLink, FileText, Mail, Phone } from "lucide-react";
+import { ArrowRight, ArrowUpRight, FileText, Mail, Phone } from "lucide-react";
 import { DealerCTA, Label, PageIntro, usePageMeta } from "../components";
 import { collections, plainName } from "../data/collections";
-import { counties, site, sources } from "../data/site";
+import { counties, site } from "../data/site";
+import { docsFor } from "../data/documents";
 
 export function AboutPage() {
   usePageMeta("/de-ce-burmatex");
@@ -12,7 +13,7 @@ export function AboutPage() {
     <PageIntro label="De ce Burmatex" title="Nu vindem doar mochetă." accent="Contează cine o produce." text="Britanică prin origine. Concepută pentru trafic real. Cu o istorie în reciclare care începe cu mult înainte ca sustenabilitatea să devină un argument de vânzare. În România, Burmatex este distribuit prin InsightFLOOR, dealer oficial." />
     <figure className="wide-figure"><img src="/img/c/armour/mocheta-dale-armour-ambient-1.webp" alt="Coridor cu mochetă Burmatex armour®" width="1200" height="1200" /><figcaption className="ed-shell">armour® · imagine Burmatex</figcaption></figure>
 
-    <section className="chapter ed-shell"><div><Label>01 / Tradiție britanică</Label><h2>O fabrică.<br /><span>Nu doar o etichetă.</span></h2></div><div><p>Povestea începe în 1912 la Ossett, în West Yorkshire, ca J&amp;F Burrows: recuperarea și prelucrarea deșeurilor textile — lână, bumbac, apoi nailon și polipropilenă. Marca Burmatex apare în 1967, odată cu prima mochetă produsă pe amplasament. <a className="cite" href={sources.history} target="_blank" rel="noreferrer">[1]</a></p><p><strong>Pentru un dealer, „britanic” este un argument concret:</strong> continuitate de producție, control al calității certificat ISO 9001 și ISO 14001 și un producător care există de peste un secol. <a className="cite" href={sources.about} target="_blank" rel="noreferrer">[2]</a></p></div></section>
+    <section className="chapter ed-shell"><div><Label>01 / Tradiție britanică</Label><h2>O fabrică.<br /><span>Nu doar o etichetă.</span></h2></div><div><p>Povestea începe în 1912 la Ossett, în West Yorkshire, ca J&amp;F Burrows: recuperarea și prelucrarea deșeurilor textile — lână, bumbac, apoi nailon și polipropilenă. Marca Burmatex apare în 1967, odată cu prima mochetă produsă pe amplasament.</p><p><strong>Pentru un dealer, „britanic” este un argument concret:</strong> continuitate de producție, control al calității certificat ISO 9001 și ISO 14001 și un producător care există de peste un secol.</p></div></section>
 
     <section className="ed-evidence ed-shell" aria-label="Repere">
       <div><strong>1912</strong><p>începutul activității de reciclare textilă</p></div>
@@ -26,7 +27,7 @@ export function AboutPage() {
     <section className="ed-sustain" id="sustenabilitate">
       <img src="/img/sustainability.webp" alt="" loading="lazy" width="1920" height="1008" />
       <div className="ed-sustain-shade" />
-      <div className="ed-shell ed-sustain-body"><Label light>03 / eco₂ matters®</Label><h2>Mai puțin impact.<br /><strong>Mai multă transparență.</strong></h2><p>Burmatex s-a angajat pe un parcurs către Net Zero și diferențiază clar colecțiile cu impact redus de cele declarate neutre din punctul de vedere al carbonului. <a className="cite light" href={sources.carbon} target="_blank" rel="noreferrer">[3]</a></p></div>
+      <div className="ed-shell ed-sustain-body"><Label light>03 / eco₂ matters®</Label><h2>Mai puțin impact.<br /><strong>Mai multă transparență.</strong></h2><p>Burmatex s-a angajat pe un parcurs către Net Zero și diferențiază clar colecțiile cu impact redus de cele declarate neutre din punctul de vedere al carbonului.</p></div>
     </section>
 
     <section className="ed-shell sustain-cards">{[
@@ -37,8 +38,6 @@ export function AboutPage() {
       ["Serviciu de preluare", "Burmatex are un serviciu de preluare a dalelor la sfârșitul utilizării; aplicabilitatea pentru proiectele din România se verifică de la caz la caz."],
       ["Neutralitate, explicată corect", "Pentru anumite colecții, neutralitatea declarată înseamnă reducere de impact plus compensare la sursă. Nu înseamnă emisii fizice zero."],
     ].map(([t, d], i) => <article key={t}><span>{String(i + 1).padStart(2, "0")}</span><h3>{t}</h3><p>{d}</p></article>)}</section>
-
-    <section className="ed-shell sources"><h2>Surse</h2><ol><li><a href={sources.history} target="_blank" rel="noreferrer">Istoricul Burmatex</a></li><li><a href={sources.about} target="_blank" rel="noreferrer">Despre Burmatex</a></li><li><a href={sources.carbon} target="_blank" rel="noreferrer">Parcursul către Net Zero</a></li><li><a href={sources.principles} target="_blank" rel="noreferrer">Principiile de sustenabilitate eco₂ matters®</a></li><li><a href={sources.epd} target="_blank" rel="noreferrer">Declarații de mediu (EPD)</a></li></ol></section>
     <DealerCTA />
   </div>;
 }
@@ -54,23 +53,22 @@ const guides = [
 
 export function ResourcesPage() {
   usePageMeta("/resurse");
-  const withDocs = collections.filter(c => c.docs?.length);
   return <div className="resources-page">
-    <PageIntro label="Resurse tehnice" title="Documentele corecte." accent="Înainte de ofertă." text="Fișe tehnice, broșuri și paletare oficiale, plus recomandările de bază pentru montaj și întreținere. Dealerii primesc versiunile traduse în română în kitul de start." />
+    <PageIntro label="Resurse tehnice" title="Documentele corecte." accent="Înainte de ofertă." text="Fișele tehnice ale tuturor colecțiilor, în limba română, cataloagele InsightFLOOR în PDF și recomandările de bază pentru montaj și întreținere. Declarațiile de mediu (EPD) și certificatele se trimit la cerere." />
     <section className="ed-shell">
-      <div className="ed-section-heading"><div><Label>Documente pe colecție</Label><h2>Fișe, broșuri,<br /><span>paletare.</span></h2></div><a href={sources.downloads} target="_blank" rel="noreferrer" className="ed-text-link">Toate descărcările Burmatex <ExternalLink /></a></div>
-      <div className="doc-table">{withDocs.map(c => <div key={c.slug} className="doc-row"><Link href={`/colectii/${c.slug}`} className="doc-name">{c.name}</Link><div>{c.docs!.map(d => <a key={d.href} href={d.href} target="_blank" rel="noreferrer"><FileText />{d.label}</a>)}</div></div>)}</div>
-      <p className="cc-note">Pentru celelalte colecții, documentele sunt disponibile pe pagina fiecărei colecții sau la cerere.</p>
+      <div className="ed-section-heading"><div><Label>Documente pe colecție · {collections.length}</Label><h2>Fișe tehnice,<br /><span>cataloage, mostre.</span></h2></div><Link href="/cataloage" className="ed-text-link">Toate cataloagele <ArrowRight /></Link></div>
+      <div className="doc-table">{collections.map(c => <div key={c.slug} className="doc-row"><Link href={`/colectii/${c.slug}`} className="doc-name">{c.name}</Link><div>{docsFor(c).map(d => d.pdf ? <a key={d.href} href={d.href} download><FileText />{d.label}</a> : <Link key={d.href} href={d.href}><FileText />{d.label}</Link>)}</div></div>)}</div>
+      <p className="cc-note">Toate documentele sunt în limba română. Paletarele fizice, mostrele, declarațiile de mediu (EPD) și certificatele se trimit gratuit, la cerere.</p>
     </section>
     <section className="ed-method"><div className="ed-shell">
       <div className="ed-section-heading"><div><Label>Ghid tehnic pe scurt</Label><h2>Montaj și întreținere.<br />Ce trebuie să știe clientul.</h2></div><Link href="/ghid-tehnic" className="ed-text-link">Ghidul tehnic complet <ArrowRight /></Link></div>
       <div className="guide-grid">{guides.map(([t, d], i) => <article key={t}><span>{String(i + 1).padStart(2, "0")}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
     </div></section>
-    <DealerCTA title="Vreți documentația" accent="tradusă în română?" text="Este inclusă în kitul de start pentru dealeri: fișe tehnice, ghid de montaj, ghid de întreținere și declarații de mediu." />
+    <DealerCTA title="Aveți nevoie de EPD" accent="sau certificate?" text="Pentru caiete de sarcini, certificări LEED, BREEAM sau WELL și dosare de licitație trimitem declarațiile de mediu, certificatele de reacție la foc și fișele tehnice pentru colecțiile din proiect." to="/contact?tip=documente" button="Cereți documentele" label="Documente" />
   </div>;
 }
 
-const requestTypes = { oferta: "Cerere de ofertă / preț", mostre: "Solicitare mostre", proiect: "Proiect / specificare", dealer: "Parteneriat de dealer", alta: "Altă întrebare" } as const;
+const requestTypes = { oferta: "Cerere de ofertă / preț", mostre: "Solicitare mostre", proiect: "Proiect / specificare", documente: "Documente tehnice (EPD, certificate)", dealer: "Parteneriat de dealer", alta: "Altă întrebare" } as const;
 type RequestType = keyof typeof requestTypes;
 
 export function ContactPage() {

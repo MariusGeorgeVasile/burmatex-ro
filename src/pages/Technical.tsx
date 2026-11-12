@@ -1,7 +1,7 @@
 import { Link } from "../link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { DealerCTA, Label, usePageMeta } from "../components";
-import { adhesives, care, directions, stains, steps, storage, subfloorNo, subfloorNumbers, subfloorOk, techSources, technicalFaqs, tips, toc } from "../data/technical";
+import { adhesives, care, directions, stains, steps, storage, subfloorNo, subfloorNumbers, subfloorOk, technicalFaqs, tips, toc } from "../data/technical";
 
 function Head({ id, n, title, accent }: { id: string; n: string; title: string; accent?: string }) {
   return <div className="tg-head" id={id}><span>{n}</span><h2>{title}{accent && <><br /><span>{accent}</span></>}</h2></div>;
@@ -83,9 +83,8 @@ export default function TechnicalGuide() {
         </section>
 
         <section className="tg-sources">
-          <h3 className="sub">Documente oficiale Burmatex</h3>
-          <div className="doc-list">{techSources.map(s => <a key={s.href} href={s.href} target="_blank" rel="noreferrer"><ExternalLink /><span>{s.label}</span><small>burmatex.co.uk</small><ExternalLink /></a>)}</div>
-          <p className="cc-note">Fișele tehnice ale fiecărei colecții sunt pe pagina colecției și în <Link href="/resurse">Resurse tehnice</Link>. Pentru condiții neobișnuite de șantier, consultați InsightFLOOR înainte de montaj.</p>
+          <h3 className="sub">Documente</h3>
+          <p className="cc-note">Fișa tehnică în limba română a fiecărei colecții este pe pagina colecției și în <Link href="/resurse">Resurse tehnice</Link>. Fișele tehnice Mapei și declarațiile de mediu le trimitem la cerere. Pentru condiții neobișnuite de șantier, consultați InsightFLOOR înainte de montaj.</p>
         </section>
       </div>
     </div>

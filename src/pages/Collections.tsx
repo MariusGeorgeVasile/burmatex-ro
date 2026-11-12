@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearch } from "wouter";
 import { Link } from "../link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, ExternalLink, FileText, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Download, FileText, Search, X } from "lucide-react";
 import { CarbonTag, CollectionCard, DealerCTA, Label, PageIntro, PriceTag, usePageMeta } from "../components";
 import { collectionBySlug, collectionPath, collections, families, plainName, type FamilyKey, type Swatch } from "../data/collections";
 import { priceTiers, sectorsMeta } from "../data/attributes";
 import { landings } from "../data/landings";
 import { collectionFaqs } from "../seo";
 import { referencesFor } from "../data/references";
+import { docsFor } from "../data/documents";
 import { ReferenceList } from "./Projects";
 import NotFound from "./NotFound";
 
@@ -144,10 +145,9 @@ export function CollectionPage({ slug }: { slug: string }) {
           {c.gwp && <div><dt>GWP (EPD)</dt><dd>{c.gwp} kg CO₂e</dd></div>}
           <div><dt>Clasă de preț</dt><dd>{priceTiers[c.priceTier].label} ({priceTiers[c.priceTier].marks}){c.priceFrom ? ` · de la ${c.priceFrom} €/m² + TVA` : ""}</dd></div>
         </dl>
-        <h3 className="sub">Documente oficiale</h3>
+        <h3 className="sub">Documente în limba română</h3>
         <div className="doc-list">
-          {c.docs.map(d => <a key={d.href} href={d.href} target="_blank" rel="noreferrer"><FileText /><span>{d.label}</span><small>PDF · Burmatex</small><ExternalLink /></a>)}
-          <a href={c.source} target="_blank" rel="noreferrer"><FileText /><span>Pagina colecției la producător</span><small>burmatex.co.uk</small><ExternalLink /></a>
+          {docsFor(c).map(d => d.pdf ? <a key={d.href} href={d.href} download><FileText /><span>{d.label}</span><small>{d.note}</small><Download /></a> : <Link key={d.href} href={d.href}><FileText /><span>{d.label}</span><small>{d.note}</small><ArrowRight /></Link>)}
         </div>
       </div>
     </section>

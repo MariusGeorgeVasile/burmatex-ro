@@ -5,6 +5,7 @@ import { generalFaqs, landingByPath, landings, type Faq } from "./data/landings"
 import { dealerFaqs } from "./data/faqs";
 import { steps as installSteps, technicalFaqs } from "./data/technical";
 import { site } from "./data/site";
+import { techSheetPath } from "./data/documents";
 import { formatArea, references, referencesFor, TOTAL_M2 } from "./data/references";
 
 export type Meta = { title: string; description: string; image?: string; jsonLd: object[]; noindex?: boolean };
@@ -56,7 +57,7 @@ function productLd(c: Collection) {
     "@type": "Product", "@id": `${abs(collectionPath(c.slug))}#produs`,
     name: `Mochetă dale Burmatex ${c.name}`, description: c.summary,
     brand: { "@type": "Brand", name: "Burmatex" },
-    manufacturer: { "@type": "Organization", name: "Burmatex", url: "https://www.burmatex.co.uk" },
+    manufacturer: { "@type": "Organization", name: "Burmatex Ltd." },
     category: `Mochetă dale / ${families[c.family].label}`,
     image: images,
     color: c.swatches.map(s => s.name).join(", "),
@@ -83,7 +84,7 @@ export const staticPages: Record<string, { title: string; description: string; c
   "/contact": { title: "Contact — mostre, oferte, dealeri | Burmatex România", description: "Solicitați mostre de mochetă Burmatex, o ofertă de preț sau datele dealerului din zona dumneavoastră.", crumb: "Contact" },
 };
 
-export const allRoutes = [...Object.keys(staticPages), ...landings.map(l => l.path), ...collections.map(c => collectionPath(c.slug))];
+export const allRoutes = [...Object.keys(staticPages), ...landings.map(l => l.path), ...collections.map(c => collectionPath(c.slug)), ...collections.map(c => techSheetPath(c.slug))];
 
 export function getMeta(path: string): Meta {
   const base = [organization, website];
@@ -102,6 +103,17 @@ export function getMeta(path: string): Meta {
   if (landing) {
     const picked = collections.filter(landing.pick);
     return { title: landing.title, description: landing.description, image: landing.image, jsonLd: [...base, breadcrumb([[landing.label, path]]), faqPage(landing.faqs), itemList(picked, landing.pickTitle)] };
+  }
+  const sheetSlug = path.match(/^\/colectii\/([^/]+)\/fisa-tehnica$/)?.[1];
+  const sc = sheetSlug ? collectionBySlug[sheetSlug] : undefined;
+  if (sc) {
+    const n = plainName(sc.name);
+    return {
+      title: clip(`Fișă tehnică ${n}® — mochetă dale Burmatex`, 70),
+      description: clip(`Fișa tehnică ${n}® în limba română: construcție, masă fir, grosime, clasă de uzură, reacție la foc, acustică, teste și ambalare. ${families[sc.family].label}, ${sc.formats.join(" și ").toLowerCase()}.`, 160),
+      image: sc.tile,
+      jsonLd: [...base, breadcrumb([["Colecții", "/colectii"], [sc.name, collectionPath(sc.slug)], ["Fișă tehnică", path]])],
+    };
   }
   const slug = path.startsWith("/colectii/") ? path.slice("/colectii/".length) : "";
   const c = collectionBySlug[slug];

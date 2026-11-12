@@ -1,14 +1,8 @@
 // Technical guide: installation, storage, adhesives and maintenance of Burmatex carpet tiles.
-// Adhesives: Mapei only (Ultrabond Eco Fix for tiles and planks, Ultrabond Eco 170 for sheet), per Burmatex România.
+// Adhesives: Mapei only (Ultrabond Eco Fix for tiles and planks, Ultrabond Eco 380 for sheet), per Burmatex România.
 // Sources: Burmatex Installation Guide (Fitting Your Carpet), Subfloor Preparation Guide,
 // Recommended Adhesives (March 2023), Carpet Tile Maintenance Guide (March 2023), Adhesive Free (IOBAC).
 // Items marked "InsightFLOOR" are field practice from installations in Romania.
-
-export const techSources = [
-  { label: "Ghid de pregătire a suportului (Burmatex, engleză)", href: "https://www.burmatex.co.uk/wp-content/uploads/2025/07/SubfloorPreparationGuide.pdf" },
-  { label: "Ghid de întreținere Burmatex (engleză)", href: "https://www.burmatex.co.uk/wp-content/uploads/2025/07/burmatex-carpet-tile-maintenance-guide-2023-03.pdf" },
-  { label: "Instrucțiuni de montaj Burmatex (engleză)", href: "https://www.burmatex.co.uk/fitting-your-carpet/" },
-];
 
 export const toc = [
   ["ce-este", "Ce este mocheta în dale"],
@@ -50,7 +44,7 @@ export const storage: [string, string][] = [
 
 export const adhesives = {
   tiles: { title: "Dale și lamele: Mapei Ultrabond Eco Fix (adeziv de fixare, tip tackifier)", text: "Toate dalele și lamelele Burmatex (buclă multinivel, buclă joasă, fibră presată, fir tăiat, dale barieră) se montează cu adeziv de tip tackifier: ține dalele pe loc, dar permite ridicarea și înlocuirea lor ulterioară. Ultrabond Eco Fix este un adeziv pe bază de apă, fără solvenți, care rămâne lipicios permanent: dalele stau ferm, dar se pot ridica și reutiliza.", products: ["Mapei Ultrabond Eco Fix", "consum 0,10–0,20 kg/m²", "aplicare cu rola sau cu mistria fin dințată"] },
-  sheet: { title: "Rulouri (5500 luxury, 7700 grimebuster, 7800 chevrolay): Mapei Ultrabond Eco 170", text: "Mocheta în rulou se lipește permanent, pe toată suprafața, cu un adeziv pentru pardoseli textile, pe bază de apă, cu emisii foarte reduse de COV.", products: ["Mapei Ultrabond Eco 170", "consum 0,25–0,45 kg/m²", "mistrie cu dinți nr. 2", "timp deschis 20–30 min"] },
+  sheet: { title: "Rulouri (5500 luxury, 7700 grimebuster, 7800 chevrolay): Mapei Ultrabond Eco 380", text: "Mocheta în rulou se lipește permanent, pe toată suprafața, cu Mapei Ultrabond Eco 380: adeziv acrilic în dispersie apoasă, fără solvenți, cu emisii foarte reduse de COV. Se întinde cu mistria dințată, iar rulourile se așază în timpul deschis al adezivului și se presează cu tăvălugul.", products: ["Mapei Ultrabond Eco 380", "consum orientativ 0,30–0,35 kg/m²", "timp deschis 60–70 min"] },
   steps: [
     ["Aplicarea", "Ultrabond Eco Fix se aplică uniform pe toată suprafața, cu rola cu păr scurt sau cu mistria fin dințată, 0,10–0,20 kg/m². Suportul trebuie să fie curat, uscat și amorsat dacă e absorbant."],
     ["Timpul de așteptare", "Dalele se montează după ce adezivul trece din alb în transparent și devine lipicios la atingere. Timpul depinde de temperatură, umiditate și suport; respectați fișa tehnică Mapei. Dalele nu se montează pe adeziv umed."],
@@ -135,7 +129,7 @@ export const stains: [string, string][] = [
 
 export const technicalFaqs = [
   { q: "Cât timp se aclimatizează mocheta în dale înainte de montaj?", a: "Cel puțin 48 de ore, despachetată, în încăperea în care se montează. Clădirea trebuie să fie închisă și încălzită la minimum 18 °C cu 72 de ore înainte de montaj." },
-  { q: "Ce adeziv se folosește pentru mocheta în dale Burmatex?", a: "Mapei Ultrabond Eco Fix: un adeziv de fixare de tip tackifier, pe bază de apă, care rămâne lipicios permanent. Dalele stau pe loc, dar pot fi ridicate și înlocuite. Consum 0,10–0,20 kg/m². Mocheta în rulou se lipește permanent cu Mapei Ultrabond Eco 170." },
+  { q: "Ce adeziv se folosește pentru mocheta în dale Burmatex?", a: "Mapei Ultrabond Eco Fix: un adeziv de fixare de tip tackifier, pe bază de apă, care rămâne lipicios permanent. Dalele stau pe loc, dar pot fi ridicate și înlocuite. Consum 0,10–0,20 kg/m². Mocheta în rulou se lipește permanent cu Mapei Ultrabond Eco 380." },
   { q: "Se poate monta mocheta în dale fără adeziv?", a: "Da, cu sistemele IOBAC aprobate de Burmatex: pătrate autocolante Tab-It pe majoritatea suporturilor sau MagTabs magnetice pe pardoseala tehnică metalică." },
   { q: "Ce umiditate maximă poate avea șapa?", a: "Maximum 75% umiditate relativă, măsurată cu higrometrul. Peste această valoare se aplică o barieră de umiditate (DPM) înainte de șapa autonivelantă și adeziv." },
   { q: "Se poate monta mocheta în dale peste linoleum sau mochetă veche?", a: "Nu. Pardoselile moi vechi (mochetă, vinil) se îndepărtează, iar suportul se curăță, se repară și se amorsează." },

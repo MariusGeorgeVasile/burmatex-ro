@@ -8,7 +8,6 @@ export const site = {
   phoneDisplay: "0728.082.778",
   address: "",
   showroomNote: "Mostre și consultanță, cu programare",
-  manufacturerUrl: "https://www.burmatex.co.uk",
   dealer: {
     name: "InsightFLOOR",
     url: "https://insightfloor.ro",
@@ -16,16 +15,6 @@ export const site = {
   },
 };
 
-export const sources = {
-  history: "https://www.burmatex.co.uk/history/",
-  about: "https://www.burmatex.co.uk/about-us/",
-  principles: "https://www.burmatex.co.uk/sustainability-principles/",
-  carbon: "https://www.burmatex.co.uk/journey-to-net-zero/",
-  takeBack: "https://www.burmatex.co.uk/take-back-service/",
-  epd: "https://www.burmatex.co.uk/epd-environmental-product-declaration/",
-  downloads: "https://www.burmatex.co.uk/downloads/",
-  technical: "https://www.burmatex.co.uk/technical/",
-};
 
 export const regions = [
   { name: "București – Ilfov", counties: ["București", "Ilfov"] },
