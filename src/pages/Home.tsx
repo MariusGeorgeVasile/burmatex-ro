@@ -21,6 +21,22 @@ const featuredFacts: Record<string, { status: string; claim: string; text: strin
   "eco-cordiale": { status: "44 de nuanțe", claim: "Volum pentru școli și spații publice.", text: "Fibră presată în dale și rulou, cu margini care nu se destramă. Un produs rezistent, ușor de întreținut, cu un raport foarte bun cost / durabilitate." },
 };
 
+// Home "brain" strip: swatches from every collection, ordered like a rainbow (by hue), neutrals last.
+const hsl = (hex: string) => {
+  const n = parseInt(hex.slice(1), 16), r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min;
+  const sat = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  let h = 0;
+  if (d) h = max === r ? ((g - b) / d + 6) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return { h: h * 60, s: sat, l };
+};
+const pick = <T,>(list: T[], n: number) => list.length <= n ? list : Array.from({ length: n }, (_, i) => list[Math.floor(i * list.length / n)]);
+const allSwatches = collections.flatMap(c => c.swatches).map(s => ({ ...s, c: hsl(s.hex) }));
+const chromatic = allSwatches.filter(s => s.c.s >= 0.18 && s.c.l > 0.12 && s.c.l < 0.9).sort((a, b) => a.c.h - b.c.h);
+const neutral = allSwatches.filter(s => !chromatic.includes(s)).sort((a, b) => b.c.l - a.c.l);
+const rainbow = [...pick(chromatic, 56), ...pick(neutral, 16)];
+const rainbowRows = [0, 1, 2, 3].map(i => rainbow.slice(i * 18, i * 18 + 18));
+
 export default function Home() {
   usePageMeta("/");
   const familyKeys = Object.keys(families) as FamilyKey[];
@@ -81,7 +97,7 @@ export default function Home() {
 
     <section className="brain ed-shell" aria-labelledby="brain-title">
       <div className="brain-copy"><Label>Selector mochetă</Label><h2 id="brain-title">Brain-ul mochetei.<br /><span>Alegeți după ce contează.</span></h2><p>Buget, tip de spațiu, design, culoare, acustică, amprentă de carbon. Combinați criteriile și vedeți imediat colecțiile potrivite, de ce se potrivesc și cum se compară.</p><Link href="/selector-mocheta" className="ed-button">Deschideți selectorul <ArrowUpRight /></Link></div>
-      <ul className="brain-preview" aria-hidden="true">{collections.flatMap(c => c.swatches.slice(0, 2)).slice(0, 24).map(s => <li key={s.img}><img src={s.img} alt="" loading="lazy" width="120" height="120" /></li>)}</ul>
+      <div className="brain-rainbow" aria-hidden="true">{rainbowRows.map((row, r) => <div key={r} className={`brain-row${r % 2 ? " reverse" : ""}`}><div className="brain-track">{[...row, ...row].map((s, i) => <img key={`${s.img}-${i}`} src={s.img} alt="" loading="lazy" width="120" height="120" />)}</div></div>)}</div>
     </section>
 
     <section className="ed-families ed-shell">
