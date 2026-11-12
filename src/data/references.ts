@@ -42,7 +42,7 @@ export const references: Reference[] = [
   { name: "CEC Bank", area: 5000, collections: ["go to®"], kind: "banca" },
   { name: "Bancpost", area: 5000, collections: ["go to®"], kind: "banca" },
   { name: "WPP", location: "București", area: 4500, collections: ["osaka®"], kind: "birouri", architect: "Cumulus",
-    photos: photos("wpp", [[1400, 968], [1400, 933], [1400, 788], [933, 1400], [1400, 933]], "WPP, București") },
+    photos: photos("wpp", [[1400, 968], [1400, 933], [1400, 788]], "WPP, București") },
   { name: "Hotel Danubius", area: 4500, collections: ["arctic®"], kind: "hotel" },
   { name: "Alten & Kepler", area: 3500, collections: ["go to®"], kind: "birouri" },
   { name: "Vista Bank, filiale", area: 3000, collections: ["tivoli®"], kind: "banca" },
@@ -55,7 +55,7 @@ export const references: Reference[] = [
   { name: "BERD", area: 1000, collections: ["tivoli®"], kind: "banca" },
   { name: "Hotel Ursulețul", area: 1000, collections: ["balance®"], kind: "hotel" },
   { name: "Ceetrus", location: "București", area: 1000, collections: ["osaka®"], kind: "birouri", architect: "Wolfhouse Production",
-    photos: photos("ceetrus", [[667, 1000], [650, 433], [1000, 697], [1000, 1000], [1400, 788]], "Ceetrus, București") },
+    photos: photos("ceetrus", [[667, 1000], [650, 433], [1000, 697]], "Ceetrus, București") },
   { name: "GLO Marine", area: 1000, collections: ["tivoli®"], kind: "birouri" },
   { name: "Ascendia", area: 1000, collections: ["snowfall®"], kind: "birouri" },
   { name: "Frigotehnica", area: 1000, collections: ["standing stones®"], kind: "industrie" },
@@ -69,7 +69,7 @@ export const references: Reference[] = [
   { name: "Librăriile Cărturești", area: 1000, collections: ["go to®"], kind: "retail" },
   { name: "Compas", area: 1000, collections: ["tivoli®"], kind: "birouri" },
   { name: "Caimmo", location: "București", area: 1000, collections: ["alaska®"], kind: "birouri", architect: "Georgia Cristea",
-    photos: photos("caimmo", [[1050, 1400], [1050, 1400], [1050, 1400], [1400, 788], [1050, 1400]], "Caimmo, București") },
+    photos: photos("caimmo", [[1050, 1400], [1050, 1400], [1050, 1400]], "Caimmo, București") },
   { name: "Nexus", area: 1000, collections: ["osaka®"], kind: "birouri" },
 ];
 
