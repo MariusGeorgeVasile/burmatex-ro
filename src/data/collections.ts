@@ -6,7 +6,7 @@ export type FamilyKey = "multilevel" | "loop" | "cut" | "barrier" | "fibre" | "e
 export type Carbon = "neutral" | "low";
 
 import media from "./media.json";
-import { attributes, priceListTech, type DesignKey, type Doc, type PriceTier, type SectorKey } from "./attributes";
+import { attributes, catalogTech, priceListTech, type DesignKey, type Doc, type PriceTier, type SectorKey } from "./attributes";
 
 export type Swatch = { name: string; code?: string; group?: string; img: string; hex: string; family: ColourFamily };
 export type Room = { img: string; alt?: string; w: number; h: number };
@@ -96,6 +96,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2026/07/surface-story%C2%AE-brochure-optimised.pdf") },
       { label: "Paletar", href: u("2026/07/Burmatex-surface-story-shade-card-1.pdf") },
     ],
+    gwp: "3,71", recycled: "72,7%",
     source: p("surface-story-carpet-tiles"),
   },
   {
@@ -109,6 +110,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2025/10/surface-trace-brochure-250x250mm-ENG-Nov-2025-optimised.pdf") },
       { label: "Paletar", href: u("2025/10/Burmatex-surface-trace-shade-card.pdf") },
     ],
+    gwp: "3,71", recycled: "72,7%",
     source: p("surface-trace-carpet-tiles"),
   },
   {
@@ -155,6 +157,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2025/05/snowfall-ebrochure-october-2025.pdf") },
       { label: "Paletar", href: u("2025/05/snowfall-digital-shade-card-2024-07.pdf") },
     ],
+    gwp: "3,39", recycled: "72,2%",
     source: p("snowfall-carpet-tiles"),
   },
   {
@@ -168,6 +171,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2025/10/alaska-brochure-250x250mm-ENG-Sep-2025-optimised.pdf") },
       { label: "Paletar", href: u("2025/05/alaska-2024-carpet-tiles-shade-card.pdf") },
     ],
+    gwp: "3,42", recycled: "74,7%",
     source: p("alaska-carpet-tiles"),
   },
   {
@@ -181,6 +185,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2025/05/osaka-brochure-250x250mm-ENG-Oct-2025-optimised.pdf") },
       { label: "Paletar", href: u("2025/05/osaka-carpet-tiles-shade-card.pdf") },
     ],
+    gwp: "3,55", recycled: "72,3%",
     source: p("osaka-carpet-tiles"),
   },
   {
@@ -227,6 +232,7 @@ const base: BaseCollection[] = [
       { label: "Broșură", href: u("2025/07/tivoli-mist-brochure-2026-01.pdf") },
       { label: "Paletar", href: u("2025/07/tivoli-mist-carpet-tiles-planks-shade-card-burmatex-2024-02.pdf") },
     ],
+    gwp: "3,10", recycled: "74,0%",
     source: p("tivoli-mist-carpet-tiles"),
   },
   {
@@ -320,6 +326,11 @@ export const collections: Collection[] = base.map(c => {
     if (!has("Reacție la foc")) specs.push(["Reacție la foc", t.fire]);
     specs.push(["Ambalare", `${String(t.boxM2).replace(".", ",")} m² / cutie${c.family === "fibre" || c.family === "entrance" ? " (dale)" : ""}`]);
   }
+  const k = catalogTech[c.slug];
+  if (k?.lc) specs.push(["Clasă de confort (EN 1307)", k.lc]);
+  if (k?.voc) specs.push(["Emisii VOC", k.voc]);
+  if (k?.c2c && !specs.some(([l]) => l.startsWith("Certificare"))) specs.push(["Certificare fir", `Cradle to Cradle® Material Health ${k.c2c}`]);
+  if (k?.energy) specs.push(["Energie la producție", "100% regenerabilă"]);
   if (!has("Garanție declarată")) specs.push(["Garanție declarată", "15 ani, în condițiile producătorului (Heavy Contract)"]);
   return { ...c, ...a, specs, pileGm2: a.pileGm2 ?? t?.pileGm2, docs, swatches: m.colours, rooms, image: rooms[0]?.img ?? c.image, tile: m.colours[0]?.img ?? c.tile };
 });

@@ -683,3 +683,128 @@ main h2 > span { color: #77736d; }
 .official-note { padding: 14px 18px; border-left: 2px solid var(--accent); background: var(--warm); color: var(--ink) !important; font-size: 14px !important; }
 .footer-about .official-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--ink); border-bottom: 1px solid var(--line); }
 @media (max-width: 640px) { .official-bar { font-size: 10px; } .official-bar .site-nav-inner { width: calc(100% - 32px); padding: 6px 0; } }
+
+/* ——— Catalogue pages: InsightFLOOR catalogue style (cream, bronze, light Jost) ——— */
+.cat { --cream: #f3efe8; --bronze: #8a6a45; --bronze-dark: #6b4f2f; --cat-line: #ddd5c8; background: var(--cream); }
+.cat-shell { width: min(1180px, calc(100% - 96px)); margin-inline: auto; }
+.cat-head { display: flex; gap: 28px; align-items: baseline; padding-top: 36px; margin-bottom: 70px; font-size: 11px; color: var(--soft-ink); }
+.cat-head span:first-child { min-width: 22px; color: var(--ink); }
+.cat-kicker { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; font-size: 10.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--bronze); }
+.cat-kicker span { width: 36px; height: 1px; background: var(--bronze); }
+.cat h1, .cat h2 { margin: 0; font: 300 clamp(44px, 5.4vw, 76px)/1.05 "Jost", sans-serif; letter-spacing: -.035em; color: var(--ink); }
+.cat h2 { font-size: clamp(36px, 4.4vw, 60px); }
+.cat-lead { max-width: 760px; margin: 28px 0 0; font-size: 16px; line-height: 1.8; color: #4d4945; }
+.cat-intro { padding-bottom: 60px; }
+.cat-section { padding-bottom: 90px; border-bottom: 1px solid var(--cat-line); }
+.cat-section .cat-head { margin-bottom: 50px; }
+.cat-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 60px; margin-top: 34px; align-items: start; }
+.cat-cols p { font-size: 14.5px; line-height: 1.8; color: #4d4945; margin: 0 0 16px; }
+.cat-cols .cat-lead { margin-top: 0; }
+.cat-bullets { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 14.5px; }
+.cat-bullets li { padding-left: 16px; position: relative; }
+.cat-bullets li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 1px; background: var(--bronze); }
+.cat-key { padding: 24px 26px; border-top: 1px solid var(--bronze); background: rgba(255,255,255,.4); }
+.cat-key h3, .cat-h3 { margin: 0 0 10px; font: 400 22px/1.2 "Jost", sans-serif; }
+.cat-key ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; font-weight: 600; font-size: 14px; }
+.cat-key ul span { display: inline-block; width: 26px; color: var(--bronze); font-size: 18px; }
+.cat-small { font-size: 12px; color: var(--soft-ink); line-height: 1.7; }
+.cat-link { display: inline-flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--bronze); color: var(--ink); font-size: 12.5px; font-weight: 600; }
+.cat-link svg { width: 15px; height: 15px; color: var(--bronze); }
+.cat-link small { color: var(--soft-ink); font-weight: 500; }
+.cat-link:hover { color: var(--bronze-dark); }
+.cat-actions { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: auto; padding-top: 16px; }
+/* hub */
+.cat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 50px 28px; padding-bottom: 50px; }
+.cat-card { display: flex; flex-direction: column; }
+.cat-cover { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: #e7e0d4; }
+.cat-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
+.cat-card:hover .cat-cover img { transform: scale(1.03); }
+.cat-badge { position: absolute; left: 14px; top: 14px; padding: 6px 10px; background: var(--cream); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--bronze-dark); }
+.cat-card.pending .cat-cover img { filter: grayscale(.6) opacity(.75); }
+.cat-card-body { display: flex; flex-direction: column; flex: 1; padding-top: 20px; }
+.cat-card-body small { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--bronze); }
+.cat-card-body h2 { margin: 10px 0 10px; font-size: 28px; font-weight: 400; letter-spacing: -.02em; }
+.cat-card-body p { margin: 0 0 6px; font-size: 13.5px; line-height: 1.75; color: #4d4945; }
+.cat-note { padding-bottom: 70px; font-size: 13px; color: var(--soft-ink); }
+.cat-note a { border-bottom: 1px solid var(--bronze); color: var(--ink); }
+/* hero */
+.cat-hero { position: relative; min-height: 560px; display: flex; align-items: flex-end; overflow: hidden; background: #3a3631; }
+.cat-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cat-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(25,22,18,.78), rgba(25,22,18,.1) 70%); }
+.cat-hero .cat-shell { position: relative; z-index: 1; padding-block: 70px 60px; color: #fff; }
+.cat-hero h1 { color: #fff; font-size: clamp(54px, 7vw, 104px); }
+.cat-hero .cat-kicker { color: #e8d7bf; }
+.cat-hero .cat-kicker span { background: #e8d7bf; }
+.cat-hero p:not(.cat-kicker) { margin: 18px 0 0; font-size: 14px; color: #f1ece4; }
+/* family + photos */
+.cat-family { display: grid; gap: 26px; margin-top: 46px; }
+.cat-family-item { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 30px; align-items: start; }
+.cat-family-item img { width: 150px; height: 150px; object-fit: cover; }
+.cat-family-item h3 { margin: 4px 0 10px; font: 400 26px/1.1 "Jost", sans-serif; }
+.cat-family-item h3 sup { font-size: 11px; }
+.cat-family-item h3 span { color: var(--bronze); font-size: 18px; margin-left: 6px; }
+.cat-family-item p { margin: 0 0 12px; font-size: 14.5px; line-height: 1.7; color: #4d4945; }
+.cat-photos { display: grid; gap: 14px; margin-top: 50px; }
+.cat-photos.two { grid-template-columns: 1fr 1fr; }
+.cat-photos img, .cat-combo-photo img { width: 100%; height: auto; aspect-ratio: 1.3; object-fit: cover; }
+.cat-photos figcaption, .cat-combo-photo figcaption, .cat-inline-photo figcaption { margin-top: 8px; font-size: 11px; color: var(--soft-ink); }
+/* combos & tiles */
+.cat-combo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 40px; padding-top: 46px; margin-top: 46px; border-top: 1px solid var(--cat-line); }
+.cat-combo-text { grid-column: 1 / -1; margin: 0; max-width: 760px; font: 300 22px/1.45 "Jost", sans-serif; color: var(--ink); }
+.cat-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 14px; align-content: start; }
+.cat-tiles.small { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 10px; }
+.cat-tile { margin: 0; }
+.cat-tile img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.cat-tile figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin-top: 7px; font-size: 11.5px; line-height: 1.35; color: #4d4945; }
+.cat-tile figcaption b { color: var(--bronze); font-weight: 600; }
+.cat-tile figcaption sup { font-size: 8px; }
+.cat-tile figcaption small { width: 100%; color: var(--soft-ink); font-variant-numeric: tabular-nums; }
+.cat-tile.empty { aspect-ratio: 1; background: repeating-linear-gradient(45deg, transparent 0 6px, rgba(138,106,69,.08) 6px 7px); }
+.cat-bank-wrap { overflow-x: auto; margin-top: 36px; padding-bottom: 6px; }
+.cat-bank { border-collapse: separate; border-spacing: 8px; min-width: 760px; }
+.cat-bank th { font-size: 11px; font-weight: 700; color: var(--soft-ink); text-align: left; white-space: nowrap; padding-right: 8px; }
+.cat-bank thead th { color: var(--bronze); text-align: center; }
+.cat-bank td { width: 120px; vertical-align: top; }
+.cat-bank.om { min-width: 1900px; }
+.cat-bank.om td { width: 100px; }
+.cat-bank .cat-tile figcaption strong, .cat-bank .cat-tile figcaption sup { display: none; }
+.cat-two { margin-bottom: 18px; }
+.cat-two p { margin: 0 0 8px; font-size: 12px; font-weight: 700; color: var(--bronze-dark); }
+.cat-inline-photo { margin: 0; }
+.cat-inline-photo img { width: 100%; height: auto; }
+.cat-link-families { display: grid; gap: 30px; margin-top: 40px; }
+.cat-link-families h3 { margin: 0 0 12px; font: 400 22px/1.2 "Jost", sans-serif; }
+.cat-link-families .cat-tile figcaption strong { font-weight: 600; }
+.cat-related { padding-top: 50px; }
+.cat-chips { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.cat-download { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 26px; align-items: center; padding-block: 60px; }
+.cat-download > svg { width: 44px; height: 44px; color: var(--bronze); stroke-width: 1.2; }
+.cat-download h2 { font-size: 32px; }
+.cat-download p { margin: 6px 0 0; font-size: 14px; color: #4d4945; }
+.cat-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--cat-line); margin-bottom: 60px; }
+.cat-stats > div { padding: 26px 22px 26px 0; }
+.cat-stats strong { font: 300 52px/1 "Jost", sans-serif; color: var(--bronze); }
+.cat-stats p { margin: 12px 0 0; font-size: 12px; line-height: 1.6; color: #4d4945; max-width: 230px; }
+.cat-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 50px; margin-top: 44px; }
+.cat-points article { border-top: 1px solid var(--bronze); padding-top: 18px; }
+.cat-points h3 { margin: 0 0 10px; font: 400 23px/1.25 "Jost", sans-serif; }
+.cat-points p { margin: 0; font-size: 14px; line-height: 1.8; color: #4d4945; }
+.cat-net .cat-actions { margin-top: 26px; }
+@media (max-width: 960px) {
+  .cat-shell { width: calc(100% - 48px); }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .cat-cols, .cat-combo, .cat-points { grid-template-columns: 1fr; gap: 28px; }
+  .cat-stats { grid-template-columns: 1fr 1fr; }
+  .cat-download { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cat-shell { width: calc(100% - 32px); }
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-head { margin-bottom: 40px; }
+  .cat-family-item { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; }
+  .cat-family-item img { width: 96px; height: 96px; }
+  .cat-photos.two { grid-template-columns: 1fr; }
+  .cat-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .cat-combo-text { font-size: 19px; }
+  .cat-hero { min-height: 460px; }
+}

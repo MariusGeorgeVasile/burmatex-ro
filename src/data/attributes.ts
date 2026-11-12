@@ -107,3 +107,25 @@ export const priceListTech: Record<string, { pileGm2: number; boxM2: number; fir
   "chevrolay-50": { pileGm2: 1490, boxM2: 5, fire: "Bfl-s1 (dale) / Efl-s1 (rulou)" },
   armour: { pileGm2: 920, boxM2: 4, fire: "Bfl-s1" },
 };
+
+// From the InsightFLOOR Burmatex catalogue (October 2026): comfort class (EN 1307), VOC emissions,
+// renewable energy in production and Cradle to Cradle yarn certificate.
+export const catalogTech: Record<string, { lc?: string; voc?: string; energy?: boolean; c2c?: string }> = {
+  "surface-memory": { lc: "LC1", voc: "M1", energy: true, c2c: "Silver" },
+  "surface-story": { lc: "LC1", voc: "A+ / M1", c2c: "Silver" },
+  "surface-trace": { lc: "LC1", voc: "A+ / M1", c2c: "Silver" },
+  arctic: { lc: "LC1", voc: "A+ / M1", c2c: "Gold" },
+  rocklines: { lc: "LC1", voc: "A+ / M1", c2c: "Silver" },
+  threads: { lc: "LC1", voc: "A+ / M1", energy: true },
+  "standing-stones": { lc: "LC1", voc: "A+ / M1", c2c: "Silver" },
+  snowfall: { lc: "LC2", voc: "A+ / M1", c2c: "Silver" },
+  balance: { lc: "LC2", voc: "A+ / M1", c2c: "Silver" },
+  alaska: { lc: "LC2", voc: "A+ / M1", energy: true },
+  osaka: { lc: "LC2", voc: "A+ / M1", c2c: "Silver" },
+  tivoli: { lc: "LC2", voc: "A+ / M1", energy: true },
+  "tivoli-mist": { lc: "LC2", voc: "A+ / M1", energy: true },
+  "go-to": { lc: "LC1", voc: "A+ / M1", energy: true },
+  armour: { lc: "LC3", voc: "A+ / M1", energy: true },
+  "grimebuster-50": { energy: true },
+  "chevrolay-50": { energy: true },
+};

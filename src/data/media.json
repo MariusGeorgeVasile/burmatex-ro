@@ -170,73 +170,85 @@
     "name": "Bamboo Wood",
     "img": "/img/c/armour/mocheta-dale-armour-bamboo-wood.webp",
     "hex": "#806845",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "36305"
    },
    {
     "name": "Black Magnet",
     "img": "/img/c/armour/mocheta-dale-armour-black-magnet.webp",
     "hex": "#262626",
-    "family": "negru"
+    "family": "negru",
+    "code": "36303"
    },
    {
     "name": "Burnt Terracotta",
     "img": "/img/c/armour/mocheta-dale-armour-burnt-terracotta.webp",
     "hex": "#59341e",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "36308"
    },
    {
     "name": "Cactus Thorn",
     "img": "/img/c/armour/mocheta-dale-armour-cactus-thorn.webp",
     "hex": "#344c29",
-    "family": "verde"
+    "family": "verde",
+    "code": "36312"
    },
    {
     "name": "Coastline Azure",
     "img": "/img/c/armour/mocheta-dale-armour-coastline-azure.webp",
     "hex": "#272b3f",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36310"
    },
    {
     "name": "Leaden Grey",
     "img": "/img/c/armour/mocheta-dale-armour-leaden-grey.webp",
     "hex": "#55493f",
-    "family": "gri"
+    "family": "gri",
+    "code": "36306"
    },
    {
     "name": "Onyx Shield",
     "img": "/img/c/armour/mocheta-dale-armour-onyx-shield.webp",
     "hex": "#232323",
-    "family": "negru"
+    "family": "negru",
+    "code": "36304"
    },
    {
     "name": "Ruby Ground",
     "img": "/img/c/armour/mocheta-dale-armour-ruby-ground.webp",
     "hex": "#4c1919",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "36311"
    },
    {
     "name": "Saltwater Blue",
     "img": "/img/c/armour/mocheta-dale-armour-saltwater-blue.webp",
     "hex": "#2c395c",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36309"
    },
    {
     "name": "Silver Nickel",
     "img": "/img/c/armour/mocheta-dale-armour-silver-nickel.webp",
     "hex": "#464643",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "36302"
    },
    {
     "name": "Titanium Ore",
     "img": "/img/c/armour/mocheta-dale-armour-titanium-ore.webp",
     "hex": "#5d5a59",
-    "family": "gri"
+    "family": "gri",
+    "code": "36301"
    },
    {
     "name": "Tungsten Stone",
     "img": "/img/c/armour/mocheta-dale-armour-tungsten-stone.webp",
     "hex": "#3a332c",
-    "family": "gri"
+    "family": "gri",
+    "code": "36307"
    }
   ],
   "rooms": [
@@ -259,336 +271,384 @@
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-apricot-beam.webp",
     "hex": "#ba8149",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35415"
    },
    {
     "name": "Aqua Skyline",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-aqua-skyline.webp",
     "hex": "#87a6a5",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35409"
    },
    {
     "name": "Block Blue",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-block-blue.webp",
     "hex": "#3f6287",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35410"
    },
    {
     "name": "Brown Leaf",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-brown-leaf.webp",
     "hex": "#615348",
-    "family": "verde"
+    "family": "verde",
+    "code": "35404"
    },
    {
     "name": "Concrete Wood",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-concrete-wood.webp",
     "hex": "#7d786d",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35402"
    },
    {
     "name": "Crisp Air",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-crisp-air.webp",
     "hex": "#a9a9a9",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35405"
    },
    {
     "name": "Dark Shadow",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-dark-shadow.webp",
     "hex": "#2d292b",
-    "family": "negru"
+    "family": "negru",
+    "code": "35412"
    },
    {
     "name": "District Red",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-district-red.webp",
     "hex": "#9c3232",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35416"
    },
    {
     "name": "Dusk Glow",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-dusk-glow.webp",
     "hex": "#c1b365",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35414"
    },
    {
     "name": "Glazed Tone",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-glazed-tone.webp",
     "hex": "#897458",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "35403"
    },
    {
     "name": "Highline Moss",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-highline-moss.webp",
     "hex": "#6f783d",
-    "family": "verde"
+    "family": "verde",
+    "code": "35413"
    },
    {
     "name": "Light Neutral",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-light-neutral.webp",
     "hex": "#b1aa9b",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35401"
    },
    {
     "name": "Lilac View",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-lilac-view.webp",
     "hex": "#747280",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35411"
    },
    {
     "name": "Morning Harbour",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-morning-harbour.webp",
     "hex": "#63686c",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35407"
    },
    {
     "name": "Steel Effect",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-steel-effect.webp",
     "hex": "#848484",
-    "family": "gri"
+    "family": "gri",
+    "code": "35406"
    },
    {
     "name": "Tower Metal",
     "group": "balance grid®",
     "img": "/img/c/balance/mocheta-dale-balance-grid-tower-metal.webp",
     "hex": "#646464",
-    "family": "gri"
+    "family": "gri",
+    "code": "35408"
    },
    {
     "name": "Apricot Mural",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-apricot-mural.webp",
     "hex": "#b17843",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35515"
    },
    {
     "name": "Aqua Vapour",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-aqua-vapour.webp",
     "hex": "#7f9e9d",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35509"
    },
    {
     "name": "City Metal",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-city-metal.webp",
     "hex": "#5b5b5b",
-    "family": "gri"
+    "family": "gri",
+    "code": "35508"
    },
    {
     "name": "Clean Air",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-clean-air.webp",
     "hex": "#a2a2a2",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35505"
    },
    {
     "name": "Dawn Glow",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-dawn-glow.webp",
     "hex": "#b6a95f",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35514"
    },
    {
     "name": "Dewy Harbour",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-dewy-harbour.webp",
     "hex": "#5b5f64",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35507"
    },
    {
     "name": "Fallen Leaf",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-fallen-leaf.webp",
     "hex": "#5c5047",
-    "family": "verde"
+    "family": "verde",
+    "code": "35504"
    },
    {
     "name": "Golden Tone",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-golden-tone.webp",
     "hex": "#947b5c",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35503"
    },
    {
     "name": "Greenery Moss",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-greenery-moss.webp",
     "hex": "#727a40",
-    "family": "verde"
+    "family": "verde",
+    "code": "35513"
    },
    {
     "name": "Lilac Rush",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-lilac-rush.webp",
     "hex": "#817f8c",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35511"
    },
    {
     "name": "Night Shadow",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-night-shadow.webp",
     "hex": "#453f42",
-    "family": "negru"
+    "family": "negru",
+    "code": "35512"
    },
    {
     "name": "Reflection Blue",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-reflection-blue.webp",
     "hex": "#3e597c",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35510"
    },
    {
     "name": "Shaded Wood",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-shaded-wood.webp",
     "hex": "#7b766b",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "35502"
    },
    {
     "name": "Soft Neutral",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-soft-neutral.webp",
     "hex": "#b1aa9c",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35501"
    },
    {
     "name": "Stone Effect",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-stone-effect.webp",
     "hex": "#7b7b7b",
-    "family": "gri"
+    "family": "gri",
+    "code": "35506"
    },
    {
     "name": "Vibrant Red",
     "group": "balance ratio®",
     "img": "/img/c/balance/mocheta-dale-balance-ratio-vibrant-red.webp",
     "hex": "#993736",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35516"
    },
    {
     "name": "Alfresco Moss",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-alfresco-moss.webp",
     "hex": "#757e45",
-    "family": "verde"
+    "family": "verde",
+    "code": "35613"
    },
    {
     "name": "Apricot Shine",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-apricot-shine.webp",
     "hex": "#bd834c",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35615"
    },
    {
     "name": "Aqua Space",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-aqua-space.webp",
     "hex": "#8aa8a7",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35609"
    },
    {
     "name": "Autumn Leaf",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-autumn-leaf.webp",
     "hex": "#63574b",
-    "family": "verde"
+    "family": "verde",
+    "code": "35604"
    },
    {
     "name": "Calm Neutral",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-calm-neutral.webp",
     "hex": "#b7b0a0",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35601"
    },
    {
     "name": "Central Shadow",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-central-shadow.webp",
     "hex": "#302c2d",
-    "family": "negru"
+    "family": "negru",
+    "code": "35612"
    },
    {
     "name": "Chrome Effect",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-chrome-effect.webp",
     "hex": "#8a8a8a",
-    "family": "gri"
+    "family": "gri",
+    "code": "35606"
    },
    {
     "name": "Fresh Air",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-fresh-air.webp",
     "hex": "#ababab",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35605"
    },
    {
     "name": "Lilac Zone",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-lilac-zone.webp",
     "hex": "#767481",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35611"
    },
    {
     "name": "River Blue",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-river-blue.webp",
     "hex": "#43668c",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35610"
    },
    {
     "name": "Smoky Wood",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-smoky-wood.webp",
     "hex": "#827c70",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "35602"
    },
    {
     "name": "Spark Red",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-spark-red.webp",
     "hex": "#a53534",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "35616"
    },
    {
     "name": "Sunny Glow",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-sunny-glow.webp",
     "hex": "#c3b667",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "35614"
    },
    {
     "name": "Tranquil Harbour",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-tranquil-harbour.webp",
     "hex": "#686c71",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "35607"
    },
    {
     "name": "Twilight Metal",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-twilight-metal.webp",
     "hex": "#676767",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "35608"
    },
    {
     "name": "Wicker Tone",
     "group": "balance scale®",
     "img": "/img/c/balance/mocheta-dale-balance-scale-wicker-tone.webp",
     "hex": "#897559",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "35603"
    }
   ],
   "rooms": [
@@ -1435,97 +1495,113 @@
     "name": "Amethyst",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-amethyst.webp",
     "hex": "#a8a7af",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "36113"
    },
    {
     "name": "Burnish",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-burnish.webp",
     "hex": "#97847a",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "36112"
    },
    {
     "name": "Causeway",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-causeway.webp",
     "hex": "#888888",
-    "family": "gri"
+    "family": "gri",
+    "code": "36102"
    },
    {
     "name": "Climate",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-climate.webp",
     "hex": "#b7b3ab",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "36105"
    },
    {
     "name": "Fragment",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-fragment.webp",
     "hex": "#a2977e",
-    "family": "gri"
+    "family": "gri",
+    "code": "36107"
    },
    {
     "name": "Habitat",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-habitat.webp",
     "hex": "#b8b49a",
-    "family": "verde"
+    "family": "verde",
+    "code": "36110"
    },
    {
     "name": "Imprint",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-imprint.webp",
     "hex": "#404041",
-    "family": "gri"
+    "family": "gri",
+    "code": "36104"
    },
    {
     "name": "Marble",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-marble.webp",
     "hex": "#ababab",
-    "family": "gri"
+    "family": "gri",
+    "code": "36101"
    },
    {
     "name": "Mountain",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-mountain.webp",
     "hex": "#787470",
-    "family": "gri"
+    "family": "gri",
+    "code": "36103"
    },
    {
     "name": "Oceanic",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-oceanic.webp",
     "hex": "#9eabb4",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36114"
    },
    {
     "name": "Riptide",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-riptide.webp",
     "hex": "#546370",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36115"
    },
    {
     "name": "Serpentine",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-serpentine.webp",
     "hex": "#596666",
-    "family": "verde"
+    "family": "verde",
+    "code": "36116"
    },
    {
     "name": "Sunlit",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-sunlit.webp",
     "hex": "#c5bfa2",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "36109"
    },
    {
     "name": "Tectonic",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-tectonic.webp",
     "hex": "#b9b2a5",
-    "family": "gri"
+    "family": "gri",
+    "code": "36106"
    },
    {
     "name": "Terrain",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-terrain.webp",
     "hex": "#836e54",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "36108"
    },
    {
     "name": "Uplift",
     "img": "/img/c/rocklines/mocheta-dale-rocklines-uplift.webp",
     "hex": "#c8ab95",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "36111"
    }
   ],
   "rooms": [
@@ -1695,73 +1771,85 @@
     "name": "Clouded",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-clouded.webp",
     "hex": "#878b88",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "31406"
    },
    {
     "name": "Flashback",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-flashback.webp",
     "hex": "#999997",
-    "family": "gri"
+    "family": "gri",
+    "code": "31411"
    },
    {
     "name": "Focus",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-focus.webp",
     "hex": "#a49c90",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "31404"
    },
    {
     "name": "Halcyon",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-halcyon.webp",
     "hex": "#725c56",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "31409"
    },
    {
     "name": "Nostalgia",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-nostalgia.webp",
     "hex": "#676157",
-    "family": "verde"
+    "family": "verde",
+    "code": "31403"
    },
    {
     "name": "Pathway",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-pathway.webp",
     "hex": "#767676",
-    "family": "gri"
+    "family": "gri",
+    "code": "31402"
    },
    {
     "name": "Snapshot",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-snapshot.webp",
     "hex": "#454544",
-    "family": "negru"
+    "family": "negru",
+    "code": "31408"
    },
    {
     "name": "Tawny",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-tawny.webp",
     "hex": "#554b41",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "31405"
    },
    {
     "name": "Tinted",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-tinted.webp",
     "hex": "#444546",
-    "family": "negru"
+    "family": "negru",
+    "code": "31412"
    },
    {
     "name": "Whisper",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-whisper.webp",
     "hex": "#c3c4bd",
-    "family": "gri-deschis"
+    "family": "gri-deschis",
+    "code": "31407"
    },
    {
     "name": "Wonder",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-wonder.webp",
     "hex": "#94928b",
-    "family": "gri"
+    "family": "gri",
+    "code": "31401"
    },
    {
     "name": "Tactile",
     "img": "/img/c/surface-memory/mocheta-dale-surface-memory-tactile.webp",
     "hex": "#9a978c",
-    "family": "gri"
+    "family": "gri",
+    "code": "31410"
    }
   ],
   "rooms": [
@@ -1789,63 +1877,72 @@
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-base-blend.webp",
     "hex": "#616161",
-    "family": "gri"
+    "family": "gri",
+    "code": "36008"
    },
    {
     "name": "Base Mix",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-base-mix.webp",
     "hex": "#888179",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "36012"
    },
    {
     "name": "Base Pastel",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-base-pastel.webp",
     "hex": "#7f8779",
-    "family": "verde"
+    "family": "verde",
+    "code": "36005"
    },
    {
     "name": "Base Pigment",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-base-pigment.webp",
     "hex": "#707e90",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36004"
    },
    {
     "name": "Base Yellow",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-base-yellow.webp",
     "hex": "#89845a",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "36007"
    },
    {
     "name": "Connect Core",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-connect-core.webp",
     "hex": "#534f4d",
-    "family": "gri"
+    "family": "gri",
+    "code": "36002"
    },
    {
     "name": "Craft Mix",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-craft-mix.webp",
     "hex": "#a28478",
-    "family": "rosu-roz-mov"
+    "family": "rosu-roz-mov",
+    "code": "36010"
    },
    {
     "name": "Harmony Stitch",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-harmony-stitch.webp",
     "hex": "#656d7d",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36001"
    },
    {
     "name": "Pigment Tide",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-pigment-tide.webp",
     "hex": "#4d627e",
-    "family": "albastru"
+    "family": "albastru",
+    "code": "36003"
    },
    {
     "name": "Base",
@@ -1957,21 +2054,24 @@
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-rust-mix.webp",
     "hex": "#9a7455",
-    "family": "galben-portocaliu"
+    "family": "galben-portocaliu",
+    "code": "36011"
    },
    {
     "name": "Shadow Blend",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-shadow-blend.webp",
     "hex": "#464243",
-    "family": "negru"
+    "family": "negru",
+    "code": "36006"
    },
    {
     "name": "Twine Mix",
     "group": "threads®",
     "img": "/img/c/threads/mocheta-dale-threads-twine-mix.webp",
     "hex": "#87776c",
-    "family": "bej-maro"
+    "family": "bej-maro",
+    "code": "36009"
    }
   ],
   "rooms": [
@@ -2352,84 +2452,84 @@
   "colours": [
    {
     "name": "Cool Storm",
-    "code": "34502",
+    "code": "34502 dală · 34602 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-cool-storm.webp",
     "hex": "#4c5054",
     "family": "gri"
    },
    {
     "name": "Norse Grey",
-    "code": "34503",
+    "code": "34503 dală · 34603 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-norse-grey.webp",
     "hex": "#7a7a7a",
     "family": "gri"
    },
    {
     "name": "Glacial Grey",
-    "code": "34504",
+    "code": "34504 dală · 34604 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-glacial-grey.webp",
     "hex": "#ababac",
     "family": "gri"
    },
    {
     "name": "Blue Water",
-    "code": "34505",
+    "code": "34505 dală · 34605 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-blue-water.webp",
     "hex": "#5d626f",
     "family": "albastru"
    },
    {
     "name": "Seal Grey",
-    "code": "34510",
+    "code": "34510 dală · 34610 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-seal-grey.webp",
     "hex": "#7b7774",
     "family": "gri"
    },
    {
     "name": "Hail Stone",
-    "code": "34511",
+    "code": "34511 dală · 34611 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-hail-stone.webp",
     "hex": "#aaa6a3",
     "family": "gri-deschis"
    },
    {
     "name": "Oslo Fog",
-    "code": "34512",
+    "code": "34512 dală · 34612 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-oslo-fog.webp",
     "hex": "#b6b2a9",
     "family": "gri-deschis"
    },
    {
     "name": "Dark Horizon",
-    "code": "34513",
+    "code": "34513 dală · 34613 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-dark-horizon.webp",
     "hex": "#313133",
     "family": "albastru"
    },
    {
     "name": "First Light",
-    "code": "34514",
+    "code": "34514 dală · 34614 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-first-light.webp",
     "hex": "#bca492",
     "family": "gri-deschis"
    },
    {
     "name": "Malmo Coast",
-    "code": "34515",
+    "code": "34515 dală · 34615 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-malmo-coast.webp",
     "hex": "#95a19b",
     "family": "gri"
    },
    {
     "name": "Snow Fox",
-    "code": "34516",
+    "code": "34516 dală · 34616 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-snow-fox.webp",
     "hex": "#afa99c",
     "family": "gri-deschis"
    },
    {
     "name": "Drift Wood",
-    "code": "34517",
+    "code": "34517 dală · 34617 lamelă",
     "img": "/img/c/arctic/mocheta-dale-arctic-drift-wood.webp",
     "hex": "#595149",
     "family": "bej-maro"

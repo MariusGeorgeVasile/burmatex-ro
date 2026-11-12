@@ -104,6 +104,12 @@ ${collections.map(line).join("\n")}
 Peste 2,5 milioane m² de mochetă Burmatex livrați și instalați în România. Lista completă: ${domain}/proiecte
 ${references.map(r => `- ${r.name}${r.location ? `, ${r.location}` : ""}: ${formatArea(r)}, ${r.collections.join(", ")}`).join("\n")}
 
+## Cataloage în limba română
+- [Cataloage și broșuri](${domain}/cataloage): catalogul de produse Burmatex 2026 (PDF), ghidul Design Connection™ (PDF), catalogul go to® (PDF).
+- [Design Connection™](${domain}/cataloage/design-connection): combinarea surface trace®, surface story® și surface memory®; culori conectate, culori în contrast, banca de culori.
+- [Organic Merge™ și Colour Link™](${domain}/cataloage/organic-merge-colour-link): familii de culori comune între balance®, standing stones®, snowfall®, rocklines® și threads®.
+- [Principiile de sustenabilitate Burmatex](${domain}/cataloage/principii-sustenabilitate): Net Zero, fir cu amprentă negativă de carbon, BioBase®, 100% energie regenerabilă, Zero Landfill, EPD.
+
 ## Parteneri
 - [Devino dealer Burmatex](${domain}/devino-dealer): program pentru magazine de pardoseli, firme de montaj și amenajări din toată România.
 - [Contact, mostre și oferte](${domain}/contact)
