@@ -198,7 +198,7 @@ export function OrganicMergePage() {
         <article><h3>EPD pe fiecare produs</h3><p>Declarații de mediu specifice produsului, pe tot ciclul de viață (A1–D), verificate de terți.</p></article>
         <article><h3>Serviciul de preluare</h3><p>Dalele uzate primesc o nouă viață, de exemplu la organizații comunitare care au nevoie de pardoseală ieftină, astfel încât nicio dală să nu ajungă la groapa de gunoi.</p></article>
       </div>
-      <div className="cat-actions">{["balance", "standing-stones", "snowfall", "rocklines", "threads"].map(s => <Link key={s} href={collectionPath(s)} className="cat-link">{collectionBySlug[s].name} <ArrowRight /></Link>)}</div>
+      <div className="cat-actions"><a href="/documente/organic-merge-colour-link-brosura.pdf" className="cat-link" download><Download /> Originalul Burmatex (PDF, engleză)</a>{["balance", "standing-stones", "snowfall", "rocklines", "threads"].map(s => <Link key={s} href={collectionPath(s)} className="cat-link">{collectionBySlug[s].name} <ArrowRight /></Link>)}</div>
       <p className="cat-small">Sursa: Burmatex® Organic Merge™ & Colour Link™, mai 2025. Adaptare în limba română: InsightFLOOR, dealer oficial Burmatex® în România.</p>
     </section>
     <DealerCTA title="Vreți o combinație" accent="pentru planul dumneavoastră?" text="Trimiteți-ne planul și zonele. Propunem combinația Organic Merge™ sau Colour Link™ și vă trimitem mostrele." to="/contact?tip=proiect" button="Trimiteți planul" label="Consultanță de design" />
@@ -269,7 +269,7 @@ export function SustainabilityPage() {
       <CatHead n="05" label="dincolo de Net Zero" />
       <h2>Net Zero e un pas.<br />Nu destinația.</h2>
       <p className="cat-lead">Strategia Beyond Net Zero continuă drumul spre produse cu amprentă negativă de carbon. Investițiile în știința materialelor, utilaje și procese noi sunt ghidate de principiile de sustenabilitate.</p>
-      <div className="cat-actions"><Link href="/selector-mocheta" className="cat-link">Alegeți colecții cu amprentă neutră în selector <ArrowRight /></Link><Link href="/de-ce-burmatex" className="cat-link">De ce Burmatex <ArrowUpRight /></Link></div>
+      <div className="cat-actions"><Link href="/selector-mocheta" className="cat-link">Alegeți colecții cu amprentă neutră în selector <ArrowRight /></Link><a href="/cataloage/burmatex-sustainability-principles-en.pdf" className="cat-link" download><Download /> Originalul Burmatex (PDF, engleză)</a><Link href="/de-ce-burmatex" className="cat-link">De ce Burmatex <ArrowUpRight /></Link></div>
       <p className="cat-small">Sursa: Burmatex® Sustainability Principles (septembrie 2024). Adaptare în limba română: InsightFLOOR, dealer oficial Burmatex® în România.</p>
     </section>
     <DealerCTA title="Aveți nevoie de EPD-uri" accent="pentru BREEAM, LEED sau WELL?" text="Vă trimitem declarațiile de mediu și datele de carbon pentru colecțiile din proiect." to="/contact?tip=proiect" button="Cereți documentația" label="Certificare verde" />
@@ -326,7 +326,7 @@ export function BiogenicPage() {
 
     <section className="cat-shell cat-section cat-net">
       <p className="cat-small">Sursa: Burmatex® Bio-genic yarn flooring collection, octombrie 2026. Adaptare în limba română: InsightFLOOR, dealer oficial Burmatex® în România.</p>
-      <div className="cat-actions"><Link href="/cataloage/principii-sustenabilitate" className="cat-link">Principiile de sustenabilitate <ArrowRight /></Link></div>
+      <div className="cat-actions"><a href="/documente/fir-biogenic-brosura.pdf" className="cat-link" download><Download /> Originalul Burmatex (PDF, engleză)</a><Link href="/cataloage/principii-sustenabilitate" className="cat-link">Principiile de sustenabilitate <ArrowRight /></Link></div>
     </section>
     <DealerCTA title="Mostre threads®, tivoli®" accent="și tivoli mist®." text="Vă trimitem mostrele colecțiilor cu fir bio-genic și datele EPD pentru proiect." to="/contact?tip=mostre&produs=tivoli" button="Cereți mostre" label="Fir bio-genic" />
   </div>;
@@ -365,7 +365,7 @@ export function WellPage() {
       <h2>Nouă cerințe,<br />un singur furnizor.</h2>
       <div className="cat-well">{wellFeatures.map(([n, t, d]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
       <p className="cat-small">Punctajul WELL al unui proiect se stabilește de evaluatorul acreditat. Documentele necesare (EPD, certificate de emisii) le primiți de la InsightFLOOR pentru colecțiile din proiect. Sursa: Burmatex® contribution to WELL Building Standard®. Adaptare în limba română: InsightFLOOR.</p>
-      <div className="cat-actions"><Link href="/mocheta-cladiri-birouri-noi" className="cat-link">Mochetă pentru clădiri de birouri noi <ArrowRight /></Link><Link href="/covoare-intrare" className="cat-link">Covoare de intrare <ArrowRight /></Link></div>
+      <div className="cat-actions"><a href="/documente/well-declaratie-burmatex.pdf" className="cat-link" download><Download /> Originalul Burmatex (PDF, engleză)</a><Link href="/mocheta-cladiri-birouri-noi" className="cat-link">Mochetă pentru clădiri de birouri noi <ArrowRight /></Link><Link href="/covoare-intrare" className="cat-link">Covoare de intrare <ArrowRight /></Link></div>
     </section>
     <DealerCTA title="Proiect WELL, BREEAM" accent="sau LEED?" text="Vă trimitem EPD-urile, certificatele de emisii și datele de carbon pentru colecțiile alese." to="/contact?tip=proiect" button="Cereți documentația" label="Certificare" />
   </div>;

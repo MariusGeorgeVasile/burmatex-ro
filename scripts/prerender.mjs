@@ -7,7 +7,7 @@ import { pathToFileURL } from "node:url";
 const root = new URL("..", import.meta.url).pathname;
 const dist = join(root, "dist");
 const server = await import(pathToFileURL(join(root, "dist-server/entry-server.js")).href);
-const { render, getMeta, allRoutes, collections, families, collectionPath, landings, generalFaqs, priceTiers, site, references, formatArea } = server;
+const { render, docsFor, getMeta, allRoutes, collections, families, collectionPath, landings, generalFaqs, priceTiers, site, references, formatArea } = server;
 const template = readFileSync(join(dist, "index.html"), "utf8");
 const domain = site.domain;
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -46,7 +46,7 @@ const imagesFor = path => {
   if (!c) return [];
   return [...c.rooms.map(r => [r.img, `Mochetă dale Burmatex ${c.name}`]), ...c.swatches.map(s => [s.img, `Mochetă dale Burmatex ${c.name}, nuanța ${s.name}`])];
 };
-const priority = p => (p === "/" ? "1.0" : p.endsWith("/fisa-tehnica") ? "0.6" : p.startsWith("/colectii/") ? "0.8" : "0.9");
+const priority = p => (p === "/" ? "1.0" : p.startsWith("/colectii/") ? "0.8" : "0.9");
 writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${allRoutes.map(p => `  <url><loc>${domain}${p}</loc><lastmod>${today}</lastmod><priority>${priority(p)}</priority>${imagesFor(p).map(([img, t]) => `<image:image><image:loc>${domain}${encodeURI(img)}</image:loc><image:title>${esc(t)}</image:title></image:image>`).join("")}</url>`).join("\n")}
@@ -130,11 +130,11 @@ Formate: ${c.formats.join(", ")}
 Nuanțe (${c.colours}): ${c.swatches.map(s => (s.code ? `${s.name} (${s.code})` : s.name)).join(", ")}
 Clasă de preț: ${priceTiers[c.priceTier].label}${c.inStock ? "\nDisponibil din stoc în România" : ""}
 ${c.specs.map(([k, v]) => `- ${k}: ${v}`).join("\n")}${c.recycled ? `\n- Conținut reciclat total: ${c.recycled}` : ""}${c.gwp ? `\n- GWP (EPD): ${c.gwp} kg CO2e` : ""}${c.impactDb ? `\n- Reducerea zgomotului de impact: ${c.impactDb} dB` : ""}
-Fișă tehnică în limba română: ${domain}${collectionPath(c.slug)}/fisa-tehnica
+Documente (PDF, original Burmatex în engleză; versiunea în română la cerere): ${docsFor(c).filter(d => d.pdf).map(d => `${d.label} ${domain}${d.href}`).join(" | ")}
 `).join("\n");
 writeFileSync(join(dist, "llms-full.txt"), `# ${site.name} — date complete despre produse
 
-Sursa datelor: fișele tehnice oficiale Burmatex, traduse în limba română de InsightFLOOR, dealer oficial Burmatex® în România. Valorile nepublicate de producător sunt omise.
+Sursa datelor: fișele tehnice oficiale Burmatex, preluate de InsightFLOOR, dealer oficial Burmatex® în România. Valorile nepublicate de producător sunt omise.
 
 ## Întrebări frecvente despre mocheta în dale
 ${generalFaqs.map(f => `### ${f.q}\n${f.a}`).join("\n\n")}

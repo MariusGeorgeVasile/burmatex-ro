@@ -1,5 +1,5 @@
 import { Link } from "../link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, FileText } from "lucide-react";
 import { DealerCTA, Label, usePageMeta } from "../components";
 import { adhesives, care, directions, stains, steps, storage, subfloorNo, subfloorNumbers, subfloorOk, technicalFaqs, tips, toc } from "../data/technical";
 
@@ -84,6 +84,7 @@ export default function TechnicalGuide() {
 
         <section className="tg-sources">
           <h3 className="sub">Documente</h3>
+          <div className="doc-list">{[["Ghid de pregătire a suportului", "/documente/ghid-pregatire-suport-burmatex.pdf"], ["Ghid de întreținere a mochetei în dale", "/documente/ghid-intretinere-burmatex.pdf"]].map(([l, h]) => <a key={h} href={h} download><FileText /><span>{l}</span><small>PDF · original Burmatex, engleză</small><Download /></a>)}<Link href="/contact?tip=documente"><FileText /><span>Ghidurile în limba română</span><small>la cerere</small><ArrowRight /></Link></div>
           <p className="cc-note">Fișa tehnică în limba română a fiecărei colecții este pe pagina colecției și în <Link href="/resurse">Resurse tehnice</Link>. Fișele tehnice Mapei și declarațiile de mediu le trimitem la cerere. Pentru condiții neobișnuite de șantier, consultați InsightFLOOR înainte de montaj.</p>
         </section>
       </div>

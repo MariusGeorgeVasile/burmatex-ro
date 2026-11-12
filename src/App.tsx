@@ -3,7 +3,6 @@ import { Route, Router, Switch, useLocation } from "wouter";
 import { Footer, Header } from "./components";
 import Home from "./pages/Home";
 import { CollectionPage, CollectionsPage } from "./pages/Collections";
-import TechSheetPage from "./pages/TechSheet";
 import DealerPage from "./pages/Dealer";
 import { AboutPage, ContactPage, ResourcesPage } from "./pages/Other";
 import NotFound from "./pages/NotFound";
@@ -59,7 +58,6 @@ function Site() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/colectii" component={CollectionsPage} />
-        <Route path="/colectii/:slug/fisa-tehnica">{params => <TechSheetPage slug={params.slug} />}</Route>
         <Route path="/colectii/:slug">{params => <CollectionPage slug={params.slug} />}</Route>
         <Route path="/selector-mocheta" component={SelectorPage} />
         <Route path="/proiecte" component={ProjectsPage} />
