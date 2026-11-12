@@ -94,7 +94,7 @@ export function getMeta(path: string): Meta {
     if (path === "/colectii") ld.push(itemList(collections, "Colecții de mochetă Burmatex"));
     if (path === "/proiecte") ld.push({ "@type": "ItemList", name: `Proiecte cu mochetă Burmatex în România (total ${TOTAL_M2} m²)`, numberOfItems: references.length, itemListElement: references.map((r, i) => ({ "@type": "ListItem", position: i + 1, name: `${r.name}${r.location ? `, ${r.location}` : ""} — ${formatArea(r)}, ${r.collections.join(", ")}` })) });
     if (path === "/devino-dealer") ld.push(faqPage(dealerFaqs));
-    if (path === "/ghid-tehnic") ld.push(faqPage(technicalFaqs), { "@type": "HowTo", name: "Cum se montează mocheta în dale", totalTime: "PT48H", supply: [{ "@type": "HowToSupply", name: "Adeziv tackifier (de exemplu F. Ball Styccobond F41)" }], tool: [{ "@type": "HowToTool", name: "Sfoară cu cretă" }, { "@type": "HowToTool", name: "Cutter" }], step: installSteps.map(([name, text], i) => ({ "@type": "HowToStep", position: i + 1, name, text })) });
+    if (path === "/ghid-tehnic") ld.push(faqPage(technicalFaqs), { "@type": "HowTo", name: "Cum se montează mocheta în dale", totalTime: "PT48H", supply: [{ "@type": "HowToSupply", name: "Adeziv de fixare Mapei Ultrabond Eco Fix" }], tool: [{ "@type": "HowToTool", name: "Sfoară cu cretă" }, { "@type": "HowToTool", name: "Cutter" }], step: installSteps.map(([name, text], i) => ({ "@type": "HowToStep", position: i + 1, name, text })) });
     if (path === "/") ld.push(faqPage(generalFaqs.slice(0, 3)));
     return { title: stat.title, description: stat.description, jsonLd: ld, image: "/img/c/go-to/mocheta-dale-go-to-ambient-2.webp" };
   }

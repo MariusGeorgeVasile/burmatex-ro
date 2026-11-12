@@ -43,11 +43,11 @@ export default function TechnicalGuide() {
 
         <section>
           <Head id="adezivi" n="04" title="Adezivi și fixare" accent="Fixare, nu lipire definitivă." />
-          {[adhesives.tiles, adhesives.sheet].map(a => <div key={a.title} className="tg-adhesive"><h3>{a.title}</h3><p>{a.text}</p><p className="tg-products"><span>Recomandați de Burmatex:</span> {a.products.join(" · ")}</p></div>)}
+          {[adhesives.tiles, adhesives.sheet].map(a => <div key={a.title} className="tg-adhesive"><h3>{a.title}</h3><p>{a.text}</p><p className="tg-products"><span>Adeziv:</span> {a.products.join(" · ")}</p></div>)}
           <dl className="landing-bullets">{adhesives.steps.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
           <h3 className="sub">Montaj fără adeziv</h3>
           <dl className="landing-bullets">{adhesives.free.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
-          <p className="cc-note">Adezivii echivalenți disponibili în România se confirmă cu InsightFLOOR pentru fiecare proiect, în funcție de suport și de colecție.</p>
+          <p className="cc-note">Folosim exclusiv adezivi Mapei, disponibili în toată România. Fișa tehnică Mapei a produsului are prioritate; consumul și timpii depind de suport, temperatură și umiditate.</p>
         </section>
 
         <section>
