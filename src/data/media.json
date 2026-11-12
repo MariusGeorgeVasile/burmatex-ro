@@ -734,11 +734,6 @@
     "img": "/img/c/chevrolay-50/mocheta-dale-chevrolay-50-ambient-1.webp",
     "w": 800,
     "h": 800
-   },
-   {
-    "img": "/img/c/chevrolay-50/mocheta-dale-chevrolay-50-ambient-2.webp",
-    "w": 1600,
-    "h": 463
    }
   ]
  },
@@ -1181,24 +1176,6 @@
     "alt": "Mochetă în dale go to® într-un birou",
     "w": 889,
     "h": 1000
-   },
-   {
-    "img": "/img/c/go-to/mocheta-dale-go-to-ambient-3.webp",
-    "alt": "Coridor de birouri cu mochetă go to®",
-    "w": 1600,
-    "h": 459
-   },
-   {
-    "img": "/img/c/go-to/mocheta-dale-go-to-ambient-4.webp",
-    "alt": "Birou cu mochetă go to® în nuanțe de albastru",
-    "w": 1600,
-    "h": 459
-   },
-   {
-    "img": "/img/c/go-to/mocheta-dale-go-to-ambient-5.webp",
-    "alt": "Birou cu mochetă go to® cu accente verzi",
-    "w": 1600,
-    "h": 459
    }
   ]
  },
@@ -1252,11 +1229,6 @@
     "img": "/img/c/grimebuster-50/mocheta-dale-grimebuster-50-ambient-1.webp",
     "w": 1600,
     "h": 463
-   },
-   {
-    "img": "/img/c/grimebuster-50/mocheta-dale-grimebuster-50-ambient-2.webp",
-    "w": 1600,
-    "h": 459
    }
   ]
  },

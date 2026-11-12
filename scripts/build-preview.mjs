@@ -11,8 +11,12 @@ for (const file of readdirSync(assets).filter(f => f.endsWith(".js"))) {
   writeFileSync(path, readFileSync(path, "utf8")
     .replaceAll('"/img/', '"img/')
     .replaceAll("`/img/", "`img/")
-    .replace(/"\/cataloage\/([^"]+\.pdf)"/g, '"cataloage/$1"'));
+    .replace(/"\/cataloage\/([^"]+\.pdf)"/g, '"#pdf-disponibil-pe-site"'));
 }
+// The hosted preview is limited to 511 files: catalogue PDFs are left out (they work on the real site).
+import { rmSync } from "node:fs";
+rmSync(join(out, "cataloage"), { recursive: true, force: true });
+rmSync(join(out, "favicon.svg"), { force: true });
 const html = join(out, "index.html");
 writeFileSync(html, readFileSync(html, "utf8").replace('href="./favicon.svg"', 'href="favicon.svg"'));
 console.log("Preview ready in", out);

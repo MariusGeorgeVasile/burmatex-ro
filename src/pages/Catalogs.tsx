@@ -158,7 +158,6 @@ export function OrganicMergePage() {
         <div><p className="cat-lead">Tranziții subtile, inspirate de felul în care peisajele diferite se întâlnesc în natură, fără o linie clară între ele: pădurea care trece în luminiș, duna care coboară spre iarbă.</p>
           <p><strong>Organic Merge™</strong> îmbină desene diferite în aceeași familie de culoare. Alegeți desenul după funcțiunea zonei (lucru, întâlnire, circulație, relaxare) și păstrați culoarea: trecerea de la o zonă la alta pare naturală, iar spațiul rămâne unitar.</p>
           <ul className="cat-bullets"><li><strong>balance grid®</strong>: rețeaua străzilor care se intersectează;</li><li><strong>balance ratio®</strong>: curgerea organică a elementelor naturale;</li><li><strong>balance scale®</strong>: urmele materialelor create de om și din natură;</li><li><strong>standing stones®</strong> și <strong>snowfall®</strong>: texturi minerale și fluide.</li></ul></div>
-        <figure className="cat-inline-photo"><img src={img("om-padure-lavanda")} alt="Potecă prin pădure cu flori de lavandă" loading="lazy" width="997" height="1245" /></figure>
       </div>
       {omCombos.map(c => <ComboBlock key={c.photo} c={c} />)}
     </section>
@@ -178,7 +177,6 @@ export function OrganicMergePage() {
       <h2>Palete și desene<br />legate prin culoare.</h2>
       <div className="cat-cols">
         <div><p className="cat-lead"><strong>Colour Link™</strong> combină tonuri și desene înrudite ca să evidențieze zone în spațiile de lucru: un „covor” de culoare într-o zonă de relaxare, o insulă de lucru, o sală de ședințe deschisă.</p><p>Fiecare familie de culoare (piersică, liliachiu, verde, albastru, galben) există în mai multe colecții. Le combinați fără ca accentele să pară întâmplătoare.</p></div>
-        <div className="cat-inspo">{[["cl-inspiratie-lavanda", "lavandă"], ["cl-inspiratie-munti", "munți"], ["cl-inspiratie-pietre", "piatră"]].map(([f, a]) => <img key={f} src={img(f)} alt={`Inspirație de culoare: ${a}`} loading="lazy" width="600" height="900" />)}</div>
       </div>
       {clCombos.map(c => <ComboBlock key={c.photo} c={c} />)}
     </section>
@@ -230,7 +228,7 @@ export function SustainabilityPage() {
       <Kicker>Moștenirea</Kicker>
       <h2>Sustenabilitatea<br />face parte din istorie.</h2>
       <div className="cat-cols"><div><p>Compania a fost înființată în Marea Britanie în 1912, ca J&amp;F Burrows. Timp de peste 100 de ani a reciclat: întâi deșeuri textile din lână și bumbac, revândute industriei de confecții, apoi, odată cu fibrele sintetice, deșeuri de nailon și polipropilenă.</p><p>Odată cu un nou tip de mochetă, needlefelt (azi fibră presată), materialul reciclat a început să fie folosit pentru produse proprii. Marca Burmatex® a apărut în 1967.</p></div>
-        <div><p>Astăzi Burmatex® produce o gamă mult mai largă, inclusiv dale de nailon cu buclă multinivel și buclă joasă. Principiile reciclării și reutilizării au rămas însă baza activității și a principiilor de sustenabilitate.</p><figure className="cat-inline-photo"><img src={img("eco2matters")} alt="Burmatex eco₂matters®" loading="lazy" width="672" height="651" /></figure></div></div>
+        <div><p>Astăzi Burmatex® produce o gamă mult mai largă, inclusiv dale de nailon cu buclă multinivel și buclă joasă. Principiile reciclării și reutilizării au rămas însă baza activității și a principiilor de sustenabilitate.</p></div></div>
     </section>
 
     <section className="cat-shell cat-section">
