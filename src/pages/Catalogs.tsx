@@ -118,38 +118,90 @@ export function DesignConnectionPage() {
   </div>;
 }
 
+type Combo = { photo: string; text: string; items: [string, string, string?][] };
+const omCombos: Combo[] = [
+  { photo: "om-lookout-soft-neutral", text: "Transformați spațiul: snowfall® în zona de lucru, balance ratio® în zona de relaxare, în aceeași familie de culoare.", items: [["snowfall", "light lookout"], ["balance", "soft neutral", "balance ratio®"]] },
+  { photo: "om-alee-iron-age-chrome", text: "Creați alei de circulație: un desen diferit marchează traseul, culoarea comună păstrează spațiul unitar.", items: [["standing-stones", "iron age"], ["balance", "chrome effect", "balance scale®"]] },
+  { photo: "om-dusky-smoky-concrete", text: "Trei desene în tonuri calde de lemn, pentru zone cu funcțiuni diferite în același open-space.", items: [["snowfall", "dusky weather"], ["balance", "smoky wood", "balance scale®"], ["balance", "concrete wood", "balance grid®"]] },
+  { photo: "om-soft-neutral-light-lookout", text: "Tranziție fină între zona de birouri și zona de întâlnire, în nuanțe neutre deschise.", items: [["balance", "soft neutral", "balance ratio®"], ["snowfall", "light lookout"]] },
+  { photo: "om-crisp-silver-fresh", text: "Gri luminos, trei desene: un spațiu de lucru mare care rămâne calm, dar nu monoton.", items: [["balance", "crisp air", "balance grid®"], ["snowfall", "silver drizzle"], ["balance", "fresh air", "balance scale®"]] },
+];
+const clCombos: Combo[] = [
+  { photo: "cl-piersica-covor", text: "Familia piersică, folosită pentru o inserție de covor într-o zonă de relaxare.", items: [["snowfall", "peach frost"], ["rocklines", "uplift"]] },
+  { photo: "cl-liliachiu", text: "Familia liliachiu delimitează o zonă de întâlnire pe un fond neutru.", items: [["snowfall", "mauve rise"], ["rocklines", "amethyst"], ["rocklines", "marble"]] },
+  { photo: "cl-verde", text: "Familia verde: o insulă de lucru legată de restul spațiului prin culoare.", items: [["snowfall", "mellow wisp"], ["rocklines", "habitat"]] },
+  { photo: "cl-albastru", text: "Familia albastră, pentru o sală de ședințe deschisă.", items: [["standing-stones", "henge sky"], ["rocklines", "oceanic"], ["rocklines", "marble"]] },
+  { photo: "cl-galben", text: "Familia galbenă aduce lumină într-o zonă de lucru.", items: [["standing-stones", "yellow traces"], ["balance", "sunny glow", "balance scale®"], ["rocklines", "sunlit"]] },
+  { photo: "cl-threads-craft", text: "threads® și threads® plain în aceeași nuanță: desenul și culoarea uni se completează.", items: [["threads", "craft mix"], ["threads", "craft", "threads® plain"]] },
+  { photo: "cl-threads-pigment", text: "Accent albastru cu threads® pigment pe un fond threads® plain.", items: [["threads", "pigment", "threads® plain"], ["threads", "pigment tide"]] },
+];
+
+function ComboBlock({ c }: { c: Combo }) {
+  return <div className="cat-combo">
+    <p className="cat-combo-text">{c.text}</p>
+    <div className="cat-tiles">{c.items.map(([slug, name, group], j) => <Tile key={name + j} slug={slug} name={name} group={group} n={j + 1} />)}</div>
+    <figure className="cat-combo-photo"><img src={img(c.photo)} alt={`Mochetă Burmatex: ${c.items.map(([s, n, g]) => `${g ?? plainName(collectionBySlug[s].name)} ${n}`).join(", ")}`} loading="lazy" width="1400" height="997" /><figcaption>{c.items.map(([s, n, g]) => `${(g ?? plainName(collectionBySlug[s].name) + "®")} ${n}`).join(" · ")}</figcaption></figure>
+  </div>;
+}
+
 export function OrganicMergePage() {
   usePageMeta("/cataloage/organic-merge-colour-link");
   return <div className="cat">
-    <section className="cat-hero"><img src="/img/c/snowfall/mocheta-dale-snowfall-ambient-1.webp" alt="Open-space cu mochetă dale Burmatex snowfall®" width="1400" height="1400" fetchPriority="high" />
-      <div className="cat-shell"><Kicker>Concepte de design Burmatex®</Kicker><h1>Organic Merge™<br />și Colour Link™</h1><p>Spații legate prin desen și culoare, inspirate de natură.</p></div></section>
+    <section className="cat-hero"><img src={img("om-dune")} alt="Dune de nisip cu iarbă, inspirația Organic Merge™" width="1245" height="815" fetchPriority="high" />
+      <div className="cat-shell"><Kicker>Concepte de design Burmatex® · mai 2025</Kicker><h1>Organic Merge™<br />și Colour Link™</h1><p>Spații legate prin desen, inspirate de natură. Spații legate prin culoare.</p></div></section>
 
     <section className="cat-shell cat-section">
       <CatHead n="01" label="Organic Merge™" />
       <Kicker>Organic Merge™</Kicker>
-      <h2>Tranziții fine<br />între peisaje diferite.</h2>
+      <h2>Desene îmbinate,<br />inspirate de natură.</h2>
       <div className="cat-cols">
-        <p className="cat-lead"><strong>Organic Merge™</strong> îmbină desene diferite în aceeași familie de culoare, astfel încât trecerea de la o zonă la alta să pară naturală, ca între două peisaje. Fiecare coloană din tabel este o familie de culoare: alegeți desenul după funcțiunea zonei, păstrați culoarea și spațiul rămâne unitar.</p>
-        <ul className="cat-bullets"><li><strong>balance grid®</strong>, rețeaua străzilor care se intersectează;</li><li><strong>balance ratio®</strong>, curgerea organică a elementelor naturale;</li><li><strong>balance scale®</strong>, urmele materialelor create de om și din natură;</li><li><strong>standing stones®</strong> și <strong>snowfall®</strong>, texturi minerale și fluide.</li></ul>
+        <div><p className="cat-lead">Tranziții subtile, inspirate de felul în care peisajele diferite se întâlnesc în natură, fără o linie clară între ele: pădurea care trece în luminiș, duna care coboară spre iarbă.</p>
+          <p><strong>Organic Merge™</strong> îmbină desene diferite în aceeași familie de culoare. Alegeți desenul după funcțiunea zonei (lucru, întâlnire, circulație, relaxare) și păstrați culoarea: trecerea de la o zonă la alta pare naturală, iar spațiul rămâne unitar.</p>
+          <ul className="cat-bullets"><li><strong>balance grid®</strong>: rețeaua străzilor care se intersectează;</li><li><strong>balance ratio®</strong>: curgerea organică a elementelor naturale;</li><li><strong>balance scale®</strong>: urmele materialelor create de om și din natură;</li><li><strong>standing stones®</strong> și <strong>snowfall®</strong>: texturi minerale și fluide.</li></ul></div>
+        <figure className="cat-inline-photo"><img src={img("om-padure-lavanda")} alt="Potecă prin pădure cu flori de lavandă" loading="lazy" width="997" height="1245" /></figure>
       </div>
-      <div className="cat-bank-wrap"><table className="cat-bank om"><tbody>{organicMerge.rows.map((row, r) => <tr key={row.label}><th scope="row">{row.label}</th>{organicMerge.columns.map((col, i) => <td key={i}>{col[r] ? <Tile slug={row.slug} name={col[r]!} group={row.group} /> : <div className="cat-tile empty" aria-hidden="true" />}</td>)}</tr>)}</tbody></table></div>
-      <p className="cat-small">Derulați tabelul orizontal. Pe aceeași coloană: aceeași familie de culoare, desene diferite. Exemplu de plan propus de Burmatex: snowfall® în zonele de lucru și balance ratio® în zonele de trecere.</p>
+      {omCombos.map(c => <ComboBlock key={c.photo} c={c} />)}
     </section>
 
     <section className="cat-shell cat-section">
-      <CatHead n="02" label="Colour Link™" />
+      <CatHead n="02" label="biblioteca de culori Organic Merge™" />
+      <Kicker>Biblioteca de culori Organic Merge™</Kicker>
+      <h2>Pe aceeași coloană,<br />aceeași familie.</h2>
+      <p className="cat-lead">17 familii de culoare, în cinci desene. Alegeți o coloană și combinați liber desenele din ea.</p>
+      <div className="cat-bank-wrap"><table className="cat-bank om"><tbody>{organicMerge.rows.map((row, r) => <tr key={row.label}><th scope="row">{row.label}</th>{organicMerge.columns.map((col, i) => <td key={i}>{col[r] ? <Tile slug={row.slug} name={col[r]!} group={row.group} /> : <div className="cat-tile empty" aria-hidden="true" />}</td>)}</tr>)}</tbody></table></div>
+      <p className="cat-small">Derulați tabelul orizontal. Toate nuanțele au link spre colecție, cu codurile de produs.</p>
+    </section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="03" label="Colour Link™" />
       <Kicker>Colour Link™</Kicker>
-      <h2>Palete legate<br />prin culoare.</h2>
+      <h2>Palete și desene<br />legate prin culoare.</h2>
       <div className="cat-cols">
-        <p className="cat-lead"><strong>Colour Link™</strong> leagă colecții diferite prin tonuri comune. Folosiți aceeași familie de culoare în desene diferite ca să evidențiați o zonă: un „covor” de culoare într-o recepție, un traseu, o zonă de relaxare.</p>
-        <figure className="cat-inline-photo"><img src={img("colour-link-ambient")} alt="Covor de culoare piersică realizat cu dale Burmatex într-o zonă de relaxare" loading="lazy" width="642" height="536" /><figcaption>Familia piersică: rocklines® uplift și snowfall® peach frost, ca inserție de covor.</figcaption></figure>
+        <div><p className="cat-lead"><strong>Colour Link™</strong> combină tonuri și desene înrudite ca să evidențieze zone în spațiile de lucru: un „covor” de culoare într-o zonă de relaxare, o insulă de lucru, o sală de ședințe deschisă.</p><p>Fiecare familie de culoare (piersică, liliachiu, verde, albastru, galben) există în mai multe colecții. Le combinați fără ca accentele să pară întâmplătoare.</p></div>
+        <div className="cat-inspo">{[["cl-inspiratie-lavanda", "lavandă"], ["cl-inspiratie-munti", "munți"], ["cl-inspiratie-pietre", "piatră"]].map(([f, a]) => <img key={f} src={img(f)} alt={`Inspirație de culoare: ${a}`} loading="lazy" width="600" height="900" />)}</div>
       </div>
+      {clCombos.map(c => <ComboBlock key={c.photo} c={c} />)}
+    </section>
+
+    <section className="cat-shell cat-section">
+      <CatHead n="04" label="biblioteca de culori Colour Link™" />
+      <Kicker>Biblioteca de culori Colour Link™</Kicker>
+      <h2>Cinci familii,<br />cinci colecții.</h2>
       <div className="cat-link-families">{colourLink.map(f => <div key={f.family}><h3>{f.family}</h3><div className="cat-tiles small">{f.items.map(([slug, name, group]) => <Tile key={slug + name + (group ?? "")} slug={slug} name={name} group={group} />)}</div></div>)}</div>
     </section>
 
-    <section className="cat-shell cat-section cat-related">
-      <h2 className="cat-h3">Colecțiile din aceste concepte</h2>
-      <div className="cat-chips">{["balance", "standing-stones", "snowfall", "rocklines", "threads"].map(s => <Link key={s} href={collectionPath(s)} className="cat-link">{collectionBySlug[s].name} <ArrowRight /></Link>)}</div>
+    <section className="cat-shell cat-section">
+      <CatHead n="05" label="sustenabilitate" />
+      <Kicker>eco₂matters®</Kicker>
+      <h2>Aceleași principii,<br />în ambele concepte.</h2>
+      <div className="cat-points">
+        <article><h3>Organic Merge™</h3><p>balance grid®, balance ratio®, balance scale®, snowfall®, standing stones®, rocklines®: amprentă neutră de carbon, verificată independent, compensată la sursă prin firul reciclat cu amprentă negativă de carbon; suport reciclat BioBase®.</p></article>
+        <article><h3>Colour Link™ cu threads®</h3><p>threads® și threads® plain: amprentă redusă de carbon, verificată; fir bio-genic 100% reciclat; suport reciclat BioBase®.</p></article>
+        <article><h3>EPD pe fiecare produs</h3><p>Declarații de mediu specifice produsului, pe tot ciclul de viață (A1–D), verificate de terți.</p></article>
+        <article><h3>Serviciul de preluare</h3><p>Dalele uzate primesc o nouă viață, de exemplu la organizații comunitare care au nevoie de pardoseală ieftină, astfel încât nicio dală să nu ajungă la groapa de gunoi.</p></article>
+      </div>
+      <div className="cat-actions"><a href="https://www.burmatex.co.uk/wp-content/uploads/2025/07/Organic-Merge-Colour-Link-brochure-May-2025-optimised-for-web.pdf" className="cat-link" target="_blank" rel="noreferrer"><Download /> Originalul Burmatex (PDF, engleză)</a>{["balance", "standing-stones", "snowfall", "rocklines", "threads"].map(s => <Link key={s} href={collectionPath(s)} className="cat-link">{collectionBySlug[s].name} <ArrowRight /></Link>)}</div>
+      <p className="cat-small">Sursa: Burmatex® Organic Merge™ & Colour Link™, mai 2025. Adaptare în limba română: InsightFLOOR, dealer oficial Burmatex® în România.</p>
     </section>
     <DealerCTA title="Vreți o combinație" accent="pentru planul dumneavoastră?" text="Trimiteți-ne planul și zonele. Propunem combinația Organic Merge™ sau Colour Link™ și vă trimitem mostrele." to="/contact?tip=proiect" button="Trimiteți planul" label="Consultanță de design" />
   </div>;

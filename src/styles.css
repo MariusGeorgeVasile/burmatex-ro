@@ -887,3 +887,5 @@ main h2 > span { color: #77736d; }
 @media (max-width: 640px) { .cat-well { grid-template-columns: 1fr; } }
 .tg-body, .tg-toc { min-width: 0; }
 @media (max-width: 640px) { .tg-numbers strong { font-size: 24px; white-space: normal; } .tg-faq { grid-template-columns: 1fr; } }
+.cat-inspo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.cat-inspo img { width: 100%; height: auto; aspect-ratio: .62; object-fit: cover; }
