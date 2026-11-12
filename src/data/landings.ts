@@ -22,6 +22,7 @@ export type Landing = {
 };
 
 export const generalFaqs: Faq[] = [
+  { q: "Cine distribuie mocheta Burmatex în România?", a: "Mocheta Burmatex® este distribuită în România prin InsightFLOOR, dealer oficial Burmatex®. InsightFLOOR livrează și montează direct, cu echipe proprii, sau prin rețeaua de parteneri și dealeri din toată țara. În România au fost livrați și instalați peste 2,5 milioane m² de mochetă Burmatex." },
   { q: "Ce este mocheta în dale?", a: "Mocheta în dale (numită și mochetă în plăci sau mochetă modulară) este mochetă livrată în pătrate de 50 × 50 cm, cu un suport stabil dimensional. Dalele se montează una lângă alta direct pe șapă sau pe pardoseala tehnică supraînălțată și pot fi ridicate și înlocuite individual." },
   { q: "Câte dale de mochetă intră într-un metru pătrat?", a: "Patru. O dală Burmatex standard are 50 × 50 cm, adică 0,25 m². Lamelele de 25 × 100 cm au tot 0,25 m² fiecare. La comandă se adaugă de obicei o rezervă pentru tăieri și înlocuiri ulterioare, din același lot de producție." },
   { q: "Ce înseamnă clasa 33 la mochetă?", a: "Clasa de utilizare 33, conform standardului EN 1307, indică mocheta potrivită pentru trafic comercial intens: birouri, coridoare, spații publice. Este cea mai înaltă clasă comercială din sistemul de clasificare pentru mochete textile." },
@@ -169,7 +170,7 @@ export const landings: Landing[] = [
     faqs: [
       { q: "Cât costă mocheta în dale pe metru pătrat?", a: "Depinde de construcție, greutatea firului, design și volum. Dalele cu buclă uniformă și fibra presată sunt clasa economică, colecțiile cu desen și textură sunt clasa standard, iar colecțiile de design, firul tăiat și covoarele de intrare grele sunt clasa premium. Prețul exact se stabilește prin ofertă, în funcție de cantitate și de montaj." },
       { q: "Prețul include montajul?", a: "Prețul materialului nu include de obicei montajul, adezivul, pregătirea suportului și transportul. Cereți o ofertă care le menționează separat, ca să le puteți compara." },
-      { q: "De unde cumpăr mochetă Burmatex în România?", a: "Prin rețeaua de dealeri Burmatex România. Trimiteți o cerere de ofertă de pe site și vă punem în legătură cu dealerul din zona dumneavoastră." },
+      { q: "De unde cumpăr mochetă Burmatex în România?", a: "Prin InsightFLOOR, dealer oficial Burmatex® în România, direct sau prin rețeaua de parteneri. Trimiteți o cerere de ofertă de pe site și vă punem în legătură cu partenerul din zona dumneavoastră." },
     ],
   },
 ];

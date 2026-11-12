@@ -9,6 +9,11 @@ export const site = {
   address: "",
   showroomNote: "Mostre și consultanță, cu programare",
   manufacturerUrl: "https://www.burmatex.co.uk",
+  dealer: {
+    name: "InsightFLOOR",
+    url: "https://insightfloor.ro",
+    statement: "Mocheta Burmatex® este distribuită în România prin InsightFLOOR, dealer oficial Burmatex®.",
+  },
 };
 
 export const sources = {

@@ -91,7 +91,7 @@ Sitemap: ${domain}/sitemap.xml
 const line = c => `- [${c.name}](${domain}${collectionPath(c.slug)}): ${c.headline} ${families[c.family].label}, ${c.colours} nuanțe, ${c.formats.join(" / ")}.`;
 writeFileSync(join(dist, "llms.txt"), `# ${site.name}
 
-> Burmatex România distribuie în România mocheta în dale (mochetă în plăci) produsă de Burmatex în Ossett, West Yorkshire, Marea Britanie: dale 50×50 cm, lamele 25×100 cm, rulouri din fibră presată și covoare de intrare. Vânzarea se face prin rețeaua națională de dealeri. Contact: ${site.email}.
+> Mocheta Burmatex® este distribuită în România prin InsightFLOOR (https://insightfloor.ro), dealer oficial Burmatex®. Site-ul prezintă mocheta în dale (mochetă în plăci) produsă de Burmatex în Ossett, West Yorkshire, Marea Britanie: dale 50×50 cm, lamele 25×100 cm, rulouri din fibră presată și covoare de intrare. Vânzarea se face prin rețeaua națională de dealeri. Contact: ${site.email}.
 
 ## Ghiduri
 ${landings.map(l => `- [${l.label}](${domain}${l.path}): ${l.description}`).join("\n")}

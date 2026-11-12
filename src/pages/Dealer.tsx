@@ -27,7 +27,7 @@ const profiles = [
 export default function DealerPage() {
   usePageMeta("/devino-dealer");
   return <div className="dealer-page">
-    <PageIntro label="Program de dealeri Burmatex · România" title="Un brand britanic." accent="Partenerul local este dumneavoastră." text="Căutăm magazine de pardoseli, firme de montaj și de amenajări din toată țara care vor să adauge în portofoliu o mochetă comercială de calitate, cu stoc în România și suport real.">
+    <PageIntro label="Program de dealeri Burmatex · România" title="Un brand britanic." accent="Partenerul local este dumneavoastră." text="Căutăm magazine de pardoseli, firme de montaj și de amenajări din toată țara care vor să adauge în portofoliu o mochetă comercială de calitate, cu stoc în România și suport real. Programul este coordonat de InsightFLOOR, dealer oficial Burmatex® în România.">
       <div className="intro-actions"><Link href="#aplica" className="ed-button">Aplicați acum <ArrowUpRight /></Link><Link href="#beneficii" className="ed-text-link">Ce primiți ca partener <ArrowRight /></Link></div>
     </PageIntro>
 

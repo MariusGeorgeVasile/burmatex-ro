@@ -9,7 +9,7 @@ import { counties, site, sources } from "../data/site";
 export function AboutPage() {
   usePageMeta("/de-ce-burmatex");
   return <div className="about-page">
-    <PageIntro label="De ce Burmatex" title="Nu vindem doar mochetă." accent="Vindem cine o produce." text="Britanică prin origine. Concepută pentru trafic real. Cu o istorie în reciclare care începe cu mult înainte ca sustenabilitatea să devină un argument de vânzare." />
+    <PageIntro label="De ce Burmatex" title="Nu vindem doar mochetă." accent="Vindem cine o produce." text="Britanică prin origine. Concepută pentru trafic real. Cu o istorie în reciclare care începe cu mult înainte ca sustenabilitatea să devină un argument de vânzare. În România, Burmatex este distribuit prin InsightFLOOR, dealer oficial." />
     <figure className="wide-figure"><img src="/img/c/armour/mocheta-dale-armour-ambient-1.webp" alt="Coridor cu mochetă Burmatex armour®" width="1200" height="1200" /><figcaption className="ed-shell">armour® · imagine Burmatex</figcaption></figure>
 
     <section className="chapter ed-shell"><div><Label>01 / Tradiție britanică</Label><h2>O fabrică.<br /><span>Nu doar o etichetă.</span></h2></div><div><p>Povestea începe în 1912 la Ossett, în West Yorkshire, ca J&amp;F Burrows: recuperarea și prelucrarea deșeurilor textile — lână, bumbac, apoi nailon și polipropilenă. Marca Burmatex apare în 1967, odată cu prima mochetă produsă pe amplasament. <a className="cite" href={sources.history} target="_blank" rel="noreferrer">[1]</a></p><p><strong>Pentru un dealer, „britanic” este un argument concret:</strong> continuitate de producție, control al calității certificat ISO 9001 și ISO 14001 și un producător care există de peste un secol. <a className="cite" href={sources.about} target="_blank" rel="noreferrer">[2]</a></p></div></section>
@@ -96,7 +96,7 @@ export function ContactPage() {
     setSent(true);
   };
   return <div className="contact-page">
-    <PageIntro label="Contact" title="Mostre, oferte," accent="parteneriat." text="Spuneți-ne ce aveți nevoie. Răspundem direct, cu pașii următori — fără formulare care dispar în neant." />
+    <PageIntro label="Contact" title="Mostre, oferte," accent="parteneriat." text="Spuneți-ne ce aveți nevoie. Răspundem direct, cu pașii următori — fără formulare care dispar în neant. Burmatex România este operat de InsightFLOOR, dealer oficial Burmatex® în România." />
     <section className="ed-shell form-section">
       <div className="form-intro">
         <div className="contact-lines"><a href={`mailto:${site.email}`}><Mail /> {site.email}</a>{site.phone && <a href={`tel:${site.phone}`}><Phone /> {site.phoneDisplay || site.phone}</a>}{site.address && <p>{site.address}</p>}<p>{site.showroomNote}</p></div>

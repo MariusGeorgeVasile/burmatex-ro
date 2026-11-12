@@ -13,10 +13,10 @@ const clip = (text: string, max = 158) => (text.length <= max ? text : `${text.s
 const ORG_ID = `${site.domain}/#organizatie`;
 
 const organization = {
-  "@type": "Organization", "@id": ORG_ID, name: site.name, url: `${site.domain}/`, email: site.email, ...(site.phone ? { telephone: site.phone, contactPoint: { "@type": "ContactPoint", telephone: site.phone, email: site.email, contactType: "sales", areaServed: "RO", availableLanguage: ["ro", "en"] } } : {}),
+  "@type": "Organization", "@id": ORG_ID, name: site.dealer.name, alternateName: site.name, sameAs: [site.dealer.url], url: `${site.domain}/`, email: site.email, ...(site.phone ? { telephone: site.phone, contactPoint: { "@type": "ContactPoint", telephone: site.phone, email: site.email, contactType: "sales", areaServed: "RO", availableLanguage: ["ro", "en"] } } : {}),
   logo: abs("/favicon.svg"), areaServed: { "@type": "Country", name: "România" },
   brand: { "@type": "Brand", name: "Burmatex" },
-  description: "Distribuție Burmatex® în România: mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie, vândute prin rețeaua națională de dealeri.",
+  description: "InsightFLOOR este dealerul oficial Burmatex® în România: mochetă în dale, lamele, rulouri și covoare de intrare produse în Marea Britanie, livrate și montate direct sau prin rețeaua națională de parteneri.",
   knowsAbout: ["mochetă dale", "mochetă în plăci", "mochetă pentru birouri", "covoare de intrare", "pardoseli textile comerciale"],
 };
 const website = { "@type": "WebSite", "@id": `${site.domain}/#website`, url: `${site.domain}/`, name: site.name, inLanguage: "ro-RO", publisher: { "@id": ORG_ID } };
@@ -42,7 +42,7 @@ export function collectionFaqs(c: Collection): Faq[] {
   if (c.carbon) faqs.push({ q: `Este ${name} o mochetă sustenabilă?`, a: `${c.carbon === "neutral" ? "Producătorul o prezintă ca neutră din punctul de vedere al carbonului (reducere de impact plus compensare la sursă; nu înseamnă emisii zero)." : "Producătorul o încadrează în gama cu amprentă de carbon redusă."}${c.recycled ? ` Conținut reciclat total: ${c.recycled}.` : ""}${c.gwp ? ` GWP declarat în EPD: ${c.gwp} kg CO₂e.` : ""}` });
   const refs = referencesFor(c.slug);
   if (refs.length) faqs.push({ q: `Unde a fost folosită mocheta ${name} în România?`, a: `În ${refs.length === 1 ? "proiectul" : "proiecte precum"} ${refs.slice(0, 6).map(r => `${r.name}${r.location ? ` (${r.location})` : ""}, ${formatArea(r)}`).join("; ")}.` });
-  faqs.push({ q: `De unde cumpăr ${name} în România?`, a: `Prin rețeaua de dealeri Burmatex România. ${c.inStock ? "Colecția este disponibilă din stoc în România. " : "Termenul de livrare se confirmă la ofertare. "}Solicitați mostre sau ofertă de pe această pagină.` });
+  faqs.push({ q: `De unde cumpăr ${name} în România?`, a: `Prin InsightFLOOR, dealer oficial Burmatex® în România, direct sau prin rețeaua sa de parteneri din toată țara. ${c.inStock ? "Colecția este disponibilă din stoc în România. " : "Termenul de livrare se confirmă la ofertare. "}Solicitați mostre sau ofertă de pe această pagină.` });
   return faqs;
 }
 
@@ -99,7 +99,7 @@ export function getMeta(path: string): Meta {
   if (c) {
     return {
       title: `${plainName(c.name)}® — mochetă dale Burmatex, ${c.colours} nuanțe`,
-      description: clip(`${c.headline} ${families[c.family].label}, ${c.colours} nuanțe, ${c.formats.join(" și ").toLowerCase()}. ${c.inStock ? "Din stoc în România. " : ""}Mostre și ofertă prin dealerii Burmatex din România.`),
+      description: clip(`${c.headline} ${families[c.family].label}, ${c.colours} nuanțe, ${c.formats.join(" și ").toLowerCase()}. ${c.inStock ? "Din stoc în România. " : ""}Mostre și ofertă prin InsightFLOOR, dealer oficial Burmatex.`),
       image: c.image,
       jsonLd: [...base, breadcrumb([["Colecții", "/colectii"], [c.name, path]]), productLd(c), faqPage(collectionFaqs(c))],
     };

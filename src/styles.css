@@ -674,3 +674,12 @@ main h2 > span { color: #77736d; }
   .ref-photos { grid-template-columns: 1fr 1fr; }
   .ref-photos img:nth-child(3) { display: none; }
 }
+
+/* ——— Official dealer statement ——— */
+.official-bar { background: var(--ink); color: #f1eee8; font-size: 11px; letter-spacing: .02em; }
+.official-bar .site-nav-inner { width: min(1480px, calc(100% - 80px)); margin-inline: auto; padding: 7px 0; text-align: center; }
+.official-bar a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.4); margin-right: 4px; }
+.official-bar a:hover { border-color: #fff; }
+.official-note { padding: 14px 18px; border-left: 2px solid var(--accent); background: var(--warm); color: var(--ink) !important; font-size: 14px !important; }
+.footer-about .official-link { display: inline-block; margin-top: 14px; font-weight: 700; color: var(--ink); border-bottom: 1px solid var(--line); }
+@media (max-width: 640px) { .official-bar { font-size: 10px; } .official-bar .site-nav-inner { width: calc(100% - 32px); padding: 6px 0; } }

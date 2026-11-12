@@ -31,7 +31,7 @@ export default function Home() {
       <div className="ed-shell ed-hero-body">
         <Label light>Burmatex® / Mochetă dale produsă în Marea Britanie din 1967</Label>
         <h1 id="hero-title">Mochetă dale britanică.<br /><strong>Pentru birouri, școli și clădiri publice din toată România.</strong></h1>
-        <p>{collections.length} de colecții și peste 400 de nuanțe, clasa 33 pentru trafic intens,<br />stoc în România și dealeri locali în toată țara.</p>
+        <p>{collections.length} de colecții și peste 400 de nuanțe, clasa 33 pentru trafic intens,{" "}<br />stoc în România și dealeri locali în toată țara.</p>
         <div className="ed-hero-actions"><Link href="/selector-mocheta" className="ed-button">Găsiți mocheta potrivită <ArrowUpRight /></Link><Link href="/devino-dealer" className="ed-hero-link">Sunteți firmă de pardoseli? Deveniți dealer <ArrowRight /></Link></div>
       </div>
       <div className="ed-shell ed-hero-caption"><Link href="#produse"><ArrowDown /> Descoperiți Burmatex</Link><Link href={collectionPath("go-to")}>go to® / din stoc <ArrowUpRight /></Link></div>
@@ -47,6 +47,7 @@ export default function Home() {
       <div><Label>Un brand cu istorie. O rețea în construcție.</Label><h2>Calitatea britanică<br /><span>nu trebuie să rămână în București.</span></h2></div>
       <div>
         <p className="ed-lead">Burmatex produce mochetă în Ossett, West Yorkshire, din 1967. Acum construim o rețea de parteneri locali care să o aducă aproape de fiecare client.</p>
+        <p className="official-note"><strong>Dealer oficial Burmatex® în România: InsightFLOOR.</strong> Mocheta Burmatex este distribuită în România prin InsightFLOOR, care livrează și montează direct sau prin rețeaua de parteneri din toată țara.</p>
         <p>Firmele mici și mijlocii câștigă cele mai multe lucrări din țară: birouri, școli, cabinete, spații comerciale, case. Au nevoie de un produs de încredere, disponibil, documentat și ușor de vândut. Exact asta oferim: un brand recunoscut de arhitecți, stoc în România și un partener care răspunde la telefon.</p>
         <Link href="/devino-dealer" className="ed-text-link">Cum funcționează programul de dealeri <ArrowRight /></Link>
       </div>
