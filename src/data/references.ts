@@ -1,6 +1,6 @@
 // Burmatex® projects delivered and installed in Romania (own teams and partner network).
 // Source: InsightFLOOR Burmatex reference catalogue (burmatex-references.ts), plus the projects
-// confirmed by Burmatex România: Ursus Breweries (tivoli®, 1.500 m²) and Holcim (tivoli®, 2.200 m²).
+// confirmed by Burmatex România: Ursus Breweries (tivoli®, 1.500 m²) and Holcim (tivoli®, 2.200 m², replaces the catalogue go to® entry for the same project).
 // Areas from the catalogue are minimums ("peste"); "exact" areas are stated as given.
 import { collections, plainName } from "./collections";
 
@@ -65,7 +65,6 @@ export const references: Reference[] = [
   { name: "Risco Servicii Financiare", area: 1000, collections: ["alaska®"], kind: "birouri" },
   { name: "One United", area: 1000, collections: ["arctic®"], kind: "birouri" },
   { name: "Arnia Software", area: 1000, collections: ["rocklines®"], kind: "birouri" },
-  { name: "Holcim", area: 1000, collections: ["go to®"], kind: "industrie", note: "alt proiect Holcim" },
   { name: "Tayra Yamamoto", area: 1000, collections: ["alaska®"], kind: "birouri" },
   { name: "Librăriile Cărturești", area: 1000, collections: ["go to®"], kind: "retail" },
   { name: "Compas", area: 1000, collections: ["tivoli®"], kind: "birouri" },
