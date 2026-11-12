@@ -13,14 +13,9 @@ Lista punctelor care trebuie confirmate înainte de publicare. Bifați pe măsur
 - [ ] Consum Eco 380: 0,30–0,35 kg/m², timp deschis 60–70 min (fișa Mapei)
 - [ ] Timpul de așteptare Ultrabond Eco Fix și adezivul Mapei pentru zone foarte solicitate
 
-## Comparația de mărci (/comparatie-mocheta-dale)
-- [ ] Recitire de către InsightFLOOR: date despre Interface, modulyss, DESSO (Tarkett), Mohawk Group (surse în docs/comparatie-surse.md)
-- [ ] Mohawk Group EU: clasa, focul, garanția și acustica nu au fost verificate (documentația de pe mohawkgroup.eu)
-- [ ] Perpetuum (perpetuum.ro) afișează logo Burmatex: de clarificat cu Burmatex; site-ul spune „dealer oficial”, nu „exclusiv”
-- [ ] Opțional: verificare juridică (publicitate comparativă, Legea 158/2008)
-
 ## Firmă și contact
 - [ ] Adresa: Str. Povernei 32, București
+- [ ] Perpetuum (perpetuum.ro) afișează logo Burmatex: de clarificat cu Burmatex (site-ul spune „dealer oficial”, nu „exclusiv”)
 - [ ] Logo InsightFLOOR: înlocuit cu fișierul original (SVG/PNG)
 - [ ] Condițiile comerciale pentru dealeri (pagina Devino dealer)
 - [ ] Orașele proiectelor Ursus Breweries și Holcim
