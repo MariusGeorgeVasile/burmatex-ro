@@ -35,7 +35,7 @@ Generate la build: `sitemap.xml` (cu imagini), `robots.txt` (deschis motoarelor 
 | Culoarea de accent | `--accent` în `src/styles.css` |
 
 ### Prețuri
-Clasele de preț (`economic` / `standard` / `premium`) sunt o propunere după construcție și trebuie confirmate.
+Clasele de preț (`economic` / `standard` / `premium`) urmează lista comercială Burmatex CEE (iunie 2026) și prețurile speciale go to® / tivoli® / tivoli mist®. Sumele nu se publică.
 Pentru a afișa „de la X €/m² + TVA”, completați `priceFrom` la colecția respectivă în `src/data/attributes.ts`;
 apare automat pe card, pe pagina colecției, în selector și în datele structurate (`AggregateOffer`).
 

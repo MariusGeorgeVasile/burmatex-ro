@@ -25,7 +25,7 @@ type State = {
 const empty: State = { sector: null, tiers: [], designs: [], colours: [], format: null, class33: false, minDb: 0, stock: false, neutral: false, minRecycled: 0, maxGwp: 0, sort: "potrivire" };
 
 const presets: { label: string; text: string; state: Partial<State> }[] = [
-  { label: "Birou open-space, buget mediu", text: "Clasa 33, buclă uniformă, culori neutre", state: { sector: "birouri", tiers: ["standard"], class33: true } },
+  { label: "Birou open-space, buget atent", text: "Clasa 33, buclă uniformă, cost redus", state: { sector: "birouri", tiers: ["economic"], class33: true } },
   { label: "Clădire nouă, certificare verde", text: "Neutră carbon declarat, GWP mic", state: { sector: "cladiri-noi", neutral: true, sort: "co2" } },
   { label: "Săli de ședință liniștite", text: "Acustică ≥ 25 dB, design premium", state: { sector: "birouri", minDb: 25, sort: "acustica" } },
   { label: "Școală, buget redus", text: "Fibră presată, culori vii", state: { sector: "scoli", tiers: ["economic"] } },

@@ -6,7 +6,7 @@ export type FamilyKey = "multilevel" | "loop" | "cut" | "barrier" | "fibre" | "e
 export type Carbon = "neutral" | "low";
 
 import media from "./media.json";
-import { attributes, type DesignKey, type Doc, type PriceTier, type SectorKey } from "./attributes";
+import { attributes, priceListTech, type DesignKey, type Doc, type PriceTier, type SectorKey } from "./attributes";
 
 export type Swatch = { name: string; code?: string; group?: string; img: string; hex: string; family: ColourFamily };
 export type Room = { img: string; alt?: string; w: number; h: number };
@@ -312,7 +312,16 @@ export const collections: Collection[] = base.map(c => {
   for (const doc of a.docs ?? []) if (!docs.some(x => x.label === doc.label)) docs.push(doc);
   const wide = (r: Room) => (r.w / r.h > 1.8 ? 1 : 0);
   const rooms = [...m.rooms].sort((x, y) => wide(x) - wide(y)).map(r => ({ ...r, alt: r.alt ?? `Mochetă dale Burmatex ${c.name} într-un spațiu amenajat` }));
-  return { ...c, ...a, docs, swatches: m.colours, rooms, image: rooms[0]?.img ?? c.image, tile: m.colours[0]?.img ?? c.tile };
+  const t = priceListTech[c.slug];
+  const specs = [...c.specs];
+  const has = (label: string) => specs.some(([l]) => l === label);
+  if (t) {
+    if (!has("Masă fir de suprafață")) specs.push(["Masă fir de suprafață", `${t.pileGm2} g/m²`]);
+    if (!has("Reacție la foc")) specs.push(["Reacție la foc", t.fire]);
+    specs.push(["Ambalare", `${String(t.boxM2).replace(".", ",")} m² / cutie${c.family === "fibre" || c.family === "entrance" ? " (dale)" : ""}`]);
+  }
+  if (!has("Garanție declarată")) specs.push(["Garanție declarată", "15 ani, în condițiile producătorului (Heavy Contract)"]);
+  return { ...c, ...a, specs, pileGm2: a.pileGm2 ?? t?.pileGm2, docs, swatches: m.colours, rooms, image: rooms[0]?.img ?? c.image, tile: m.colours[0]?.img ?? c.tile };
 });
 
 export const collectionBySlug = Object.fromEntries(collections.map(c => [c.slug, c])) as Record<string, Collection>;
