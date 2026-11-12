@@ -3,6 +3,7 @@ import { Link } from "../link";
 import { ArrowRight, ArrowUpRight, Check, RotateCcw, X } from "lucide-react";
 import { CarbonTag, Label, PriceTag, usePageMeta } from "../components";
 import { collections, collectionPath, families, plainName, type ColourFamily, type Collection } from "../data/collections";
+import { referencesFor } from "../data/references";
 import { designs, priceTiers, sectorsMeta, type DesignKey, type PriceTier, type SectorKey } from "../data/attributes";
 
 const colourFamilies: Record<ColourFamily, { label: string; hex: string }> = {
@@ -46,6 +47,8 @@ function reasons(c: Collection, s: State) {
   if (c.carbon === "neutral") r.push("Neutră carbon (declarat)");
   if (c.recycled && s.minRecycled) r.push(`${c.recycled} reciclat`);
   if (c.inStock) r.push("Din stoc");
+  const n = referencesFor(c.slug).length;
+  if (n) r.push(`${n} ${n === 1 ? "proiect" : "proiecte"} în România`);
   return [...new Set(r)];
 }
 

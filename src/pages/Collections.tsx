@@ -7,6 +7,8 @@ import { collectionBySlug, collectionPath, collections, families, plainName, typ
 import { priceTiers, sectorsMeta } from "../data/attributes";
 import { landings } from "../data/landings";
 import { collectionFaqs } from "../seo";
+import { referencesFor } from "../data/references";
+import { ReferenceList } from "./Projects";
 import NotFound from "./NotFound";
 
 const formatFilters = [["toate", "Toate formatele"], ["Dală", "Dale 50 × 50"], ["Lamelă", "Lamele 25 × 100"], ["Rulou", "Rulouri 2 m"]] as const;
@@ -149,6 +151,12 @@ export function CollectionPage({ slug }: { slug: string }) {
         </div>
       </div>
     </section>
+
+    {referencesFor(c.slug).length > 0 && <section className="ed-shell collection-refs">
+      <div className="ed-section-heading"><div><Label>Proiecte în România · {referencesFor(c.slug).length}</Label><h2>{name}<sup>®</sup> deja montată<br /><span>în România.</span></h2></div><Link href="/proiecte" className="ed-text-link">Toate proiectele Burmatex <ArrowUpRight /></Link></div>
+      {referencesFor(c.slug).filter(r => r.photos?.length).map(r => <div key={r.name} className="ref-photos">{r.photos!.slice(0, 3).map(p => <img key={p.src} src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" />)}</div>)}
+      <ReferenceList items={referencesFor(c.slug)} compact />
+    </section>}
 
     <section className="ed-shell faq">
       <div><Label>Întrebări despre {name}</Label><h2>Pe scurt,<br /><span>{name}<sup>®</sup>.</span></h2></div>

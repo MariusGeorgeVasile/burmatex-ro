@@ -7,7 +7,7 @@ import { pathToFileURL } from "node:url";
 const root = new URL("..", import.meta.url).pathname;
 const dist = join(root, "dist");
 const server = await import(pathToFileURL(join(root, "dist-server/entry-server.js")).href);
-const { render, getMeta, allRoutes, collections, families, collectionPath, landings, generalFaqs, priceTiers, site } = server;
+const { render, getMeta, allRoutes, collections, families, collectionPath, landings, generalFaqs, priceTiers, site, references, formatArea } = server;
 const template = readFileSync(join(dist, "index.html"), "utf8");
 const domain = site.domain;
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -99,6 +99,10 @@ ${landings.map(l => `- [${l.label}](${domain}${l.path}): ${l.description}`).join
 
 ## Colecții
 ${collections.map(line).join("\n")}
+
+## Proiecte Burmatex în România
+Peste 2,5 milioane m² de mochetă Burmatex livrați și instalați în România. Lista completă: ${domain}/proiecte
+${references.map(r => `- ${r.name}${r.location ? `, ${r.location}` : ""}: ${formatArea(r)}, ${r.collections.join(", ")}`).join("\n")}
 
 ## Parteneri
 - [Devino dealer Burmatex](${domain}/devino-dealer): program pentru magazine de pardoseli, firme de montaj și amenajări din toată România.

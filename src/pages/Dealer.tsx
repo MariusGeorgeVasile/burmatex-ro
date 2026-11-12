@@ -33,6 +33,11 @@ export default function DealerPage() {
 
     <figure className="wide-figure"><img src="/img/c/tivoli/mocheta-dale-tivoli-ambient-2.webp" alt="Sală de lucru cu mochetă în dale Burmatex tivoli mist®" width="1200" height="1200" /><figcaption className="ed-shell">tivoli® · imagine Burmatex</figcaption></figure>
 
+    <section className="ed-shell dealer-proof">
+      <p><strong>Peste 2,5 milioane m²</strong> de mochetă Burmatex sunt deja montați în România: Nokia, Continental, ING, Raiffeisen Bank, Aeroportul Otopeni, Holcim, Ursus Breweries. Clienții dumneavoastră vor recunoaște referințele.</p>
+      <Link href="/proiecte" className="ed-text-link">Vedeți proiectele <ArrowRight /></Link>
+    </section>
+
     <section className="ed-shell benefits" id="beneficii">
       <div className="ed-section-heading"><div><Label>Ce primiți</Label><h2>Tot ce vă trebuie<br /><span>ca să vindeți din prima lună.</span></h2></div><p>Programul este gândit pentru firme mici și mijlocii. Fără angajamente de volum nerealiste, fără stoc blocat pe raft.</p></div>
       <div className="benefit-grid">{benefits.map(([title, text], i) => <article key={title}><span>{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p></article>)}</div>

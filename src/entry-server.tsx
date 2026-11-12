@@ -12,3 +12,4 @@ export { collections, families, collectionPath } from "./data/collections";
 export { landings, generalFaqs } from "./data/landings";
 export { priceTiers } from "./data/attributes";
 export { site } from "./data/site";
+export { references, formatArea } from "./data/references";

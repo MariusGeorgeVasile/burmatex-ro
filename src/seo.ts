@@ -4,6 +4,7 @@ import { collections, collectionBySlug, collectionPath, families, plainName, typ
 import { generalFaqs, landingByPath, landings, type Faq } from "./data/landings";
 import { dealerFaqs } from "./data/faqs";
 import { site } from "./data/site";
+import { formatArea, references, referencesFor, TOTAL_M2 } from "./data/references";
 
 export type Meta = { title: string; description: string; image?: string; jsonLd: object[]; noindex?: boolean };
 
@@ -39,6 +40,8 @@ export function collectionFaqs(c: Collection): Faq[] {
   const cls = c.specs.find(([label]) => label === "Clasă de utilizare");
   if (cls) faqs.push({ q: `Ce clasă de trafic are ${name}?`, a: `Clasa ${cls[1]}, conform fișei tehnice a producătorului.` });
   if (c.carbon) faqs.push({ q: `Este ${name} o mochetă sustenabilă?`, a: `${c.carbon === "neutral" ? "Producătorul o prezintă ca neutră din punctul de vedere al carbonului (reducere de impact plus compensare la sursă; nu înseamnă emisii zero)." : "Producătorul o încadrează în gama cu amprentă de carbon redusă."}${c.recycled ? ` Conținut reciclat total: ${c.recycled}.` : ""}${c.gwp ? ` GWP declarat în EPD: ${c.gwp} kg CO₂e.` : ""}` });
+  const refs = referencesFor(c.slug);
+  if (refs.length) faqs.push({ q: `Unde a fost folosită mocheta ${name} în România?`, a: `În ${refs.length === 1 ? "proiectul" : "proiecte precum"} ${refs.slice(0, 6).map(r => `${r.name}${r.location ? ` (${r.location})` : ""}, ${formatArea(r)}`).join("; ")}.` });
   faqs.push({ q: `De unde cumpăr ${name} în România?`, a: `Prin rețeaua de dealeri Burmatex România. ${c.inStock ? "Colecția este disponibilă din stoc în România. " : "Termenul de livrare se confirmă la ofertare. "}Solicitați mostre sau ofertă de pe această pagină.` });
   return faqs;
 }
@@ -68,6 +71,7 @@ export const staticPages: Record<string, { title: string; description: string; c
   "/devino-dealer": { title: "Devino dealer Burmatex — mochetă dale | Burmatex România", description: "Magazin de pardoseli, firmă de montaj sau amenajări? Vindeți mocheta Burmatex: stoc în România, mostre, documentație în română și suport la ofertare.", crumb: "Devino dealer" },
   "/de-ce-burmatex": { title: "De ce Burmatex — producător britanic de mochetă din 1967", description: "Burmatex produce mochetă la Ossett, UK: reciclare textilă din 1912, mochetă din 1967, ISO 9001 și 14001, fire reciclate, EPD și parcurs către Net Zero.", crumb: "De ce Burmatex" },
   "/resurse": { title: "Resurse tehnice mochetă: fișe, EPD, montaj | Burmatex România", description: "Fișe tehnice, declarații de mediu (EPD), broșuri și paletare Burmatex, plus ghiduri de montaj, întreținere și pregătire a suportului pentru mocheta în dale.", crumb: "Resurse" },
+  "/proiecte": { title: "Proiecte cu mochetă Burmatex în România | Burmatex România", description: `Peste 2,5 milioane m² de mochetă Burmatex livrați în România: Nokia, Continental, ING, Raiffeisen, Aeroportul Otopeni, Holcim, Ursus Breweries și alte ${references.length - 7} proiecte.`, crumb: "Proiecte" },
   "/contact": { title: "Contact — mostre, oferte, dealeri | Burmatex România", description: "Solicitați mostre de mochetă Burmatex, o ofertă de preț sau datele dealerului din zona dumneavoastră.", crumb: "Contact" },
 };
 
@@ -80,6 +84,7 @@ export function getMeta(path: string): Meta {
     const ld: object[] = [...base];
     if (stat.crumb) ld.push(breadcrumb([[stat.crumb, path]]));
     if (path === "/colectii") ld.push(itemList(collections, "Colecții de mochetă Burmatex"));
+    if (path === "/proiecte") ld.push({ "@type": "ItemList", name: `Proiecte cu mochetă Burmatex în România (total ${TOTAL_M2} m²)`, numberOfItems: references.length, itemListElement: references.map((r, i) => ({ "@type": "ListItem", position: i + 1, name: `${r.name}${r.location ? `, ${r.location}` : ""} — ${formatArea(r)}, ${r.collections.join(", ")}` })) });
     if (path === "/devino-dealer") ld.push(faqPage(dealerFaqs));
     if (path === "/") ld.push(faqPage(generalFaqs.slice(0, 3)));
     return { title: stat.title, description: stat.description, jsonLd: ld, image: "/img/c/go-to/mocheta-dale-go-to-ambient-2.webp" };

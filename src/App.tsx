@@ -8,6 +8,7 @@ import { AboutPage, ContactPage, ResourcesPage } from "./pages/Other";
 import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/Landing";
 import SelectorPage from "./pages/Selector";
+import ProjectsPage from "./pages/Projects";
 import { landings } from "./data/landings";
 
 // The hosted preview (claude.ai artifact) has no server rewrites, so it routes on the URL hash:
@@ -57,6 +58,7 @@ function Site() {
         <Route path="/colectii" component={CollectionsPage} />
         <Route path="/colectii/:slug">{params => <CollectionPage slug={params.slug} />}</Route>
         <Route path="/selector-mocheta" component={SelectorPage} />
+        <Route path="/proiecte" component={ProjectsPage} />
         {landings.map(l => <Route key={l.path} path={l.path}><LandingPage path={l.path} /></Route>)}
         <Route path="/devino-dealer" component={DealerPage} />
         <Route path="/de-ce-burmatex" component={AboutPage} />

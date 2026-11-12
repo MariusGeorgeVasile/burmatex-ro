@@ -4,6 +4,7 @@ import { DealerCTA, Label, featured, usePageMeta } from "../components";
 import { collections, families, totalColours, collectionPath, plainName, type FamilyKey } from "../data/collections";
 import { sectors } from "../data/site";
 import { landings } from "../data/landings";
+import { formatArea, references } from "../data/references";
 
 const familyImage: Record<FamilyKey, string> = {
   multilevel: "/img/c/rocklines/mocheta-dale-rocklines-ambient-1.webp",
@@ -111,6 +112,14 @@ export default function Home() {
     <section className="ed-sectors ed-shell">
       <div className="ed-section-heading"><div><Label>Unde se vinde Burmatex</Label><h2>Clienții există deja.<br /><span>În orașul dumneavoastră.</span></h2></div><p>Fiecare oraș are birouri, școli, cabinete medicale, hoteluri și magazine care renovează periodic. Mocheta în dale se înlocuiește modular, fără să oprească activitatea.</p></div>
       <div className="sector-grid">{sectors.map(([name, text], i) => <article key={name}><span>{String(i + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{text}</p></article>)}</div>
+    </section>
+
+    <section className="ed-shell home-refs">
+      <div className="ed-section-heading"><div><Label>Proiecte Burmatex în România</Label><h2>Peste 2,5 milioane m².<br /><span>Deja montați în România.</span></h2></div><Link href="/proiecte" className="ed-text-link">Toate cele {references.length} de proiecte <ArrowUpRight /></Link></div>
+      <div className="home-refs-grid">
+        <Link href="/proiecte" className="home-refs-photo"><img src="/img/proiecte/mocheta-dale-burmatex-wpp-1.webp" alt="Birouri WPP, București, cu mochetă dale Burmatex osaka®" width="1400" height="968" loading="lazy" /><span>WPP, București · osaka® · peste 4.500 m²</span></Link>
+        <ul className="ref-names">{references.filter(r => r.area >= 2000).slice(0, 14).map(r => <li key={r.name + r.area}><strong>{r.name}</strong><span>{formatArea(r)} · {r.collections.join(", ")}</span></li>)}</ul>
+      </div>
     </section>
 
     <section className="ed-sustain">
