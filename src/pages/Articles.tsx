@@ -1,4 +1,4 @@
-import { useSearch } from "wouter";
+import { useLocation, useSearch } from "wouter";
 import { Link } from "../link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Clock } from "lucide-react";
 import { CollectionCard, DealerCTA, Label, PageIntro, usePageMeta } from "../components";
@@ -38,6 +38,7 @@ export function ArticlesPage() {
 
 export function ArticlePage({ slug }: { slug: string }) {
   const a = articleBySlug[slug];
+  const [, navigate] = useLocation();
   usePageMeta(articlePath(slug));
   if (!a) return <NotFound />;
   const related = articles.filter(o => o.slug !== a.slug && o.category === a.category).concat(articles.filter(o => o.slug !== a.slug && o.category !== a.category)).slice(0, 3);
@@ -53,7 +54,16 @@ export function ArticlePage({ slug }: { slug: string }) {
     <figure className="ed-shell article-hero"><img src={a.image} alt={a.imageAlt} width="1600" height="900" fetchPriority="high" /></figure>
     <div className="ed-shell article-layout">
       {a.headings.length > 2 && <nav className="tg-toc" aria-label="Cuprins"><p>Cuprins</p><ol>{a.headings.map((h, i) => <li key={h.id}><a href={`#${h.id}`} onClick={e => { e.preventDefault(); document.getElementById(h.id)?.scrollIntoView({ behavior: "smooth" }); }}><span>{String(i + 1).padStart(2, "0")}</span>{h.text.replace(/^\d+\.\s*/, "")}</a></li>)}</ol></nav>}
-      <div className="article-body" dangerouslySetInnerHTML={{ __html: a.html }} />
+      <div className="article-body" dangerouslySetInnerHTML={{ __html: a.html }} onClick={e => {
+        // Internal links inside the article text navigate within the app (keeps hash routing working in the preview).
+        const link = (e.target as Element).closest("a");
+        const href = link?.getAttribute("href");
+        if (!href || !href.startsWith("/") || e.metaKey || e.ctrlKey) return;
+        e.preventDefault();
+        const [p, hash] = href.split("#");
+        navigate(p);
+        if (hash) setTimeout(() => document.getElementById(hash)?.scrollIntoView(), 150);
+      }} />
     </div>
     {cols.length > 0 && <section className="ed-shell related"><div className="ed-section-heading"><div><Label>Colecții din articol</Label><h2>Mocheta potrivită.</h2></div><Link href="/colectii" className="ed-text-link">Toate colecțiile <ArrowUpRight /></Link></div><div className="cc-collection-grid">{cols.map(c => <CollectionCard key={c.slug} c={c} />)}</div></section>}
     {related.length > 0 && <section className="ed-shell related"><div className="ed-section-heading"><div><Label>Mai citiți</Label><h2>Articole apropiate.</h2></div><Link href="/articole" className="ed-text-link">Toate articolele <ArrowUpRight /></Link></div><div className="article-grid">{related.map(o => <ArticleCard key={o.slug} a={o} />)}</div></section>}
