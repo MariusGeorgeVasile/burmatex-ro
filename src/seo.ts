@@ -109,7 +109,7 @@ export function getMeta(path: string): Meta {
   const art = path.startsWith("/articole/") ? articleBySlug[path.slice("/articole/".length)] : undefined;
   if (art) {
     return {
-      title: art.title.length > 52 ? art.title : `${art.title} | Burmatex România`,
+      title: `${art.title} | Burmatex România`.length <= 70 ? `${art.title} | Burmatex România` : art.title,
       description: clip(art.description, 160),
       image: art.image,
       type: "article",
